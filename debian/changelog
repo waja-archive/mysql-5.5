@@ -1,20 +1,24 @@
 mysql-5.5 (5.5.13-1) UNRELEASED; urgency=low
 
+  [Clint Byrum]
   * New upstream major release. Changing source name to mysql-5.5.
     (LP: #690925)
-  * dropping usr/lib/libmysqlclient*.la as they are no longer built
+  * Dropping usr/lib/libmysqlclient*.la as they are no longer built
     by the cmake build, and are not necessary for linking properly.
-  * Removing obsolete automake and dpatch build deps
-  * converted source format to 3.0 (quilt)
+  * Removing obsolete automake and dpatch build deps.
+  * Converted source format to 3.0 (quilt).
   * debian/patches: converted to quilt, and removed all except disable
     long filename check to allow building on sbuild/chroots
-  * renamed packages with -5.1 suffix to -5.5.
-  * renaming mysql-testsuite to mysql-testsuite-5.5
-  * dropping unneeded docs files
-  * dropping libmysqlclient16-dev as transition is complete.
-  * bumping libmysqlclient to v18 for new SONAME.
+  * Renamed packages with -5.1 suffix to -5.5.
+  * Renaming mysql-testsuite to mysql-testsuite-5.5.
+  * Dropping unneeded docs files
+  * Dropping libmysqlclient16-dev as transition is complete.
+  * Bumping libmysqlclient to v18 for new SONAME.
 
- -- Clint Byrum <clint@ubuntu.com>  Fri, 03 Jun 2011 17:12:08 -0700
+  [Norbert Tretkowski]
+  * Update my.cnf to use --lc-messages-dir instead --language.
+
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Wed, 22 Jun 2011 19:31:23 +0200
 
 mysql-5.1 (5.1.57-3) unstable; urgency=low
 
@@ -191,317 +195,17 @@ mysql-5.1 (5.1.49-2) unstable; urgency=low
 
  -- Norbert Tretkowski <norbert@tretkowski.de>  Wed, 27 Oct 2010 14:41:19 +0200
 
-mysql-5.1 (5.1.49-1ubuntu9) natty; urgency=low
-
-  * debian/mysql-server-5.1.mysql.upstart, debian/control: use AppArmor
-    helper, available since upstart 0.6.7-3.
-
- -- Kees Cook <kees@ubuntu.com>  Fri, 14 Jan 2011 13:11:24 -0800
-
-mysql-5.1 (5.1.49-1ubuntu8.1) maverick-security; urgency=low
-
-  * SECURITY UPDATE: denial of service via incorrect propagation of type
-    errors.
-    - debian/patches/61_CVE-2010-3833.dpatch: properly check for execution
-      errors in sql/item_func.cc. Add tests to mysql-test/*.
-    - CVE-2010-3833
-  * SECURITY UPDATE: denial of service via derived table materializing.
-    - debian/patches/61_CVE-2010-3834.dpatch: handle temporary tables in
-      sql/field.cc, sql/sql_select.*. Add tests to mysql-test/*.
-    - CVE-2010-3834
-  * SECURITY UPDATE: denial of service via user-variable assignment
-    expression.
-    - debian/patches/61_CVE-2010-3835.dpatch: fix logic in sql/item_func.*,
-      Add tests to mysql-test/*.
-    - CVE-2010-3835
-  * SECURITY UPDATE: denial of service via pre-evaluation of LIKE
-    predicates during view preparation.
-    - debian/patches/61_CVE-2010-3836.dpatch: make sure we're not in view
-      preparation mode in sql/item_cmpfunc.cc. Add tests to mysql-test/*.
-    - CVE-2010-3836
-  * SECURITY UPDATE: denial of service via use of GROUP_CONCAT() and
-    WITH ROLLUP together.
-    - debian/patches/61_CVE-2010-3837.dpatch: create a copy of the order
-      structures in sql/item_sum.cc, sql/table.h. Add tests to
-      mysql-test/*.
-    - CVE-2010-3837
-  * SECURITY UPDATE: denial of service via longblob and union or update
-    with subquery.
-    - debian/patches/61_CVE-2010-3838.dpatch: handle REAL_RESULT in
-      sql/item_func.cc. Add tests to mysql-test/*.
-    - CVE-2010-3838
-  * SECURITY UPDATE: denial of service via certain queries with nested
-    joins.
-    - debian/patches/61_CVE-2010-3839.dpatch: fix nesting in
-      sql/sql_select.cc. Add tests to mysql-test/*.
-    - CVE-2010-3839
-  * SECURITY UPDATE: denial of service via PolyFromWKB() function and
-    improper data.
-    - debian/patches/61_CVE-2010-3840.dpatch: improve data handling in
-      sql/spatial.cc. Add tests to mysql-test/*.
-    - CVE-2010-3840
-  * debian/patches/62_disable_longfilename_test.dpatch: disable the
-    partition_rename_longfilename test as it fails when building with
-    sbuild and schroots.
-
- -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 09 Nov 2010 12:58:03 -0500
-
-mysql-5.1 (5.1.49-1ubuntu8) maverick; urgency=low
-
-  * raising kill timeout to 300 to help avoid table corruption (LP: #620441)
-
- -- Clint Byrum <clint@ubuntu.com>  Wed, 08 Sep 2010 09:36:13 -0700
-
-mysql-5.1 (5.1.49-1ubuntu7) maverick; urgency=low
-
-  * debian/apparmor-profile: fix syntax error introduced in last upload
-    and remove added redundant access rule. LP: #622010, LP: #594932
-
- -- Jamie Strandboge <jamie@ubuntu.com>  Sat, 21 Aug 2010 22:16:40 -0500
-
-mysql-5.1 (5.1.49-1ubuntu6) maverick; urgency=low
-
-  [Clint Byrum]
-  * Installing mysql_config_pic in /usr/bin so users of libmysqld-pic
-    can extract the appropriate compile flags. (LP: #605021) 
-
-  [Chuck Short]
-  * debian/mysql-server.5.1.postinst: Specify the mysql user when installing 
-    the mysql databases. (LP: #591875)
-  * debian/apparmor-profile: Update apparmor profile for mysql plugins.
-    (LP: #594932, #619172)
-
- -- Chuck Short <zulcss@ubuntu.com>  Fri, 20 Aug 2010 10:12:48 -0400
-
-mysql-5.1 (5.1.49-1ubuntu5) maverick; urgency=low
-
-  * New patch: 99_fix_testsuite_for_installed_env.dpatch: fix
-    mysql-testsuite to work with the installation location (LP: #617461)
-  * debian/apparmor-profile: add mmap access to mysql plugin location
-    (LP: #617463)
-
- -- Steve Beattie <sbeattie@ubuntu.com>  Thu, 12 Aug 2010 15:44:46 -0700
-
-mysql-5.1 (5.1.49-1ubuntu4) maverick; urgency=low
-
-  * debian/rules: doy. Put dh_apparmor in binary-arch so more than just
-    i386 has the benefit of AppArmor protection, really fixing LP: #616417
-
- -- Jamie Strandboge <jamie@ubuntu.com>  Thu, 12 Aug 2010 07:11:57 -0500
-
-mysql-5.1 (5.1.49-1ubuntu3) maverick; urgency=low
-
-  * debian/control: Build-Depends on debhelper 7.4.20ubuntu6, which has a
-    fix that prevented debhelper from creating the necessary output in
-    postinst (LP: #616417)
-
- -- Jamie Strandboge <jamie@ubuntu.com>  Wed, 11 Aug 2010 15:08:12 -0500
-
-mysql-5.1 (5.1.49-1ubuntu2) maverick; urgency=low
-
-  * convert to using dh_apparmor:
-    - debian/rules, debian/mysql-server-5.1.postinst: use dh_apparmor
-    - debian/control: Build-Depends on debhelper 7.4.20ubuntu5
-  * debian/mysql-server-5.1.postrm: since it doesn't use DEBHELPER, update
-    to what we have in debhelper
-  * debian/apparmor-profile: update for local include
-
- -- Jamie Strandboge <jamie@ubuntu.com>  Fri, 06 Aug 2010 14:13:29 -0500
-
-mysql-5.1 (5.1.49-1ubuntu1) maverick; urgency=low
-
-  * Merge from debian unstable:
-    + debian/control:
-       * Update maintainer according to spec.
-       * Move section from "misc" to "database".
-       * Added libmysqlclient16-dev an empty transitional package. 
-       * Added mysql-client-core-5.1 package.
-       * Suggest mailx for mysql-server-5.1
-       * Add mysql-testsuite package so you can run the testsuite seperately.
-    + debian/additions/my.cnf:
-      * Remove language options. Error message files are located in a different directory in Mysql
-        5.0. Setting the language option to use /usr/share/mysql/english breaks Mysql 5.0. Both 5.0
-        and 5.1 use a different value that works. (LP: #316974)
-    + Add apparmor profile:
-      + debian/apparmor-profile: apparmor-profile
-      + debian/rules, debian/mysql-server-5.1.files: install apparmor profile
-      + debian/mysql-server-5.1.dirs: add etc/apparmor.d/fore-complain
-      + debian/mysql-server-5.1.postrm: remove symlink in force-complain/ on purge.
-      + debian/mysql-server-5.1.README.Debian: add apparmor documentation.
-      + debian/additions/my.cnf: Add warning about apparmor. (LP: #201799)
-      + debian/mysql-server-5.1.postinst: reload apparmor profiles
-    * Convert the package from sysvinit to upstart:
-      + debian/mysql-server-5.1.mysql.upstart: Add upstart script.
-      + debian/mysql-server-5.1.mysql.init: Dropped, unused now with upstart.
-      + debian/additions/mysqld_safe_syslog.cnf: Dropped, unused now with upstart.
-      + debian/additons/my.cnf: Remove pid declaration and setup error logging to /var/log/mysql since
-        we're not piping anything around logger anymore.
-      + debian/rules, debian/mysql-server-5.1.logcheck.ignore.{paranoid,worstation},
-        debian/mysql-server-5.1.logcheck.ignore.server: : Remove references to mysqld_safe
-      + debian/patches/38_scripts_mysqld_safe.sh_signals.dpatch: Dropped
-    * Added -fno-strict-aliasing to CFLAGS to get around mysql testsuite build failures.
-    * Add Apport hook (LP: #354188):
-      + debian/mysql-server-5.1.py: apport package hook
-      + debian/rules: Make it installable
-    * debian/mysql-server-5.1.mysql-server.logrotate: Check to see if mysql is running before
-      running logrotate. (LP: #513135)
-    * Make the testsuite installable. (LP: #530752)
-      + debian/mysql-server-5.1.files, debian/rules: install apport package hook
-    * debian/mysql-server-5.1.preinst: Set mysql user's home directory
-      to /nonexistent to protect against having the /var/lib/mysql
-      user-writeable. If an attacker can trick mysqld into creating
-      dot files in the home directory, he could do .rhost-like attacks
-      on the system. (LP: #293258)
-    * debian/control: mysql-client-5.1 should depend on mysql-core-client-5.1.
-      (LP: #590952) 
-
- -- Chuck Short <zulcss@ubuntu.com>  Wed, 04 Aug 2010 13:18:27 -0400
-
 mysql-5.1 (5.1.49-1) unstable; urgency=low
 
   * New upstream release.
 
  -- Norbert Tretkowski <norbert@tretkowski.de>  Sat, 31 Jul 2010 12:34:43 +0200
 
-mysql-5.1 (5.1.48-1ubuntu5) maverick; urgency=low
-
-  * debian/mysql-server-5.1.mysql.upstart: Fix upstart init script. (LP: #608423)
-
- -- Chuck Short <zulcss@ubuntu.com>  Sun, 01 Aug 2010 11:23:11 -0400
-
-mysql-5.1 (5.1.48-1ubuntu4) maverick; urgency=low
-
-  * debian/mysql-server-5.1.mysql.upstart: Update upstart job again, simpilfy things again. 
-
- -- Chuck Short <zulcss@ubuntu.com>  Wed, 28 Jul 2010 08:23:13 -0400
-
-mysql-5.1 (5.1.48-1ubuntu3) maverick; urgency=low
-
-  * debian/mysql-server-5.1.mysq.upstart: Update upstart job, thanks to sPOiDar.
-    (LP: #551130) 
-
- -- Chuck Short <zulcss@ubuntu.com>  Wed, 21 Jul 2010 09:29:19 -0400
-
-mysql-5.1 (5.1.48-1ubuntu2) maverick; urgency=low
-
-  * New patch 60_abi-check-includ; fix build failure in abi_check with newer
-    GCCs which will exit with failure when an #include can't be found;
-    LP: #579909.
-
- -- Loïc Minier <loic.minier@ubuntu.com>  Wed, 14 Jul 2010 00:13:00 +0200
-
-mysql-5.1 (5.1.48-1ubuntu1) maverick; urgency=low
-
-  * Merge from debian unstable, remaining changes:
-    + debian/control:
-       * Update maintainer according to spec.
-       * Move section from "misc" to "database".
-       * Added libmysqlclient16-dev an empty transitional package. 
-       * Added mysql-client-core-5.1 package.
-       * Suggest mailx for mysql-server-5.1
-       * Add mysql-testsuite package so you can run the testsuite seperately.
-    + debian/additions/my.cnf:
-      * Remove language options. Error message files are located in a different directory in Mysql
-        5.0. Setting the language option to use /usr/share/mysql/english breaks Mysql 5.0. Both 5.0
-        and 5.1 use a different value that works. (LP: #316974)
-    + Add apparmor profile:
-      + debian/apparmor-profile: apparmor-profile
-      + debian/rules, debian/mysql-server-5.1.files: install apparmor profile
-      + debian/mysql-server-5.1.dirs: add etc/apparmor.d/fore-complain
-      + debian/mysql-server-5.1.postrm: remove symlink in force-complain/ on purge.
-      + debian/mysql-server-5.1.README.Debian: add apparmor documentation.
-      + debian/additions/my.cnf: Add warning about apparmor. (LP: #201799)
-      + debian/mysql-server-5.1.postinst: reload apparmor profiles
-    * Convert the package from sysvinit to upstart:
-      + debian/mysql-server-5.1.mysql.upstart: Add upstart script.
-      + debian/mysql-server-5.1.mysql.init: Dropped, unused now with upstart.
-      + debian/additions/mysqld_safe_syslog.cnf: Dropped, unused now with upstart.
-      + debian/additons/my.cnf: Remove pid declaration and setup error logging to /var/log/mysql since
-        we're not piping anything around logger anymore.
-      + debian/rules, debian/mysql-server-5.1.logcheck.ignore.{paranoid,worstation},
-        debian/mysql-server-5.1.logcheck.ignore.server: : Remove references to mysqld_safe
-      + debian/patches/38_scripts_mysqld_safe.sh_signals.dpatch: Dropped
-    * Added -fno-strict-aliasing to CFLAGS to get around mysql testsuite build failures.
-    * Add Apport hook (LP: #354188):
-      + debian/mysql-server-5.1.py: apport package hook
-      + debian/rules: Make it installable
-    * debian/mysql-server-5.1.mysql-server.logrotate: Check to see if mysql is running before
-      running logrotate. (LP: #513135)
-    * Make the testsuite installable. (LP: #530752)
-      + debian/mysql-server-5.1.files, debian/rules: install apport package hook
-    * debian/mysql-server-5.1.preinst: Set mysql user's home directory
-      to /nonexistent to protect against having the /var/lib/mysql
-      user-writeable. If an attacker can trick mysqld into creating
-      dot files in the home directory, he could do .rhost-like attacks
-      on the system. (LP: #293258)
-    * debian/control: mysql-client-5.1 should depend on mysql-core-client-5.1.
-      (LP: #590952) 
-
- -- Chuck Short <zulcss@ubuntu.com>  Mon, 21 Jun 2010 15:31:05 -0400
-
 mysql-5.1 (5.1.48-1) unstable; urgency=low
 
   * New upstream release.
 
  -- Norbert Tretkowski <norbert@tretkowski.de>  Thu, 17 Jun 2010 22:38:56 +0200
-
-mysql-5.1 (5.1.47-1ubuntu2) maverick; urgency=low
-
-  * debian/control: mysql-client-5.1 should depend on mysql-core-client-5.1.
-    (LP: #590952) 
-  * debian/mysql-server-5.1.mysql.upstart: Dont start mysqld on runlevel 1.
-    (LP: #559533)
-
- -- Chuck Short <zulcss@ubuntu.com>  Tue, 15 Jun 2010 11:20:15 -0400
-
-mysql-5.1 (5.1.47-1ubuntu1) maverick; urgency=low
-
-  * Merge from debian unstable, remaining changes:
-    + debian/control:
-       * Update maintainer according to spec.
-       * Move section from "misc" to "database".
-       * Added libmysqlclient16-dev an empty transitional package. 
-       * Added mysql-client-core-5.1 package.
-       * Suggest mailx for mysql-server-5.1
-       * Add mysql-testsuite package so you can run the testsuite seperately.
-    + debian/additions/my.cnf:
-      * Remove language options. Error message files are located in a different directory in Mysql
-        5.0. Setting the language option to use /usr/share/mysql/english breaks Mysql 5.0. Both 5.0
-        and 5.1 use a different value that works. (LP: #316974)
-    + Add apparmor profile:
-      + debian/apparmor-profile: apparmor-profile
-      + debian/rules, debian/mysql-server-5.1.files: install apparmor profile
-      + debian/mysql-server-5.1.dirs: add etc/apparmor.d/fore-complain
-      + debian/mysql-server-5.1.postrm: remove symlink in force-complain/ on purge.
-      + debian/mysql-server-5.1.README.Debian: add apparmor documentation.
-      + debian/additions/my.cnf: Add warning about apparmor. (LP: #201799)
-      + debian/mysql-server-5.1.postinst: reload apparmor profiles
-    * Convert the package from sysvinit to upstart:
-      + debian/mysql-server-5.1.mysql.upstart: Add upstart script.
-      + debian/mysql-server-5.1.mysql.init: Dropped, unused now with upstart.
-      + debian/additions/mysqld_safe_syslog.cnf: Dropped, unused now with upstart.
-      + debian/additons/my.cnf: Remove pid declaration and setup error logging to /var/log/mysql since
-        we're not piping anything around logger anymore.
-      + debian/rules, debian/mysql-server-5.1.logcheck.ignore.{paranoid,worstation},
-        debian/mysql-server-5.1.logcheck.ignore.server: : Remove references to mysqld_safe
-      + debian/patches/38_scripts_mysqld_safe.sh_signals.dpatch: Dropped
-    * Added -fno-strict-aliasing to CFLAGS to get around mysql testsuite build failures.
-    * Add Apport hook (LP: #354188):
-      + debian/mysql-server-5.1.py: apport package hook
-      + debian/rules: Make it installable
-    * debian/mysql-server-5.1.mysql-server.logrotate: Check to see if mysql is running before
-      running logrotate. (LP: #513135)
-    * Make the testsuite installable. (LP: #530752)
-      + debian/mysql-server-5.1.files, debian/rules: install apport package hook
-    * debian/mysql-server-5.1.preinst: Set mysql user's home directory
-      to /nonexistent to protect against having the /var/lib/mysql
-      user-writeable. If an attacker can trick mysqld into creating
-      dot files in the home directory, he could do .rhost-like attacks
-      on the system. (LP: #293258)
-    * Dropped:
-      + debian/patches/51_ssl_test_certs: Certs have been updated up until 2015.
-
- -- Chuck Short <zulcss@ubuntu.com>  Wed, 26 May 2010 09:27:48 -0400
 
 mysql-5.1 (5.1.47-1) unstable; urgency=low
 
@@ -3363,6 +3067,18 @@ mysql-dfsg (4.0.20-9) unstable; urgency=medium
 
 mysql-dfsg (4.0.20-8) unstable; urgency=low
 
+  * The mysqlcheck that is started from the initscript will now be
+    backgrounded because it might else prevent the boot process to continue.
+    It also now notifies root by mail and syslog if a table is corrupt.
+  * The "debian-sys-maint" MySQL user now has almost full rights so that other
+    packages might use this account to create databases and user (thanks to
+    Andreas Barth). Closes: #262541
+  * Added paranoid rules for logcheck.
+
+ -- Christian Hammers <ch@debian.org>  Sun,  1 Aug 2004 21:00:55 +0200
+
+mysql-dfsg (4.0.20-8) unstable; urgency=low
+
   * Upload stalled. Not released.
 
  -- Christian Hammers <ch@debian.org>  Sun,  1 Aug 2004 20:27:55 +0200
@@ -4887,14 +4603,6 @@ mysql (3.21.22beta-1) unstable; urgency=low
   
  -- Scott Hanson <shanson@debian.org>  Wed, 28 Jan 1998 18:59:09 +0100
 
-mysql (3.21.21.beta-1) unstable; urgency=low
-
-  * Use debhelper where possible in rules
-  * Split binary packages into mysql-base, mysql-client, mysql-doc	
-  * New upstream release
-
- -- Scott Hanson <shanson@debian.org>  Thu, 15 Jan 1998 08:12:17 +0100
-
 mysql (3.21.21a.beta-2) unstable; urgency=low
 
   * Compile with libpthreads from libc6-dev_2.0.6-3 rather than statically 
@@ -4909,6 +4617,14 @@ mysql (3.21.21a.beta-1) unstable; urgency=low
   * Correct upstream release number so source packages are correctly built
 
  -- Scott Hanson <shanson@debian.org>  Mon, 19 Jan 1998 07:52:48 +0100
+
+mysql (3.21.21.beta-1) unstable; urgency=low
+
+  * Use debhelper where possible in rules
+  * Split binary packages into mysql-base, mysql-client, mysql-doc	
+  * New upstream release
+
+ -- Scott Hanson <shanson@debian.org>  Thu, 15 Jan 1998 08:12:17 +0100
 
 mysql (3.21.19.beta-1) unstable; urgency=low
 
