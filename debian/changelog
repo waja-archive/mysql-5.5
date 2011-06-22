@@ -16,6 +16,43 @@ mysql-5.5 (5.5.13-1) UNRELEASED; urgency=low
 
  -- Clint Byrum <clint@ubuntu.com>  Fri, 03 Jun 2011 17:12:08 -0700
 
+mysql-5.1 (5.1.57-3) unstable; urgency=low
+
+  * Really fix syntax warning in preinst. (closes: #630672)
+
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Tue, 21 Jun 2011 10:33:25 +0200
+
+mysql-5.1 (5.1.57-2) unstable; urgency=low
+
+  * Acknowledge NMUs. (closes: #614044)
+  * Fix syntax warning in preinst. (closes: #630672)
+
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Sat, 18 Jun 2011 19:28:35 +0200
+
+mysql-5.1 (5.1.57-1.3) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Use correct DEB_HOST_GNU_TYPE and not DEB_HOST_BUILD_TYPE.
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 13 Jun 2011 17:02:50 +0200
+
+mysql-5.1 (5.1.57-1.2) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Prefix gcc-4.5 and g++-4.5 with DEB_BUILD_GNU_TYPE to fix FTBFS on
+    ia64, s390 and maybe more.
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 13 Jun 2011 13:20:37 +0200
+
+mysql-5.1 (5.1.57-1.1) unstable; urgency=high
+
+  * Non-maintainer upload (with permission of maintainer).
+  * Build with gcc-4.5 (Closes: #614044)
+  * Revert: "Build with -O2 instead -O3, MySQL seems not yet ready for -
+    O3 when using gcc-4.6." since we are building with gcc-4.5.
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 13 Jun 2011 08:51:51 +0200
+
 mysql-5.1 (5.1.57-1) unstable; urgency=medium
 
   * Bump libmysqlclient16 shlibs to 5.1.50-1 as it introduced a new symbol.
@@ -50,60 +87,6 @@ mysql-5.1 (5.1.54-2) unstable; urgency=low
   * Fix minor grammar infelicity in debian-start script. (closes: #582955)
 
  -- Norbert Tretkowski <norbert@tretkowski.de>  Fri, 04 Feb 2011 16:28:08 +0100
-
-mysql-5.1 (5.1.54-1ubuntu1) natty; urgency=low
-
-  * Synchronize from Debian Experimental:
-  * Merge from debian unstable:
-    + debian/control:
-       * Update maintainer according to spec.
-       * Move section from "misc" to "database".
-       * Added libmysqlclient16-dev an empty transitional package. 
-       * Added mysql-client-core-5.1 package.
-       * Suggest mailx for mysql-server-5.1
-       * Add mysql-testsuite package so you can run the testsuite seperately.
-    + debian/additions/my.cnf:
-      * Remove language options. Error message files are located in a different directory in Mysql
-        5.0. Setting the language option to use /usr/share/mysql/english breaks Mysql 5.0. Both 5.0
-        and 5.1 use a different value that works. (LP: #316974)
-    + Add apparmor profile:
-      + debian/apparmor-profile: apparmor-profile
-      + debian/rules, debian/mysql-server-5.1.files: install apparmor profile
-      + debian/mysql-server-5.1.dirs: add etc/apparmor.d/fore-complain
-      + debian/mysql-server-5.1.postrm: remove symlink in force-complain/ on purge.
-      + debian/mysql-server-5.1.README.Debian: add apparmor documentation.
-      + debian/additions/my.cnf: Add warning about apparmor. (LP: #201799)
-      + debian/mysql-server-5.1.postinst: reload apparmor profiles
-    * Convert the package from sysvinit to upstart:
-      + debian/mysql-server-5.1.mysql.upstart: Add upstart script.
-      + debian/mysql-server-5.1.mysql.init: Dropped, unused now with upstart.
-      + debian/additions/mysqld_safe_syslog.cnf: Dropped, unused now with upstart.
-      + debian/additons/my.cnf: Remove pid declaration and setup error logging to /var/log/mysql since
-        we're not piping anything around logger anymore.
-      + debian/rules, debian/mysql-server-5.1.logcheck.ignore.{paranoid,worstation},
-        debian/mysql-server-5.1.logcheck.ignore.server: : Remove references to mysqld_safe
-      + debian/patches/38_scripts_mysqld_safe.sh_signals.dpatch: Dropped
-    * Added -fno-strict-aliasing to CFLAGS to get around mysql testsuite build failures.
-    * Add Apport hook (LP: #354188):
-      + debian/mysql-server-5.1.py: apport package hook
-      + debian/rules: Make it installable
-    * debian/mysql-server-5.1.mysql-server.logrotate: Check to see if mysql is running before
-      running logrotate. (LP: #513135)
-    * Make the testsuite installable. (LP: #530752)
-      + debian/mysql-server-5.1.files, debian/rules: install apport package hook
-    * debian/mysql-server-5.1.preinst: Set mysql user's home directory
-      to /nonexistent to protect against having the /var/lib/mysql
-      user-writeable. If an attacker can trick mysqld into creating
-      dot files in the home directory, he could do .rhost-like attacks
-      on the system. (LP: #293258)
-    * debian/control: mysql-client-5.1 should depend on mysql-core-client-5.1.
-      (LP: #590952)
-    * debian/mysql-server.5.1.postinst: Specify the mysql user when installing 
-      the mysql databases. (LP: #591875)
-    * Installing mysql_config_pic in /usr/bin so users of libmysqld-pic
-      can extract the appropriate compile flags. (LP: #605021) 
-
- -- Chuck Short <zulcss@ubuntu.com>  Wed, 26 Jan 2011 09:19:25 -0500
 
 mysql-5.1 (5.1.54-1) experimental; urgency=low
 
