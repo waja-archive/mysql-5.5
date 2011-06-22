@@ -3,7 +3,7 @@
 export DH_VERBOSE=1
 export DEB_BUILD_HARDENING=1
 
-PACKAGE=mysql-5.1
+PACKAGE=mysql-5.5
 
 TMP=$(CURDIR)/debian/tmp/
 
@@ -19,7 +19,7 @@ DEB_NOEPOCH_VERSION ?= $(shell echo $(DEB_VERSION) | cut -d: -f2-)
 DEB_UPSTREAM_VERSION ?= $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//')
 DEB_UPSTREAM_VERSION_MAJOR_MINOR := $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r -n 's/^([0-9]+\.[0-9]+).*/\1/p')
 
-EXPORTED_SOURCE_TARBALL = debian/mysql-source-5.1.tar.gz
+EXPORTED_SOURCE_TARBALL = debian/mysql-source-5.5.tar.gz
 
 DISTRIBUTION = $(shell lsb_release -i -s)
 
@@ -105,13 +105,10 @@ build: build-stamp build-stamp-pic
 build-stamp: configure
 	@echo "RULES.$@"
 	dh_testdir
-	[ -f $(EXPORTED_SOURCE_TARBALL) ] || tar -zcf $(EXPORTED_SOURCE_TARBALL) \
-      --exclude=debian . \
-      --transform="s,^\./,mysql-5.5/,"
-
+	
 	[ -f $(EXPORTED_SOURCE_TARBALL) ] || tar -zcf $(EXPORTED_SOURCE_TARBALL) \
 	--exclude=debian . \
-	--transform="s,^\./,mysql-5.1/,"
+	--transform="s,^\./,mysql-5.5/,"
 
 	cd $(builddir) && $(MAKE) $(MAKE_J)
 
