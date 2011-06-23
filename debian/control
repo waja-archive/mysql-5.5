@@ -79,8 +79,8 @@ Package: mysql-client-5.5
 Architecture: any
 Depends: debianutils (>=1.6), libdbi-perl, libdbd-mysql-perl (>= 1.2202), mysql-common (>= ${source:Version}), ${perl:Depends}, ${shlibs:Depends}, ${misc:Depends}
 Provides: virtual-mysql-client, mysql-client, mysql-client-4.1
-Conflicts: mysql-client (<< ${source:Version}), mysql-client-5.0
-Replaces: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-server-5.1 (<= 5.1.49-1)
+Conflicts: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-client-5.1
+Replaces: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-server-5.1 (<= 5.1.49-1), mysql-client-5.1
 Suggests: libterm-readkey-perl
 Description: MySQL database client binaries
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database

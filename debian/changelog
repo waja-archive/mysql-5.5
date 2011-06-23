@@ -2,7 +2,7 @@ mysql-5.5 (5.5.13-1) UNRELEASED; urgency=low
 
   [Clint Byrum]
   * New upstream major release. Changing source name to mysql-5.5.
-    (LP: #690925)
+    (closes: #609592)
   * Dropping usr/lib/libmysqlclient*.la as they are no longer built
     by the cmake build, and are not necessary for linking properly.
   * Removing obsolete automake and dpatch build deps.
