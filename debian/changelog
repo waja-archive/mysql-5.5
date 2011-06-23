@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.13-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.13-1~pre1) UNRELEASED; urgency=low
 
   [Clint Byrum]
   * New upstream major release. Changing source name to mysql-5.5.
