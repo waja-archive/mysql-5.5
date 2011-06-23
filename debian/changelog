@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.13-1~pre1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.13-1) experimental; urgency=low
 
   [Clint Byrum]
   * New upstream major release. Changing source name to mysql-5.5.
@@ -7,18 +7,18 @@ mysql-5.5 (5.5.13-1~pre1) UNRELEASED; urgency=low
     by the cmake build, and are not necessary for linking properly.
   * Removing obsolete automake and dpatch build deps.
   * Converted source format to 3.0 (quilt).
-  * debian/patches: converted to quilt, and removed all except disable
-    long filename check to allow building on sbuild/chroots
+  * debian/patches: Converted to quilt, and removed all except disable
+    long filename check to allow building on sbuild/chroots.
   * Renamed packages with -5.1 suffix to -5.5.
   * Renaming mysql-testsuite to mysql-testsuite-5.5.
-  * Dropping unneeded docs files
+  * Dropping unneeded docs files.
   * Dropping libmysqlclient16-dev as transition is complete.
   * Bumping libmysqlclient to v18 for new SONAME.
 
   [Norbert Tretkowski]
   * Update my.cnf to use --lc-messages-dir instead --language.
 
- -- Norbert Tretkowski <norbert@tretkowski.de>  Wed, 22 Jun 2011 19:31:23 +0200
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Thu, 23 Jun 2011 10:25:33 +0200
 
 mysql-5.1 (5.1.57-3) unstable; urgency=low
 
