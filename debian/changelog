@@ -1,9 +1,10 @@
-mysql-5.5 (5.5.13-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.15-1) UNRELEASED; urgency=low
 
+  * New upstream release.
   * Fix empty libmysqld-pic package.
   * Run dh_apparmor on Ubuntu only.
 
- -- Norbert Tretkowski <norbert@tretkowski.de>  Thu, 23 Jun 2011 20:32:25 +0200
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Mon, 01 Aug 2011 13:06:29 +0200
 
 mysql-5.5 (5.5.13-1) experimental; urgency=low
 
