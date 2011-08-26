@@ -10,7 +10,7 @@ mysql-5.5 (5.5.13-1) experimental; urgency=low
 
   [Clint Byrum]
   * New upstream major release. Changing source name to mysql-5.5.
-    (closes: #609592)
+    (closes: #609592, #637274)
   * Dropping usr/lib/libmysqlclient*.la as they are no longer built
     by the cmake build, and are not necessary for linking properly.
   * Removing obsolete automake and dpatch build deps.
