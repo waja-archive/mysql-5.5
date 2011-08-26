@@ -28,6 +28,12 @@ mysql-5.5 (5.5.13-1) experimental; urgency=low
 
  -- Norbert Tretkowski <norbert@tretkowski.de>  Thu, 23 Jun 2011 10:25:33 +0200
 
+mysql-5.1 (5.1.58-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Sun, 17 Jul 2011 17:26:27 +0200
+
 mysql-5.1 (5.1.57-3) unstable; urgency=low
 
   * Really fix syntax warning in preinst. (closes: #630672)
