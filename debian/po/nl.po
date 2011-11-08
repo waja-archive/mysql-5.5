@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
-"POT-Creation-Date: 2011-01-19 09:50-0800\n"
+"POT-Creation-Date: 2011-11-08 11:42-0800\n"
 "PO-Revision-Date: 2010-11-21 21:30+0100\n"
 "Last-Translator: Eric Spreen <erispre@gmail.com>\n"
 "Language-Team: Debian-Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -178,8 +178,12 @@ msgstr ""
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
+#, fuzzy
+#| msgid ""
+#| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
+#| "more information."
 msgid ""
-"Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for more "
+"Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
 msgstr ""
 "Leest u het bestand /usr/share/doc/mysql-server-5.1/README.Debian voor meer "
@@ -208,8 +212,13 @@ msgstr "De NDB-cluster lijkt in gebruik te zijn"
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
+#, fuzzy
+#| msgid ""
+#| "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the "
+#| "new mysql-cluster-server package and remove all lines starting with \"ndb"
+#| "\" from all config files below /etc/mysql/."
 msgid ""
-"MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new "
+"MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""

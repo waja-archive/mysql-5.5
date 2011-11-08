@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mysql_nb\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
-"POT-Creation-Date: 2011-01-19 09:50-0800\n"
+"POT-Creation-Date: 2011-11-08 11:42-0800\n"
 "PO-Revision-Date: 2007-02-18 12:13+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@powertech.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -204,7 +204,7 @@ msgstr ""
 #. Description
 #: ../mysql-server-5.5.templates:8001
 msgid ""
-"Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for more "
+"Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
 msgstr ""
 
@@ -230,7 +230,7 @@ msgstr ""
 #. Description
 #: ../mysql-server-5.5.templates:10001
 msgid ""
-"MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new "
+"MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""

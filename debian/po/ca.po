@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mysql-dfsg-4.1\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
-"POT-Creation-Date: 2011-01-19 09:50-0800\n"
+"POT-Creation-Date: 2011-11-08 11:42-0800\n"
 "PO-Revision-Date: 2004-01-31 19:20GMT\n"
 "Last-Translator: Aleix Badia i Bosch <abadia@ica.es>\n"
 "Language-Team: Debian L10n Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -179,8 +179,12 @@ msgstr ""
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
+#, fuzzy
+#| msgid ""
+#| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
+#| "more information."
 msgid ""
-"Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for more "
+"Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
 msgstr ""
 "Llegiu el fitxer /usr/share/doc/mysql-server-5.1/README.Debian per a obtenir "
@@ -209,7 +213,7 @@ msgstr ""
 #. Description
 #: ../mysql-server-5.5.templates:10001
 msgid ""
-"MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new "
+"MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""

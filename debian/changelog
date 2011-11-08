@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.15-1) experimental; urgency=low
+mysql-5.5 (5.5.17-1) experimental; urgency=low
 
   [Norbert Tretkowski]
   * New upstream release.
@@ -8,7 +8,7 @@ mysql-5.5 (5.5.15-1) experimental; urgency=low
   [Clint Byrum]
   * Rewrote debian/copyright file from scratch.
 
- -- Norbert Tretkowski <norbert@tretkowski.de>  Fri, 26 Aug 2011 14:28:55 +0200
+ -- Clint Byrum <clint@ubuntu.com>  Tue, 08 Nov 2011 11:31:13 -0800
 
 mysql-5.5 (5.5.13-1) experimental; urgency=low
 
