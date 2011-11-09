@@ -21,6 +21,7 @@ DEB_VERSION ?= $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' '
 DEB_NOEPOCH_VERSION ?= $(shell echo $(DEB_VERSION) | cut -d: -f2-)
 DEB_UPSTREAM_VERSION ?= $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//')
 DEB_UPSTREAM_VERSION_MAJOR_MINOR := $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r -n 's/^([0-9]+\.[0-9]+).*/\1/p')
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 EXPORTED_SOURCE_TARBALL = debian/mysql-source-5.5.tar.gz
 
@@ -90,7 +91,7 @@ endif
 	    -DMYSQL_SERVER_SUFFIX="-$(DEBVERSION)" \
 	    -DSYSTEM_TYPE="debian-linux-gnu" \
 	    -DINSTALL_LAYOUT=RPM \
-	    -DINSTALL_LIBDIR=lib \
+	    -DINSTALL_LIBDIR=/$(DEB_HOST_MULTIARCH) \
 	    -DINSTALL_PLUGINDIR=lib/mysql/plugin \
         -DWITH_EMBEDDED_SERVER=ON \
         -DHAVE_EMBEDDED_PRIVILEGE_CONTROL=ON \
