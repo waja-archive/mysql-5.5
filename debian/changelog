@@ -4,8 +4,14 @@ mysql-5.5 (5.5.17-2) UNRELEASED; urgency=low
     gcc 4.6 compile problems (see Debian bug number 630471)
   * d/rules, d/libmysqlclient*.files: changes to support
     multiarch.
+  * d/libmysqlclient18.files, d/libmysqlclient-dev.files: install
+    symlinks to dev libraries properly and remove libmysqlclient_r
+    since it is no longer needed. libmysqlclient is now perfectly
+    thread safe. This will cause FTBFS but can be corrected by simply
+    removing _r, and avoids uncomfortable problem of trying to properly
+    mangle libmysqlclient_r symlinks to libmysqlclient.so.
 
- -- Clint Byrum <clint@ubuntu.com>  Wed, 09 Nov 2011 15:02:15 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Wed, 09 Nov 2011 17:13:40 -0800
 
 mysql-5.5 (5.5.17-1) experimental; urgency=low
 
