@@ -13,6 +13,7 @@ Package: libmysqlclient18
 Section: libs
 Architecture: any
 Depends: mysql-common (>= ${source:Version}), ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
 Description: MySQL database client library
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
@@ -66,6 +67,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: mysql-common-4.1
 Provides: mysql-common-4.1
 Replaces: mysql-common-4.1
+Multi-Arch: foreign
 Description: MySQL database common files, e.g. /etc/mysql/my.cnf
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
