@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.17-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.17-2) experimental; urgency=low
 
   * d/rules, d/control: Build with gcc 4.5 to avoid
     gcc 4.6 compile problems (see Debian bug number 630471)
@@ -11,7 +11,7 @@ mysql-5.5 (5.5.17-2) UNRELEASED; urgency=low
     removing _r, and avoids uncomfortable problem of trying to properly
     mangle libmysqlclient_r symlinks to libmysqlclient.so.
 
- -- Clint Byrum <clint@ubuntu.com>  Wed, 09 Nov 2011 17:13:40 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Wed, 09 Nov 2011 23:27:36 -0800
 
 mysql-5.5 (5.5.17-1) experimental; urgency=low
 
