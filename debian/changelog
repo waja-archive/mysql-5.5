@@ -1,8 +1,12 @@
 mysql-5.5 (5.5.17-3) UNRELEASED; urgency=low
 
+  [Clint Byrum]
   * d/control: setting Multi-Arch fields where appropriate.
 
- -- Clint Byrum <clint@ubuntu.com>  Wed, 09 Nov 2011 23:32:46 -0800
+  [Norbert Tretkowski]
+  * Add Clint Byrum to Uploaders.
+
+ -- Norbert Tretkowski <norbert@tretkowski.de>  Sun, 13 Nov 2011 11:16:55 +0100
 
 mysql-5.5 (5.5.17-2) experimental; urgency=low
 
