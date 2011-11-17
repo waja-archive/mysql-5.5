@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.17-3) precise; urgency=low
+mysql-5.5 (5.5.17-3) experimental; urgency=low
 
   [Clint Byrum]
   * d/control: setting Multi-Arch fields where appropriate.
@@ -6,7 +6,7 @@ mysql-5.5 (5.5.17-3) precise; urgency=low
   [Norbert Tretkowski]
   * Add Clint Byrum to Uploaders.
 
- -- Norbert Tretkowski <norbert@tretkowski.de>  Sun, 13 Nov 2011 11:16:55 +0100
+ -- Clint Byrum <clint@ubuntu.com>  Thu, 17 Nov 2011 14:36:50 -0800
 
 mysql-5.5 (5.5.17-2) experimental; urgency=low
 
