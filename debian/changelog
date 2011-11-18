@@ -1,3 +1,11 @@
+mysql-5.5 (5.5.17-4) UNRELEASED; urgency=low
+
+  * d/control: Pre-Depend on multiarch-support and misc:Pre-Depends.
+    also bump debhelper Build-Dep for multiarch.
+    d/compat: raise to 9 for multiarch support.
+
+ -- Clint Byrum <clint@ubuntu.com>  Thu, 17 Nov 2011 17:16:45 -0800
+
 mysql-5.5 (5.5.17-3) experimental; urgency=low
 
   [Clint Byrum]
