@@ -1,3 +1,10 @@
+mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
+
+  * d/copyright: rearranging to have standalone license paragraphs
+    silencing lintian complaints about missing paragraphs.
+
+ -- Clint Byrum <clint@ubuntu.com>  Fri, 18 Nov 2011 14:39:55 -0800
+
 mysql-5.5 (5.5.17-4) experimental; urgency=low
 
   * d/control: Pre-Depend on multiarch-support and misc:Pre-Depends.
