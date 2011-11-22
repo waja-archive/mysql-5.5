@@ -1,9 +1,14 @@
 mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
 
+  [ Guillaume Plessis ]
+  * d/rules: Enabling ARCHIVE, BLACKHOLE, and FEDERATED engines.
+    (Closes: #649484)
+
+  [Clint Byrum ]
   * d/copyright: rearranging to have standalone license paragraphs
     silencing lintian complaints about missing paragraphs.
 
- -- Clint Byrum <clint@ubuntu.com>  Fri, 18 Nov 2011 14:39:55 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Mon, 21 Nov 2011 16:23:28 -0800
 
 mysql-5.5 (5.5.17-4) experimental; urgency=low
 

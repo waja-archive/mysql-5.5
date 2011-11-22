@@ -95,6 +95,9 @@ endif
 	    -DINSTALL_PLUGINDIR=lib/mysql/plugin \
         -DWITH_EMBEDDED_SERVER=ON \
         -DHAVE_EMBEDDED_PRIVILEGE_CONTROL=ON \
+	    -DWITH_ARCHIVE_STORAGE_ENGINE=ON \
+	    -DWITH_BLACKHOLE_STORAGE_ENGINE=ON \
+	    -DWITH_FEDERATED_STORAGE_ENGINE=ON \
 		-DWITH_EXTRA_CHARSETS=all ..'
 		
 	#       --sysconfdir=/etc/mysql  -- Appends /etc/mysql after ~/ in the my.cnf search patch!
