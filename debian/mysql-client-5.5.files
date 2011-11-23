@@ -18,6 +18,7 @@ usr/bin/mysqlreport
 usr/bin/mysqlshow
 usr/bin/mysqlslap
 usr/bin/mysql_waitpid
+usr/bin/mysql_plugin
 usr/share/man/man1/innotop.1
 usr/share/man/man1/myisam_ftdump.1
 usr/share/man/man1/mysqlaccess.1
@@ -36,3 +37,4 @@ usr/share/man/man1/mysqlshow.1
 usr/share/man/man1/mysqlslap.1
 usr/share/man/man1/mysql_tableinfo.1
 usr/share/man/man1/mysql_waitpid.1
+usr/share/man/man1/mysql_plugin.1

@@ -7,8 +7,9 @@ mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
   [Clint Byrum ]
   * d/copyright: rearranging to have standalone license paragraphs
     silencing lintian complaints about missing paragraphs.
+  * d/mysql-client-5.5.files: add mysql_plugin
 
- -- Clint Byrum <clint@ubuntu.com>  Mon, 21 Nov 2011 16:23:28 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Tue, 22 Nov 2011 22:41:18 -0800
 
 mysql-5.5 (5.5.17-4) experimental; urgency=low
 
