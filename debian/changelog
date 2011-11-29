@@ -8,6 +8,31 @@ mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
   * d/copyright: rearranging to have standalone license paragraphs
     silencing lintian complaints about missing paragraphs.
   * d/mysql-client-5.5.files: add mysql_plugin
+  * Sync changes back from Ubuntu:
+      * d/control: need to also break mysql-client-core-5.1 and
+        mysql-server-core-5.1 as well so that apt knows not to
+        remove mysql-server/mysql-client.
+      * d/control: convert mysql-server back to a meta-package
+      * d/control: convert mysql-client back to a meta-package as well.
+      * d/patches/72_fix_standalone_tests.patch: fix testsuite so it
+        will run all tests when run from system /usr/lib/mysql-testsuite
+        directory.
+        5.1 is removed from the archive.
+      * d/control: mysql-common includes configuration items that only
+        work on mysql 5.5, so adding Breaks: for client and server 5.1.
+        This will make mysql-server-5.1 and mysql-client-5.1 
+        uninstallable which is actually desired.
+      * d/patches/71_disable_rpl_tests.patch: disables this test until
+        Ubuntu bug #894146 can be triaged.
+      * d/mysql-client-5.5.files: add missing mysql_plugin
+      * d/libmysqlcient18.files,libmysqlclient-dev.files,d/rules: re-add
+        libmysqlclient_r. In hindsight, removing it was not a productive
+        change.
+      * d/libmysqlclient-dev.files: ship entire contents of include dir,
+        some of these files are included internally by others in the 
+        main dir.
+      * d/patches/70_mysql_va_list.patch: cherry pick patch from
+        upstream bug tracker to fix ARM build failure. (LP: #700982)
 
  -- Clint Byrum <clint@ubuntu.com>  Tue, 22 Nov 2011 22:41:18 -0800
 

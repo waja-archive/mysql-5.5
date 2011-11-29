@@ -1,5 +1,5 @@
 Source: mysql-5.5
-Section: misc
+Section: database
 Priority: optional
 Maintainer: Debian MySQL Maintainers <pkg-mysql-maint@lists.alioth.debian.org>
 Uploaders: Norbert Tretkowski <norbert@tretkowski.de>, Clint Byrum <clint@ubuntu.com>
@@ -68,6 +68,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: mysql-common-4.1
 Provides: mysql-common-4.1
 Replaces: mysql-common-4.1
+Breaks: mysql-server-5.1, mysql-client-5.1, mysql-server-core-5.1
 Multi-Arch: foreign
 Description: MySQL database common files, e.g. /etc/mysql/my.cnf
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
@@ -82,8 +83,8 @@ Package: mysql-client-5.5
 Architecture: any
 Depends: debianutils (>=1.6), libdbi-perl, libdbd-mysql-perl (>= 1.2202), mysql-common (>= ${source:Version}), ${perl:Depends}, ${shlibs:Depends}, ${misc:Depends}
 Provides: virtual-mysql-client, mysql-client, mysql-client-4.1
-Conflicts: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-client-5.1
-Replaces: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-server-5.1 (<= 5.1.49-1), mysql-client-5.1
+Breaks: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-client-5.1
+Replaces: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-client-5.1
 Suggests: libterm-readkey-perl
 Description: MySQL database client binaries
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
@@ -116,7 +117,7 @@ Recommends: mailx, libhtml-template-perl
 Pre-Depends: mysql-common (>= ${source:Version}), adduser (>= 3.40), debconf
 Depends: mysql-client-5.5 (>= ${source:Version}), libdbi-perl, perl (>= 5.6), ${shlibs:Depends}, ${misc:Depends}, psmisc, passwd, lsb-base (>= 3.0-10), mysql-server-core-5.5 (= ${binary:Version})
 Breaks: mysql-server (<< ${source:Version}), mysql-server-4.1, mysql-server-5.1
-Provides: mysql-server, virtual-mysql-server
+Provides: virtual-mysql-server
 Replaces: mysql-server (<< ${source:Version}), mysql-server-5.1,  mysql-server-5.0, mysql-server-4.1
 Description: MySQL database server binaries and system database setup 
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
@@ -128,7 +129,6 @@ Description: MySQL database server binaries and system database setup
  databases.
 
 Package: mysql-server
-Section: database
 Architecture: all
 Depends: mysql-server-5.5, ${misc:Depends}
 Description: MySQL database server (metapackage depending on the latest version)
@@ -144,7 +144,6 @@ Description: MySQL database server (metapackage depending on the latest version)
  ease of use.
 
 Package: mysql-client
-Section: database
 Architecture: all
 Depends: mysql-client-5.5, ${misc:Depends}
 Description: MySQL database client (metapackage depending on the latest version)

@@ -214,6 +214,13 @@ install install-pic: build
 	#  echo "ERROR: versioned symbols are absent"; \
 	#  exit 1; \
 	#fi     
+	# libmysqlclient_r is now a symlink to libmysqlclient. But it is
+	# created wrong by the cmake build system and points at
+	# libmysqlclient.so instead of the corresponding versioned lib.
+	for i in `ls $(TMP)/usr/lib/$(DEB_HOST_MULTIARCH)/libmysqlclient.so*` ; do \
+		rlib=`basename $$i | sed -e 's/libmysqlclient\./libmysqlclient_r./'` ;\
+		ln -sf `basename $$i` $(TMP)/usr/lib/$(DEB_HOST_MULTIARCH)/$$rlib ;\
+	done
 
 	# libmysqlclient-dev: forgotten header file since 3.23.25?
 	#cp $(BUILDDIR)/include/my_config.h $(TMP)/usr/include/mysql/
