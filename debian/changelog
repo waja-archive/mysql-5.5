@@ -1,13 +1,16 @@
-mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
+mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
 
   [ Guillaume Plessis ]
   * d/rules: Enabling ARCHIVE, BLACKHOLE, and FEDERATED engines.
     (Closes: #649484)
 
-  [Clint Byrum ]
+  [ Clint Byrum ]
+  * New Upstream Release
   * d/copyright: rearranging to have standalone license paragraphs
     silencing lintian complaints about missing paragraphs.
   * d/mysql-client-5.5.files: add mysql_plugin
+  * d/rules, d/control: 5.5.20 Fixes segfault on tests with gcc 4.6,
+    change compiler back to system default.
   * Sync changes back from Ubuntu:
       * d/control: need to also break mysql-client-core-5.1 and
         mysql-server-core-5.1 as well so that apt knows not to
@@ -34,7 +37,7 @@ mysql-5.5 (5.5.17-5) UNRELEASED; urgency=low
       * d/patches/70_mysql_va_list.patch: cherry pick patch from
         upstream bug tracker to fix ARM build failure. (LP: #700982)
 
- -- Clint Byrum <clint@ubuntu.com>  Tue, 22 Nov 2011 22:41:18 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Mon, 23 Jan 2012 15:46:40 -0800
 
 mysql-5.5 (5.5.17-4) experimental; urgency=low
 
