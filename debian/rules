@@ -84,7 +84,8 @@ endif
 		-DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
 	       	-DMYSQL_USER=mysql \
 		-DWITH_LIBWRAP=ON \
-		-DWITH_LIBREADLINE=OFF \
+		-DWITH_READLINE=OFF \
+		-DWITH_LIBEDIT=OFF \
 		$(USE_STATIC_MYSQLD) \
 		-DWITH_SSL=yes \
 	    -DCOMPILATION_COMMENT="($(DISTRIBUTION))" \
