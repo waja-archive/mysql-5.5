@@ -38,6 +38,9 @@ mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
       * d/patches/70_mysql_va_list.patch: cherry pick patch from
         upstream bug tracker to fix ARM build failure. (LP: #700982)
 
+  [ Nicholas Bamber ]
+  * Added myself to Uploaders
+
  -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Feb 2012 11:48:47 -0800
 
 mysql-5.5 (5.5.17-4) experimental; urgency=low
