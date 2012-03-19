@@ -84,7 +84,7 @@ endif
 	    	CXX=$${MYSQL_BUILD_CXX:-g++} \
 	    	CXXFLAGS=$${MYSQL_BUILD_CXXFLAGS:-"-O3 -DBIG_JOINS=1 -felide-constructors -fno-exceptions -fno-rtti ${FORCE_FPIC_CFLAGS} -fno-strict-aliasing"} \
 	    cmake -DCMAKE_INSTALL_PREFIX=/usr \
-		\
+		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		$(FORCE_FPIC) \
 		-DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
 	       	-DMYSQL_USER=mysql \
