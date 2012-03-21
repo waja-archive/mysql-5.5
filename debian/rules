@@ -62,7 +62,12 @@ builddir = $(if $(findstring -pic,$@),$(BUILDDIR_PIC),$(BUILDDIR))
 ifeq ($(STATIC_MYSQLD), 1)
     USE_STATIC_MYSQLD=--with-mysqld-ldflags=-all-static
 endif
-		
+	
+# See http://blogs.innodb.com/wp/2010/04/innodb-performance-aio-linux/
+# Also #659565
+ifneq (,$(findstring linux-gnu,$(DEB_HOST_GNU_TYPE)))
+    USE_LINUX_NATIVE_AIO=-DLINUX_NATIVE_AIO=ON
+endif
 
 configure-stamp-pic: FORCE_FPIC_CFLAGS=-fPIC
 configure-stamp-pic: FORCE_FPIC=-DWITH_PIC=On -DINSTALL_LIBDIR=lib/mysql
@@ -92,6 +97,7 @@ endif
 		-DWITH_READLINE=OFF \
 		-DWITH_LIBEDIT=OFF \
 		$(USE_STATIC_MYSQLD) \
+		$(USE_LINUX_NATIVE_AIO) \
 		-DWITH_SSL=yes \
 	    -DCOMPILATION_COMMENT="($(DISTRIBUTION))" \
 	    -DMYSQL_SERVER_SUFFIX="-$(DEBVERSION)" \
