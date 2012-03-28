@@ -45,7 +45,8 @@ mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
   * Added patch to provide cmake options for GNU/Hurd (Closes: #651002)
     and tweaked debian/rules so that only 'make test' is run on Hurd.
   * Tweaked debian/rules to make build logs verbose (Closes: #651003)
-  * Refreshed patches
+  * Refreshed patches - and added a new patch to disable a further flurry
+    of failing tests
   * Switched on native AIO in linux builds (Closes: #659565)
 
  -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Feb 2012 11:48:47 -0800
