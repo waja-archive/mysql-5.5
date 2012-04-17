@@ -62,6 +62,11 @@ mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
     - Added DEP-5 header fields to two patches
     - Refreshed and commented all lintian overrides and added override
       concerning lack of upstream changelog to all packages
+    - Cleaned up debian/copyright
+      * upgraded to latest version of DEP-5
+      * encoding issues
+      * out of date FSF address
+      * Updated License short name from "PD" to "public-domain"
 
  -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Feb 2012 11:48:47 -0800
 
