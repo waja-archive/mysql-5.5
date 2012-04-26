@@ -67,6 +67,12 @@ mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
       * encoding issues
       * out of date FSF address
       * Updated License short name from "PD" to "public-domain"
+  * Converted to short form debhelper rules
+    - Renamed stamp files to end in '-stamp' so that they are cleaned up
+      automatically by dh_clean
+    - Removed commented out lines
+    - Removed obsolete -DINSTALL_LIBDIR clause from pic build
+    - Overrode dh_auto_install so that the rules only run once
 
  -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Feb 2012 11:48:47 -0800
 
