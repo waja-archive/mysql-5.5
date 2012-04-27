@@ -208,11 +208,11 @@ auto_install-stamp:
 	install -m 0755 debian/additions/echo_stderr $(TMP)/usr/share/mysql/
 	install -m 0755 debian/additions/debian-start $(TMP)/etc/mysql/
 	install -m 0755 debian/additions/debian-start.inc.sh $(TMP)/usr/share/mysql/
-	install -D -m 0644 $(EXPORTED_SOURCE_TARBALL) $(TMP)/usr/src/mysql/`basename $(EXPORTED_SOURCE_TARBALL)`
 	touch $@
 
 override_dh_install:
 	dh_movefiles
+	dh_install
 
 override_dh_installlogrotate-arch:
 	dh_installlogrotate --name mysql-server
