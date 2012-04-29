@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.20-1) experimental; urgency=low
 
   [ Guillaume Plessis ]
   * d/rules: Enabling ARCHIVE, BLACKHOLE, and FEDERATED engines.
@@ -76,7 +76,7 @@ mysql-5.5 (5.5.20-1) UNRELEASED; urgency=low
     - Migrated mysql-source, mysql-testsuite, mysql-common from
     dh_movefiles to dh_install
 
- -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Feb 2012 11:48:47 -0800
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 28 Apr 2012 15:02:16 +0100
 
 mysql-5.5 (5.5.17-4) experimental; urgency=low
 
