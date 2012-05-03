@@ -1,9 +1,12 @@
-mysql-5.5 (5.5.20-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23-1) UNRELEASED; urgency=low
 
   * Added patch to test suite to accept socket paths less than 40
     characters long (Closes: #540153)
   * Disabled some more tests including some reported by Olaf van der Speck
   * Removed ha_example.so from mysql-server-5.5 install (Closes: #666721)
+  * New upstream release: unspecified security issues CVE-2012-1697,
+    CVE-2012-1696 
+  * Added patch to correct spelling mistakes: preceeding -> preceding
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Sun, 29 Apr 2012 09:39:04 +0100
 
