@@ -27,11 +27,6 @@ EXPORTED_SOURCE_TARBALL := debian/mysql-source-5.5.tar.gz
 
 DISTRIBUTION := $(shell lsb_release -i -s)
 
-MAKE_J := -j$(shell if [ -f /proc/cpuinfo ] ; then grep -c processor.* /proc/cpuinfo ; else echo 1 ; fi)
-ifeq (${MAKE_J}, -j0)
-  MAKE_J := -j1
-endif
-
 MAKE_TEST_TARGET:=test-force
 ifneq ($(findstring fulltest,$(DEB_BUILD_OPTIONS)),)
 # make test-bt is the testsuite run by the MySQL build team 
@@ -125,20 +120,18 @@ endif
 
 override_dh_auto_build: build-stamp build-pic-stamp
 
-MAKE_PIC = cd $(builddir) && $(MAKE) $(MAKE_J)
-
 build-stamp:
 	@echo "RULES.$@"
 	[ -f $(EXPORTED_SOURCE_TARBALL) ] || tar -zcf $(EXPORTED_SOURCE_TARBALL) \
 	--exclude=debian . \
 	--transform="s,^\./,mysql-5.5/,"
-	cd $(builddir) && $(MAKE) $(MAKE_J)
+	cd $(builddir) && $(MAKE)
 	touch $@
 
 build-pic-stamp:
 	@echo "RULES.$@"
-	$(MAKE_PIC) -C scripts
-	$(MAKE_PIC) -C libmysqld
+	cd $(builddir) && $(MAKE) -C scripts
+	cd $(builddir) && $(MAKE) -C libmysqld
 	touch $@
 
 override_dh_auto_test:
