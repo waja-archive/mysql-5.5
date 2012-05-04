@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.23-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23-1) experimental; urgency=low
 
   * Added patch to test suite to accept socket paths less than 40
     characters long (Closes: #540153)
@@ -8,7 +8,7 @@ mysql-5.5 (5.5.23-1) UNRELEASED; urgency=low
     CVE-2012-1696 
   * Added patch to correct spelling mistakes: preceeding -> preceding
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Sun, 29 Apr 2012 09:39:04 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 03 May 2012 18:03:34 +0100
 
 mysql-5.5 (5.5.20-1) experimental; urgency=low
 
