@@ -1,6 +1,10 @@
 mysql-5.5 (5.5.23-2) UNRELEASED; urgency=low
 
   * Stopped overriding the -j build parameter (Closes: #512964)
+  * Stopped testing for /proc filesystem. It is no longer used
+    for determining the number of CPUs. The procps package itself
+    is probably still required as per #96768
+  * Migrated libmysqld-dev to using dh_install rather than dh_movefiles
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 04 May 2012 07:26:25 +0100
 

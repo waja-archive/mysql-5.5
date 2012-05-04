@@ -83,9 +83,6 @@ configure-pic-stamp: FORCE_FPIC=-DWITH_PIC=On
 configure-stamp configure-pic-stamp:
 	@echo "RULES.$@"
 	dh_testdir
-ifneq ($(ARCH_OS),hurd)
-	if [ ! -d /proc/self ]; then echo "/proc IS NEEDED" 1>&2; exit 1; fi 
-endif
 	( test -d $(builddir) || mkdir $(builddir) ) && cd $(builddir) && \
 	sh -c  'PATH=$${MYSQL_BUILD_PATH:-"/bin:/usr/bin"} \
 	    	CC=$${MYSQL_BUILD_CC:-gcc} \
