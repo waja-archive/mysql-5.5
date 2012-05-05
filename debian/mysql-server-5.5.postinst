@@ -54,17 +54,17 @@ EOF
        return $retval
 }
 
-# This is necessary because mysql_install_db removes the pid file in /var/run
+# This is necessary because mysql_install_db removes the pid file in /run
 # and because changed configuration options should take effect immediately.
 # In case the server wasn't running at all it should be ok if the stop
-# script fails. I can't tell at this point because of the cleaned /var/run.
+# script fails. I can't tell at this point because of the cleaned /run.
 set +e; invoke stop; set -e
     
 case "$1" in
   configure)
     mysql_datadir=/usr/share/mysql
     mysql_statedir=/var/lib/mysql
-    mysql_rundir=/var/run/mysqld
+    mysql_rundir=/run/mysqld
     mysql_logdir=/var/log
     mysql_cfgdir=/etc/mysql
     mysql_newlogdir=/var/log/mysql
