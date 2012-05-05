@@ -2,12 +2,13 @@ mysql-5.5 (5.5.23-2) UNRELEASED; urgency=low
 
   * Stopped overriding the -j build parameter (Closes: #512964)
   * Stopped testing for /proc filesystem. It is no longer used
-    for determining the number of CPUs. The procps package itself
-    is probably still required as per #96768
-  * Migrated libmysqld-dev, libmysqld-pic to using dh_install rather
-    than dh_movefiles
+    for determining the number of CPUs.
+  * Removed dependency on procps as it is required by cmake, cf. #96768
+  * Migrated libmysqld-dev, libmysqld-pic, libmysqlclient18 to using
+    dh_install rather than dh_movefiles
   * Changed /var/run to /run as required by Debian Policy 3.9.3 (9.1.1)
   * Raised standards version to 3.9.3
+  * Moved '-e' from shebang line to explicit 'set -e' as requested by lintian
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 04 May 2012 07:26:25 +0100
 
