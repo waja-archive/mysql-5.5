@@ -13,6 +13,8 @@ mysql-5.5 (5.5.23-2) UNRELEASED; urgency=low
   * Changed /var/run to /run as required by Debian Policy 3.9.3 (9.1.1)
   * Raised standards version to 3.9.3
   * Moved '-e' from shebang line to explicit 'set -e' as requested by lintian
+  * Restored ha_example.so to mysql-server-5.5 but added Breaks/Replaces
+    clauses (cf. LP: #912487) and (Closes: #666721)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 04 May 2012 07:26:25 +0100
 
