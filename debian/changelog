@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.23-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23-2) unstable; urgency=low
 
   * Stopped overriding the -j build parameter (Closes: #512964)
   * Stopped testing for /proc filesystem. It is no longer used
@@ -19,7 +19,7 @@ mysql-5.5 (5.5.23-2) UNRELEASED; urgency=low
     - mysql-server-5.5 overwrites perror from mysql-client-5.1
     - mysql-server-core-5.5 overwrites my_print_defaults from mysql-client-5.1
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 04 May 2012 07:26:25 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 05:59:09 +0100
 
 mysql-5.5 (5.5.23-1) experimental; urgency=low
 
