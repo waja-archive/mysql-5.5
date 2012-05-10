@@ -1,3 +1,14 @@
+mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
+
+  * Migrated libmysqlclient-dev off dh_movefiles
+  * Rewrote libmysqlclient_r linking stuff to generate
+    ephemeral dh_link files so that the hack is more comprehensible
+  * Stopped attempts to install non-existent files for libmysqlclient-dev
+  * Converted mysql-source-5.5 to arch:all
+  * Removed source cruft: debian/additions/mysql_config.1
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
+
 mysql-5.5 (5.5.23-2) unstable; urgency=low
 
   * Stopped overriding the -j build parameter (Closes: #512964)

@@ -114,7 +114,6 @@ configure-stamp configure-pic-stamp:
 		-DWITH_EXTRA_CHARSETS=all ..'
 	touch $@
 
-
 override_dh_auto_build: build-stamp build-pic-stamp
 
 build-stamp:
@@ -165,13 +164,6 @@ auto_install-stamp:
 		| cut -d: -f 1 \
 		| xargs --no-run-if-empty chrpath -d; \
 	set -e
-	# libmysqlclient_r is now a symlink to libmysqlclient. But it is
-	# created wrong by the cmake build system and points at
-	# libmysqlclient.so instead of the corresponding versioned lib.
-	for i in `ls $(TMP)/usr/lib/$(DEB_HOST_MULTIARCH)/libmysqlclient.so*` ; do \
-		rlib=`basename $$i | sed -e 's/libmysqlclient\./libmysqlclient_r./'` ;\
-		ln -sf `basename $$i` $(TMP)/usr/lib/$(DEB_HOST_MULTIARCH)/$$rlib ;\
-	done
 	# install libmysqld built with -FPIC
 	install -d -m 0755 -o root -g root $(TMP)/usr/lib/mysql
 	install -m 0644 -o root -g root $(BUILDDIR_PIC)/libmysqld/libmysqld.a $(TMP)/usr/lib/mysql/libmysqld_pic.a
@@ -197,6 +189,24 @@ auto_install-stamp:
 override_dh_install:
 	dh_movefiles
 	dh_install
+
+libmysqlclient-links-stamp: auto_install-stamp
+	@echo "RULES.$@"
+	# libmysqlclient_r is now a symlink to libmysqlclient. But it is
+	# created wrong by the cmake build system and points at
+	# libmysqlclient.so instead of the corresponding versioned lib.
+	echo usr/lib/$(DEB_HOST_MULTIARCH)/libmysqlclient.so usr/lib/$(DEB_HOST_MULTIARCH)/libmysqlclient_r.so > debian/libmysqlclient-dev.links
+	rm -f debian/libmysqlclient18.links
+	for i in `ls $(TMP)/usr/lib/$(DEB_HOST_MULTIARCH)/libmysqlclient.so.*`; \
+	do \
+	    source=`basename $$i`; \
+	    dest=`echo $$source | sed -e's/libmysqlclient/libmysqlclient_r/'`; \
+	    echo usr/lib/$(DEB_HOST_MULTIARCH)/$$source usr/lib/$(DEB_HOST_MULTIARCH)/$$dest >> debian/libmysqlclient18.links; \
+	done
+	touch $@
+
+override_dh_link-arch: libmysqlclient-links-stamp
+	dh_link
 
 override_dh_installlogrotate-arch:
 	dh_installlogrotate --name mysql-server
