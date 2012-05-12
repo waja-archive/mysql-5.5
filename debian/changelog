@@ -1,10 +1,12 @@
 mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
 
   * Migrated libmysqlclient-dev, mysql-client-5.5, mysql-server-core-5.5
-    off dh_movefiles
+    and mysql-server-5.5 off dh_movefiles
+  * Removed dh_movefiles override
   * Rewrote libmysqlclient_r linking stuff to generate
     ephemeral dh_link files so that the hack is more comprehensible
   * Stopped attempts to install non-existent files for libmysqlclient-dev
+    and mysql-server-5.5
   * Converted mysql-source-5.5 to arch:all
   * Removed source cruft: debian/additions/mysql_config.1
   * Restored zlib1g-dev build dependency pending further investigation

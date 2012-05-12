@@ -182,10 +182,6 @@ auto_install-stamp:
 	install -m 0755 debian/additions/debian-start.inc.sh $(TMP)/usr/share/mysql/
 	touch $@
 
-override_dh_install:
-	dh_movefiles
-	dh_install
-
 libmysqlclient-links-stamp: auto_install-stamp
 	@echo "RULES.$@"
 	# libmysqlclient_r is now a symlink to libmysqlclient. But it is
