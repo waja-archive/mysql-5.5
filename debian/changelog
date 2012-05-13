@@ -10,6 +10,7 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
   * Converted mysql-source-5.5 to arch:all
   * Removed source cruft: debian/additions/mysql_config.1
   * Restored zlib1g-dev build dependency pending further investigation
+  * Removed the numerical prefix from the patch files
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
