@@ -150,7 +150,6 @@ auto_install-stamp:
 	# some self written manpages which hopefully
 	# gets overwritten sooner or later with upstreams
 	mkdir -p $(TMP)/usr/share/man/man1/
-	mkdir -p $(TMP)/usr/share/man/man8/
 	cp debian/additions/*.1 $(TMP)/usr/share/man/man1/
 	mkdir -p $(TMP)/etc/mysql/conf.d/
 	cp debian/additions/mysqld_safe_syslog.cnf $(TMP)/etc/mysql/conf.d/
@@ -181,6 +180,27 @@ auto_install-stamp:
 	install -m 0755 debian/additions/debian-start $(TMP)/etc/mysql/
 	install -m 0755 debian/additions/debian-start.inc.sh $(TMP)/usr/share/mysql/
 	touch $@
+
+# Use the --fail-missing to check for stuff that we should be installing
+# Exclusions:
+#       usr/share/man/  -       dh_installman
+#       libmysqlclient_r.so     dh_links
+#       usr/share/info          [dh_installinfo - mysql-client ]
+#       usr/share/mysql/magic   [dh_installexamples - mysql-server]
+#       usr/lib/mysql/plugin/daemon_example.ini [to investigate]
+#       usr/bin/mysqlaccess.conf [dh_installexamples - mysql-client]
+#       embdedded               [-> test suite ?]
+override_dh_install:
+	dh_install --fail-missing                       \
+        -Xusr/share/man/                                \
+        -Xlibmysqlclient_r.so                           \
+        -Xusr/share/info                                \
+        -Xusr/share/mysql/magic                         \
+        -Xusr/lib/mysql/plugin/daemon_example.ini       \
+        -Xusr/bin/mysqlaccess.conf                      \
+        -Xusr/bin/mysql_client_test_embedded            \
+        -Xusr/bin/mysql_embedded                        \
+        -Xusr/bin/mysqltest_embedded
 
 libmysqlclient-links-stamp: auto_install-stamp
 	@echo "RULES.$@"

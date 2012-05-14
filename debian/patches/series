@@ -8,3 +8,4 @@ fix_standalone_tests.patch
 mysqlcheck_tests.patch
 kfreebsd_tests.patch
 spelling.patch
+fix-mysqldump-test.patch
