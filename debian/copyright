@@ -160,6 +160,7 @@ License: GPL-2
  of which version of the GPL is applied is otherwise unspecified.
 
 Files: BUILD/*
+ Docs/*
  client/*
  client/echo.c
  client/get_password.c

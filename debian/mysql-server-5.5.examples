@@ -1,0 +1,2 @@
+debian/tmp/usr/share/mysql/magic
+debian/tmp/usr/lib/mysql/plugin/daemon_example.ini

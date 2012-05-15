@@ -13,6 +13,9 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
   * Removed the numerical prefix from the patch files
   * Applied fix-mysqldump-test.patch from Ubuntu
   * Added --fail-missing to dh_install to catch binaries not being installed
+  * Distributed unused resources amongst packages appropriately
+  * Located and installed upstream changelog
+  * Removed doxygen-latex as build dependency
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
