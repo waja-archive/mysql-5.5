@@ -151,8 +151,6 @@ auto_install-stamp:
 	# gets overwritten sooner or later with upstreams
 	mkdir -p $(TMP)/usr/share/man/man1/
 	cp debian/additions/*.1 $(TMP)/usr/share/man/man1/
-	mkdir -p $(TMP)/etc/mysql/conf.d/
-	cp debian/additions/mysqld_safe_syslog.cnf $(TMP)/etc/mysql/conf.d/
 	# make install (trailing slash needed for innobase)
 	cd $(builddir) && $(MAKE) install DESTDIR=$(TMP)/
 	# After installing, remove rpath to make lintian happy.
@@ -171,14 +169,20 @@ auto_install-stamp:
 	# mysql-server
 	mkdir -p $(TMP)/usr/share/doc/mysql-server-5.5/examples
 	mv $(TMP)/usr/share/mysql/*cnf 	    $(TMP)/usr/share/doc/mysql-server-5.5/examples/
-	rm -vf $(TMP)/usr/share/mysql/mi_test_all* \
-	       $(TMP)/usr/share/mysql/mysql-log-rotate \
-	       $(TMP)/usr/share/mysql/mysql.server \
-	       $(TMP)/usr/share/mysql/binary-configure
 	nm -n $(BUILDDIR)/sql/mysqld |gzip -9 > $(TMP)/usr/share/doc/mysql-server-5.5/mysqld.sym.gz
+	# This seems to be the only safe place to fix permissions issues
+        # not handled by dh_fixperms.
+	mkdir -p $(TMP)/etc/mysql/conf.d/
 	install -m 0755 debian/additions/echo_stderr $(TMP)/usr/share/mysql/
 	install -m 0755 debian/additions/debian-start $(TMP)/etc/mysql/
 	install -m 0755 debian/additions/debian-start.inc.sh $(TMP)/usr/share/mysql/
+	chmod 0755 $(TMP)/usr/share/mysql-test/lib/My/SafeProcess/safe_process.pl
+	chmod 0755 $(TMP)/usr/share/mysql-test/std_data/checkDBI_DBD-mysql.pl
+	chmod 0644 $(TMP)/usr/share/mysql/*.ini
+	chmod 0644 $(TMP)/usr/share/mysql-test/[rt]/*
+	chmod 0644 $(TMP)/usr/share/mysql-test/collections/default.weekly
+	chmod 0644 $(TMP)/usr/share/mysql-test/suite/innodb/[rt]/*
+	chmod 0644 $(TMP)/usr/bin/mysqlaccess.conf
 	touch $@
 
 # Use the --fail-missing to check for stuff that we should be installing
@@ -191,6 +195,13 @@ auto_install-stamp:
 #       usr/lib/mysql/plugin/daemon_example.ini         M-server-5.5    example
 # Note: lintian complains about the upstream supplied info file
 # and we don't have the source to fix it.
+# 
+# The following exclusions have been inherited from pre short form
+# debian/rules days.
+#        usr/share/mysql/mi_test_all
+#        usr/share/mysql/mysql-log-rotate
+#        usr/share/mysql/mysql.server
+#        usr/share/mysql/binary-configure
 override_dh_install:
 	dh_install --fail-missing                       \
         -Xusr/share/man/                                \
@@ -198,7 +209,11 @@ override_dh_install:
         -Xusr/share/info                                \
         -Xusr/share/mysql/magic                         \
         -Xusr/lib/mysql/plugin/daemon_example.ini       \
-        -Xusr/bin/mysqlaccess.conf
+        -Xusr/bin/mysqlaccess.conf                      \
+        -Xusr/share/mysql/mi_test_all                   \
+        -Xusr/share/mysql/mysql-log-rotate              \
+        -Xusr/share/mysql/mysql.server                  \
+        -Xusr/share/mysql/binary-configure
 
 libmysqlclient-links-stamp: auto_install-stamp
 	@echo "RULES.$@"

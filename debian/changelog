@@ -7,15 +7,19 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
     ephemeral dh_link files so that the hack is more comprehensible
   * Stopped attempts to install non-existent files for libmysqlclient-dev
     and mysql-server-5.5
+  * Added --fail-missing to dh_install to catch executables not being installed
+  * Distributed unused resources amongst packages appropriately
+  * Added fixes to mop up various permissions issues in auto-install rule
   * Converted mysql-source-5.5 to arch:all
   * Removed source cruft: debian/additions/mysql_config.1
   * Restored zlib1g-dev build dependency pending further investigation
   * Removed the numerical prefix from the patch files
   * Applied fix-mysqldump-test.patch from Ubuntu
-  * Added --fail-missing to dh_install to catch binaries not being installed
-  * Distributed unused resources amongst packages appropriately
   * Located and installed upstream changelog
   * Removed doxygen-latex as build dependency
+  * Added lintian overrides
+    - spelling false positive: yuR
+    - long lines in man pages that cannot be reformatted
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
