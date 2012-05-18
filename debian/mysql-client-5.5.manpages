@@ -13,9 +13,8 @@ debian/tmp/usr/share/man/man1/mysql_find_rows.1
 debian/tmp/usr/share/man/man1/mysql_fix_extensions.1
 debian/tmp/usr/share/man/man1/mysqlimport.1
 debian/tmp/usr/share/man/man1/mysqlman.1
-debian/tmp/usr/share/man/man1/mysqlreport.1
+debian/additions/mysqlreport.1
 debian/tmp/usr/share/man/man1/mysqlshow.1
 debian/tmp/usr/share/man/man1/mysqlslap.1
-debian/tmp/usr/share/man/man1/mysql_tableinfo.1
 debian/tmp/usr/share/man/man1/mysql_waitpid.1
 debian/tmp/usr/share/man/man1/mysql_plugin.1

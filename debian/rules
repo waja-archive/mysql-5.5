@@ -146,11 +146,6 @@ auto_install-stamp:
 	@echo "RULES.$@"
 	dh_testdir
 	dh_testroot
-	dh_prep
-	# some self written manpages which hopefully
-	# gets overwritten sooner or later with upstreams
-	mkdir -p $(TMP)/usr/share/man/man1/
-	cp debian/additions/*.1 $(TMP)/usr/share/man/man1/
 	# make install (trailing slash needed for innobase)
 	cd $(builddir) && $(MAKE) install DESTDIR=$(TMP)/
 	# After installing, remove rpath to make lintian happy.

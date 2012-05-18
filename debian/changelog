@@ -11,7 +11,7 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
   * Distributed unused resources amongst packages appropriately
   * Added fixes to mop up various permissions issues in auto-install rule
   * Converted mysql-source-5.5 to arch:all
-  * Removed source cruft: debian/additions/mysql_config.1
+  * Removed source cruft: debian/additions/*.1 (apart from mysqlreport.1)
   * Restored zlib1g-dev build dependency pending further investigation
   * Removed the numerical prefix from the patch files
   * Applied fix-mysqldump-test.patch from Ubuntu
@@ -20,6 +20,8 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
   * Added lintian overrides
     - spelling false positive: yuR
     - long lines in man pages that cannot be reformatted
+    - missing symbols file (cf. #590905)
+  * Added patch for hyphen/minus sign confusion
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
