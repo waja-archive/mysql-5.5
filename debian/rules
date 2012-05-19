@@ -161,9 +161,7 @@ auto_install-stamp:
 	install -m 0644 -o root -g root $(BUILDDIR_PIC)/libmysqld/libmysqld.a $(TMP)/usr/lib/mysql/libmysqld_pic.a
 	# mysql_config won't report the -fPIC, so give libmysqld-pic users a way to get their flags
 	install -m 0755 -o root -g root $(BUILDDIR_PIC)/scripts/mysql_config $(TMP)/usr/bin/mysql_config_pic
-	# mysql-server
-	mkdir -p $(TMP)/usr/share/doc/mysql-server-5.5/examples
-	mv $(TMP)/usr/share/mysql/*cnf 	    $(TMP)/usr/share/doc/mysql-server-5.5/examples/
+	mkdir -p $(TMP)/usr/share/doc/mysql-server-5.5
 	nm -n $(BUILDDIR)/sql/mysqld |gzip -9 > $(TMP)/usr/share/doc/mysql-server-5.5/mysqld.sym.gz
 	# This seems to be the only safe place to fix permissions issues
         # not handled by dh_fixperms.
@@ -188,6 +186,7 @@ auto_install-stamp:
 #       usr/share/mysql/magic                           M-server-5.5    example
 #       usr/bin/mysqlaccess.conf                        M-client-5.5    example
 #       usr/lib/mysql/plugin/daemon_example.ini         M-server-5.5    example
+#       usr/share/mysql/my-                             M-server-5.5    example
 # Note: lintian complains about the upstream supplied info file
 # and we don't have the source to fix it.
 # 
@@ -208,7 +207,8 @@ override_dh_install:
         -Xusr/share/mysql/mi_test_all                   \
         -Xusr/share/mysql/mysql-log-rotate              \
         -Xusr/share/mysql/mysql.server                  \
-        -Xusr/share/mysql/binary-configure
+        -Xusr/share/mysql/binary-configure              \
+        -Xusr/share/mysql/my-
 
 libmysqlclient-links-stamp: auto_install-stamp
 	@echo "RULES.$@"

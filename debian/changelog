@@ -16,12 +16,14 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
   * Removed the numerical prefix from the patch files
   * Applied fix-mysqldump-test.patch from Ubuntu
   * Located and installed upstream changelog
-  * Removed doxygen-latex as build dependency
+  * Removed doxygen-latex, ghostscript as build dependency
+    as these were needed only for the NDB docs
   * Added lintian overrides
     - spelling false positive: yuR
     - long lines in man pages that cannot be reformatted
     - missing symbols file (cf. #590905)
   * Added patch for hyphen/minus sign confusion
+  * Dropped mailx to Suggests clause (Closes: #535496)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
