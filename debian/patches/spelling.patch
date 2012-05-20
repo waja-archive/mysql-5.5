@@ -1,7 +1,7 @@
 Author <nicholas@periapt.co.uk>
 Subject: spelling errors
  Preceeding -> preceding
-Last-Update: 2012-05-02
+Last-Update: 2012-05-19
 Forwarded: no
 --- a/libmysql/errmsg.c
 +++ b/libmysql/errmsg.c
@@ -14,17 +14,6 @@ Forwarded: no
    "The number of columns in the result set differs from the number of bound buffers. You must reset the statement, rebind the result set columns, and execute the statement again",
    "This handle is already connected. Use a separate handle for each connection.",
    "Authentication plugin '%s' cannot be loaded: %s",
---- a/Docs/mysql.info
-+++ b/Docs/mysql.info
-@@ -233132,7 +233132,7 @@
- 
-    *  Error: `2056' (`CR_STMT_CLOSED')
- 
--     Message: Statement closed indirectly because of a preceeding %s()
-+     Message: Statement closed indirectly because of a preceding %s()
-      call
- 
-    *  Error: `2057' (`CR_NEW_STMT_METADATA')
 --- a/mysql-test/extra/rpl_tests/rpl_ddl.test
 +++ b/mysql-test/extra/rpl_tests/rpl_ddl.test
 @@ -98,8 +98,8 @@
@@ -40,7 +29,7 @@ Forwarded: no
  #       effects like failing 'sync_slave_with_master', crashes of the slave or
 --- a/mysql-test/extra/rpl_tests/rpl_row_basic.test
 +++ b/mysql-test/extra/rpl_tests/rpl_row_basic.test
-@@ -186,7 +186,7 @@
+@@ -221,7 +221,7 @@
  SELECT * FROM t7 ORDER BY C1;
  
  # since bug#31552/31609 idempotency is not default any longer. In order
@@ -49,7 +38,7 @@ Forwarded: no
  # temprorarily
  set @@global.slave_exec_mode= 'IDEMPOTENT';
  
-@@ -225,7 +225,7 @@
+@@ -260,7 +260,7 @@
  SELECT * FROM t8 ORDER BY a;
  
  # since bug#31552/31609 idempotency is not default any longer. In order

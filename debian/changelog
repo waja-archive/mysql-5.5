@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
+mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
 
   * Migrated libmysqlclient-dev, mysql-client-5.5, mysql-server-core-5.5
     and mysql-server-5.5 off dh_movefiles
@@ -24,6 +24,10 @@ mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
     - missing symbols file (cf. #590905)
   * Added patch for hyphen/minus sign confusion
   * Dropped mailx to Suggests clause (Closes: #535496)
+  * New upstream source
+  * Refreshed patches
+  * Standardized debian/watch and get-orig-source and made DFSG exclusion
+    of Docs/mysql.info explicit
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
