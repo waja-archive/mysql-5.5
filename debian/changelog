@@ -1,10 +1,13 @@
-mysql-5.5 (5.5.23-3) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23+dfsg-1) UNRELEASED; urgency=low
 
   * Changes to prevent certain failures to build from scratch
     when building against MySQL 5.5 (Closes: #590905)
     - Patched mysql_config so that it no longer mandates -lssl -lcrypto
     - Added libwrap0-dev as a dependency of libmysqld-dev, libmysqld-pic
     - Added libaio-dev as a Linux dependency of libmysqld-dev, libmysqld-pic
+  * Standardized debian/watch and get-orig-source and made DFSG exclusion
+    of Docs/mysql.info explicit (Closes: #673528)
+  * Located and installed upstream changelog
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 18 May 2012 17:36:37 +0100
 

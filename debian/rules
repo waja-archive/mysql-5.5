@@ -182,7 +182,7 @@ auto_install-stamp:
 	# Patch mysql_config inline rather using quilt because the latter
 	# seems not to work, though I don't know why. Comments hold
 	# but not the real bit of work. The source is scripts/mysql_config.sh.
-	sed -i -e's/-lssl -lcrypto //' debian/libmysql*/usr/bin/mysql_config*
+	sed -i -e's/-lssl -lcrypto //' $(TMP)/usr/bin/mysql_config*
 	# mysql-client
 	install -m 0755 debian/additions/mysqlreport $(TMP)/usr/bin/
 	install -m 0755 debian/additions/innotop/innotop $(TMP)/usr/bin/
@@ -203,6 +203,9 @@ auto_install-stamp:
 override_dh_install:
 	dh_movefiles
 	dh_install
+
+override_dh_installchangelogs:
+	dh_installchangelogs Docs/ChangeLog
 
 override_dh_installlogrotate-arch:
 	dh_installlogrotate --name mysql-server
@@ -225,16 +228,7 @@ override_dh_makeshlibs-arch:
 binary:	binary-indep binary-arch
 
 get-orig-source:
-	@wget -nv -T10 -t3 \
-	  -O /tmp/mysql-$(DEB_UPSTREAM_VERSION).tar.gz \
-	  http://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-$(DEB_UPSTREAM_VERSION_MAJOR_MINOR)/mysql-$(DEB_UPSTREAM_VERSION).tar.gz
-	@tar xfz /tmp/mysql-$(DEB_UPSTREAM_VERSION).tar.gz -C /tmp
-	@rm -rf /tmp/mysql-$(DEB_UPSTREAM_VERSION)/Docs
-	@rm -rf /tmp/mysql-$(DEB_UPSTREAM_VERSION)/debian
-	@mv /tmp/mysql-$(DEB_UPSTREAM_VERSION) /tmp/$(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION).orig
-	@cd /tmp ; tar czf $(DEB_SOURCE_PACKAGE)_$(DEB_UPSTREAM_VERSION).orig.tar.gz $(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION).orig
-	@rm -f /tmp/mysql-$(DEB_UPSTREAM_VERSION).tar.gz
-	@rm -rf /tmp/$(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION).orig
+	uscan --force-download --verbose --download-current-version
 
 %:
 	dh $@ --parallel
