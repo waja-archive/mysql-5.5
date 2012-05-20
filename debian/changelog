@@ -27,7 +27,7 @@ mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
   * New upstream source
   * Refreshed patches
   * Standardized debian/watch and get-orig-source and made DFSG exclusion
-    of Docs/mysql.info explicit
+    of Docs/mysql.info explicit (Closes: #673528)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
