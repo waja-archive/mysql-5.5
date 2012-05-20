@@ -27,7 +27,8 @@ Description: MySQL database client library
 Package: libmysqld-pic
 Architecture: any
 Section: libdevel
-Depends: libmysqlclient-dev (>= ${source:Version}), ${misc:Depends}
+Depends: libmysqlclient-dev (>= ${source:Version}), ${misc:Depends},
+ libwrap0-dev (>= 7.6-8.3), libaio-dev[linux-any]
 Description: PIC version of MySQL embedded server development files
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
@@ -39,7 +40,8 @@ Description: PIC version of MySQL embedded server development files
 Package: libmysqld-dev
 Architecture: any
 Section: libdevel
-Depends: libmysqlclient-dev (>= ${source:Version}), ${misc:Depends}
+Depends: libmysqlclient-dev (>= ${source:Version}), ${misc:Depends},
+ libwrap0-dev (>= 7.6-8.3), libaio-dev[linux-any]
 Description: MySQL embedded database development files
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query

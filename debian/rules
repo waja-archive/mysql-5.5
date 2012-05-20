@@ -177,6 +177,12 @@ auto_install-stamp:
 	install -m 0644 -o root -g root $(BUILDDIR_PIC)/libmysqld/libmysqld.a $(TMP)/usr/lib/mysql/libmysqld_pic.a
 	# mysql_config won't report the -fPIC, so give libmysqld-pic users a way to get their flags
 	install -m 0755 -o root -g root $(BUILDDIR_PIC)/scripts/mysql_config $(TMP)/usr/bin/mysql_config_pic
+	# As per #590905 we don't want mysql_config saying -lssl -lcrypto
+	# because those libraries are overkill for most packages.
+	# Patch mysql_config inline rather using quilt because the latter
+	# seems not to work, though I don't know why. Comments hold
+	# but not the real bit of work. The source is scripts/mysql_config.sh.
+	sed -i -e's/-lssl -lcrypto //' debian/libmysql*/usr/bin/mysql_config*
 	# mysql-client
 	install -m 0755 debian/additions/mysqlreport $(TMP)/usr/bin/
 	install -m 0755 debian/additions/innotop/innotop $(TMP)/usr/bin/
