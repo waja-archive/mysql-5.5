@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.23+dfsg-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23+dfsg-1) unstable; urgency=low
 
   * Revert having libssl-dev as a build dependency and changed
     WITH_SSL option to 'bundled' from 'yes' (Closes: #590905)
@@ -7,7 +7,7 @@ mysql-5.5 (5.5.23+dfsg-1) UNRELEASED; urgency=low
     of Docs/mysql.info explicit (Closes: #673528)
   * Located and installed upstream changelog
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 18 May 2012 17:36:37 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 22 May 2012 21:42:39 +0100
 
 mysql-5.5 (5.5.23-2) unstable; urgency=low
 
