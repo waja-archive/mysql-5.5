@@ -3,6 +3,9 @@ mysql-5.5 (5.5.23+dfsg-2) UNRELEASED; urgency=low
   * Fixing regular expression in tests to guard against build path containing
     the '+' symbol (Closes: #674210)
   * Disabled certain SSL tests pending investigation (cf. #674267)
+  * Updated French translation (Closes: #674025)
+  * Updated Dutch translation (Closes: #674124)
+  * Updated Russian translation (Closes: #674189)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Wed, 23 May 2012 18:30:53 +0100
 
