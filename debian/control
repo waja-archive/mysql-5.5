@@ -164,7 +164,7 @@ Description: MySQL testsuite
  This package includes the MySQL testsuite.
 
 Package: mysql-source-5.5
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: MySQL source
  MySQL is a fast, stable, and true multi-user, multi-threaded SQL database
@@ -172,4 +172,6 @@ Description: MySQL source
  language in the world. The main goals of MySQL are speed, robustness and
  ease of use.
  .
- This package includes the MySQL source code as configured before building.
+ This package includes the MySQL source code as configured before building
+ - but after the arch specific configuration. This is currently required for
+ building plugins.
