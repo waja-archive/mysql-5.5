@@ -184,9 +184,6 @@ msgstr "Проверьте пароль учётной записи после �
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-#| msgid ""
-#| "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for "
-#| "more information."
 msgid ""
 "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
@@ -213,10 +210,6 @@ msgstr "NDB Cluster уже используется"
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
-#| msgid ""
-#| "MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the "
-#| "new mysql-cluster package and remove all lines starting with \"ndb\" from "
-#| "all config files below /etc/mysql/."
 msgid ""
 "MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
@@ -224,6 +217,4 @@ msgid ""
 msgstr ""
 "MySQL-5.5 больше не поддерживает NDB Cluster. Переходите на новый пакет "
 "mysql-cluster-server и удалите все строки, начинающиеся с «ndb», из всех "
-"файлов "
-"настройки в каталоге /etc/mysql/."
-
+"файлов настройки в каталоге /etc/mysql/."

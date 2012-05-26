@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.23+dfsg-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.23+dfsg-2) unstable; urgency=low
 
   * Fixing regular expression in tests to guard against build path containing
     the '+' symbol (Closes: #674210)
@@ -7,7 +7,7 @@ mysql-5.5 (5.5.23+dfsg-2) UNRELEASED; urgency=low
   * Updated Dutch translation (Closes: #674124)
   * Updated Russian translation (Closes: #674189)
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Wed, 23 May 2012 18:30:53 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 25 May 2012 23:38:16 +0100
 
 mysql-5.5 (5.5.23+dfsg-1) unstable; urgency=low
 
