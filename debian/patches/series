@@ -1,5 +1,4 @@
 hurd.patch
-main_openssl_1.patch
 scripts__mysqld_safe.sh__signals.patch
 disable_tests.patch
 mysql_va_list.patch
@@ -10,3 +9,5 @@ kfreebsd_tests.patch
 spelling.patch
 fix-mysqldump-test.patch
 hyphens-in-manpages.patch
+regex_plus.patch
+linked_list_mem_failure.patch

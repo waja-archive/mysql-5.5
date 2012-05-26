@@ -1,5 +1,11 @@
 mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
 
+  * Fixing regular expression in tests to guard against build path containing
+    the '+' symbol (Closes: #674210)
+  * Disabled certain SSL tests pending investigation (cf. #674267)
+  * Updated French translation (Closes: #674025)
+  * Updated Dutch translation (Closes: #674124)
+  * Updated Russian translation (Closes: #674189)
   * Migrated libmysqlclient-dev, mysql-client-5.5, mysql-server-core-5.5
     and mysql-server-5.5 off dh_movefiles
   * Removed dh_movefiles override
@@ -28,6 +34,11 @@ mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
   * Refreshed patches
   * Standardized debian/watch and get-orig-source and made DFSG exclusion
     of Docs/mysql.info explicit (Closes: #673528)
+  * Revert having libssl-dev as a build dependency and changed
+    WITH_SSL option to 'bundled' from 'yes' (Closes: #590905)
+    and (Closes: #673865)
+  * Removed main_openssl_1 patch
+  * Set SYSTEM_TYPE according to GNU Build System
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
