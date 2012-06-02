@@ -236,9 +236,8 @@ override_dh_installinit-arch:
 override_dh_installcron-arch:
 	dh_installcron --name mysql-server
 
-# This looks very dodgy to 'periapt'.
 override_dh_makeshlibs-arch:
-	dh_makeshlibs -plibmysqlclient18 -V'libmysqlclient18 (>= 5.5.13-1)'
+	dh_makeshlibs -plibmysqlclient18 -V'libmysqlclient18 (>= 5.5.24+dfsg-1)'
 
 binary:	binary-indep binary-arch
 

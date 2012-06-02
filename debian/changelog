@@ -46,6 +46,8 @@ mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
   * Revert having libssl-dev as a build dependency and changed
     WITH_SSL option to 'bundled' from 'yes' (Closes: #590905)
     and (Closes: #673865)
+  * Added patch to libmysql/CMakeLists.txt to restore symbol versioning
+    and bumped dependency in shlibs (Closes: #660686)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
