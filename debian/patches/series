@@ -10,3 +10,4 @@
 94_spelling.patch
 regex_plus.patch
 linked_list_mem_failure.patch
+versioned_symbols.patch

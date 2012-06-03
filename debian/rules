@@ -154,6 +154,7 @@ auto_install-stamp:
 	mkdir -p $(TMP)/usr/share/man/man8/
 	cp debian/additions/*.1 $(TMP)/usr/share/man/man1/
 	mkdir -p $(TMP)/etc/mysql/conf.d/
+	touch $(TMP)/etc/mysql/conf.d/.keepme
 	cp debian/additions/mysqld_safe_syslog.cnf $(TMP)/etc/mysql/conf.d/
 	# make install (trailing slash needed for innobase)
 	cd $(builddir) && $(MAKE) install DESTDIR=$(TMP)/
