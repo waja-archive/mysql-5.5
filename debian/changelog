@@ -3,11 +3,13 @@ mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
   * New upstream release. Fixes CVE-2012-2102 mysql DoS by authenticated user
   * Updated Portuguese translation (Closes: #674953)
   * Updated Swedish translation (Closes: #675108)
+  * Updated German translation (Closes: #675766)
   * Refreshed spelling patch
   * Added patch to libmysql/CMakeLists.txt to restore symbol versioning
     and bumped dependency in shlibs (Closes: #660686)
   * Ensured that /etc/mysql/conf.d is installed as part of mysql-common
     so that client programs work without a co-located server (Closes: #672359)
+  * Added versioned Breaks clause against amarok (cf. #675304)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 31 May 2012 09:00:25 +0100
 
