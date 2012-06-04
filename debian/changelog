@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.24+dfsg-1) unstable; urgency=low
 
   * New upstream release. Fixes CVE-2012-2102 mysql DoS by authenticated user
   * Updated Portuguese translation (Closes: #674953)
@@ -11,7 +11,7 @@ mysql-5.5 (5.5.24+dfsg-1) UNRELEASED; urgency=low
     so that client programs work without a co-located server (Closes: #672359)
   * Added versioned Breaks clause against amarok (cf. #675304)
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 31 May 2012 09:00:25 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Mon, 04 Jun 2012 18:17:04 +0100
 
 mysql-5.5 (5.5.23+dfsg-2) unstable; urgency=low
 
