@@ -103,7 +103,7 @@ case "${1:-''}" in
 	   log_end_msg 0
 	else
 	    # Could be removed during boot
-	    test -e /run/mysqld || install -m 755 -o mysql -g root -d /run/mysqld
+	    test -e /var/run/mysqld || install -m 755 -o mysql -g root -d /var/run/mysqld
 
 	    # Start MySQL! 
   	    /usr/bin/mysqld_safe > /dev/null 2>&1 &
