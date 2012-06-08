@@ -1,3 +1,9 @@
+mysql-5.5 (5.5.24+dfsg-3) unstable; urgency=high
+
+  * Added versioned dependency on initscripts (Closes: #676560)
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 07 Jun 2012 23:29:32 +0100
+
 mysql-5.5 (5.5.24+dfsg-2) unstable; urgency=low
 
   * Really bumped the version in shlibs
