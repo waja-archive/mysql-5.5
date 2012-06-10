@@ -51,6 +51,8 @@ mysql-5.5 (5.5.25+dfsg-1) UNRELEASED; urgency=low
     and bumped dependency in shlibs (Closes: #660686)
   * Ensured that /etc/mysql/conf.d is installed as part of mysql-common
     so that client programs work without a co-located server (Closes: #672359)
+  * Added versioned dependency on initscripts and revert /var/run
+    to /run change (Closes: #676560)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 08 May 2012 09:04:25 +0100
 
