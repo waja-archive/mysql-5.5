@@ -31,6 +31,8 @@ mysql-5.5 (5.5.25+dfsg-1) UNRELEASED; urgency=low
   * Restored zlib1g-dev build dependency pending further investigation
   * Removed the numerical prefix from the patch files
   * Applied fix-mysqldump-test.patch from Ubuntu
+  * Applied mysql-testsuite and mysql-client-core-5.5 package definitions
+    from Ubuntu
   * Located and installed upstream changelog
   * Removed doxygen-latex, ghostscript as build dependency
     as these were needed only for the NDB docs
