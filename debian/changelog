@@ -1,3 +1,10 @@
+mysql-5.5 (5.5.24+dfsg-4) UNRELEASED; urgency=low
+
+  * Made DFSG repacking mechanism independent of local installs, improved
+    the documentation and added debian/README.source
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 16 Jun 2012 13:53:35 +0100
+
 mysql-5.5 (5.5.24+dfsg-3) unstable; urgency=high
 
   * Added versioned dependency on initscripts and revert /var/run
