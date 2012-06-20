@@ -2,6 +2,8 @@ mysql-5.5 (5.5.24+dfsg-4) UNRELEASED; urgency=low
 
   * Made DFSG repacking mechanism independent of local installs, improved
     the documentation and added debian/README.source
+  * Setting the gcc/g++ version to 4.4 on i386 platforms (Closes: #674267)
+    but see #678252 for follow up from upstream
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 16 Jun 2012 13:53:35 +0100
 
