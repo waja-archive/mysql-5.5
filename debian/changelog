@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.24+dfsg-4) UNRELEASED; urgency=low
+mysql-5.5 (5.5.24+dfsg-4) unstable; urgency=low
 
   * Made DFSG repacking mechanism independent of local installs, improved
     the documentation and added debian/README.source
@@ -7,7 +7,7 @@ mysql-5.5 (5.5.24+dfsg-4) UNRELEASED; urgency=low
     up from upstream
   * Danish debconf translation (Closes: #599483)
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 16 Jun 2012 13:53:35 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 21 Jun 2012 13:36:40 +0100
 
 mysql-5.5 (5.5.24+dfsg-3) unstable; urgency=high
 
