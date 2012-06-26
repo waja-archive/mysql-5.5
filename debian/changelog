@@ -16,6 +16,7 @@ mysql-5.5 (5.5.25+dfsg-1) UNRELEASED; urgency=low
   * Updated Swedish translation (Closes: #675108)
   * Updated German translation (Closes: #675766)
   * Danish debconf translation (Closes: #599483)
+  * Spanish debconf translation (Closes: #679053)
   * Migrated libmysqlclient-dev, mysql-client-5.5, mysql-server-core-5.5
     and mysql-server-5.5 off dh_movefiles
   * Removed dh_movefiles override
