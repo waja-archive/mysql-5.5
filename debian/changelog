@@ -1,3 +1,9 @@
+mysql-5.5 (5.5.24+dfsg-5) UNRELEASED; urgency=low
+
+  * Spanish debconf translation (Closes: #679053)
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 26 Jun 2012 22:05:41 +0100
+
 mysql-5.5 (5.5.24+dfsg-4) unstable; urgency=low
 
   * Made DFSG repacking mechanism independent of local installs, improved
