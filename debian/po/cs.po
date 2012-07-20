@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: mysql-dfsg-5.5\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-08 11:42-0800\n"
-"PO-Revision-Date: 2007-05-01 13:01+0200\n"
+"PO-Revision-Date: 2012-07-15 21:05+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "Language: cs\n"
@@ -39,10 +39,6 @@ msgstr "V systému existuje soubor /var/lib/mysql/debian-*.flag."
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:2001
-#, fuzzy
-#| msgid ""
-#| "Such file is an indication that a mysql-server package with a higher "
-#| "version has been installed earlier."
 msgid ""
 "Such a file is an indication that a mysql-server package with a higher "
 "version has been installed previously."
@@ -71,14 +67,12 @@ msgid ""
 "Using MySQL under NIS/YP requires a mysql user account to be added on the "
 "local system with:"
 msgstr ""
+"Používání MySQL pod NIS/YP vyžaduje, aby byl uživatelský účet mysql přidán "
+"na místním systému příkazem:"
 
 #. Type: note
 #. Description
 #: ../mysql-server-5.5.templates:3001
-#, fuzzy
-#| msgid ""
-#| "You should also check the permissions and the owner of the /var/lib/mysql "
-#| "directory:"
 msgid ""
 "You should also check the permissions and ownership of the /var/lib/mysql "
 "directory:"
@@ -125,14 +119,14 @@ msgid ""
 "The MySQL server can be launched automatically at boot time or manually with "
 "the '/etc/init.d/mysql start' command."
 msgstr ""
-"MySQL se může spouštět automaticky při startu systému, nebo ručně příkazem '/"
-"etc/init.d/mysql start'."
+"MySQL se může spouštět automaticky při startu systému, nebo ručně příkazem „/"
+"etc/init.d/mysql start“."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:6001
 msgid "New password for the MySQL \"root\" user:"
-msgstr "Nové heslo MySQL uživatele \"root\":"
+msgstr "Nové heslo MySQL uživatele „root“:"
 
 #. Type: password
 #. Description
@@ -142,29 +136,25 @@ msgid ""
 "the MySQL administrative \"root\" user."
 msgstr ""
 "Přestože to není nezbytné, je silně doporučeno nastavit heslo u "
-"správcovského MySQL účtu \"root\"."
+"správcovského MySQL účtu „root“."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:6001
-#, fuzzy
-#| msgid "If that field is left blank, the password will not be changed."
 msgid "If this field is left blank, the password will not be changed."
 msgstr "Ponecháte-li pole prázdné, heslo se nezmění."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:7001
-#, fuzzy
-#| msgid "New password for the MySQL \"root\" user:"
 msgid "Repeat password for the MySQL \"root\" user:"
-msgstr "Nové heslo MySQL uživatele \"root\":"
+msgstr "Zopakujte heslo MySQL uživatele „root“:"
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
 msgid "Unable to set password for the MySQL \"root\" user"
-msgstr "Nelze nastavit heslo MySQL uživatele \"root\""
+msgstr "Nelze nastavit heslo MySQL uživatele „root“"
 
 #. Type: error
 #. Description
@@ -181,19 +171,12 @@ msgstr ""
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-#, fuzzy
-#| msgid ""
-#| "You should check the account's password after tha package installation."
 msgid "You should check the account's password after the package installation."
 msgstr "Po instalaci balíku byste měli heslo ověřit."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-#, fuzzy
-#| msgid ""
-#| "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for "
-#| "more information."
 msgid ""
 "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
@@ -204,19 +187,19 @@ msgstr ""
 #. Description
 #: ../mysql-server-5.5.templates:9001
 msgid "Password input error"
-msgstr ""
+msgstr "Chyba zadávání hesla"
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:9001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr ""
+msgstr "Zadaná hesla nejsou stejná. Zkuste to prosím znovu."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
 msgid "NDB Cluster seems to be in use"
-msgstr ""
+msgstr "Zdá se, že je používán NBD cluster"
 
 #. Type: error
 #. Description
@@ -226,6 +209,9 @@ msgid ""
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""
+"MySQL-5.5 již NBD cluster nepodporuje. Přejděte prosím na nový balík "
+"mysql-cluster-server a ze všech konfiguračních souborů pod /etc/mysql/ "
+"odstraňte všechny řádky začínající na „nbd“."
 
 #~ msgid ""
 #~ "To use MySQL, the following entries for users and groups should be added "
