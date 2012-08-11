@@ -223,6 +223,9 @@ override_dh_installcron-arch:
 override_dh_makeshlibs-arch:
 	dh_makeshlibs -plibmysqlclient18 -V'libmysqlclient18 (>= 5.5.24+dfsg-1)'
 
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
 binary:	binary-indep binary-arch
 
 get-orig-source:

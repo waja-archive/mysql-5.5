@@ -1,32 +1,32 @@
 # Turkish translation of mysql-server.
 # This file is distributed under the same license as the mysql-server package.
 # Gürkan Aslan <gurkan@iaslan.com>, 2004
+# Atila KOÇ <akoc@artielektronik.com.tr>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mysql-dfsg-4.1\n"
+"Project-Id-Version: mysql-5.1\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-08 11:42-0800\n"
-"PO-Revision-Date: 2004-06-05 08:53+0300\n"
-"Last-Translator: Gürkan Aslan <gurkan@iaslan.com>\n"
+"PO-Revision-Date: 2012-03-20 21:31+0200\n"
+"Last-Translator: Atila KOÇ <akoc@artielektronik.com.tr>\n"
 "Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:2001
 msgid "Really proceed with downgrade?"
-msgstr ""
+msgstr "Sürüm düşürme işlemine gerçekten başlansın mı?"
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:2001
 msgid "A file named /var/lib/mysql/debian-*.flag exists on this system."
-msgstr ""
+msgstr "Bu sistemde /var/lib/mysql/debian-*.flag adlı bir dosya bulunmaktadır."
 
 #. Type: boolean
 #. Description
@@ -35,6 +35,8 @@ msgid ""
 "Such a file is an indication that a mysql-server package with a higher "
 "version has been installed previously."
 msgstr ""
+"Böyle bir dosyanın varlığı daha yüksek sürümde bir mysql-server paketinin "
+"önceden kurulu olduğunu gösterir."
 
 #. Type: boolean
 #. Description
@@ -43,14 +45,14 @@ msgid ""
 "There is no guarantee that the version you're currently installing will be "
 "able to use the current databases."
 msgstr ""
+"Kurmakta olduğunuz sürümün var olan veritabanlarını kullanabileceğinin "
+"garantisi yoktur."
 
 #. Type: note
 #. Description
 #: ../mysql-server-5.5.templates:3001
-#, fuzzy
-#| msgid "Important note for NIS/YP users!"
 msgid "Important note for NIS/YP users"
-msgstr "NIS/YP kullanıcıları için önemli not!"
+msgstr "NIS/YP kullanıcıları için önemli not"
 
 #. Type: note
 #. Description
@@ -59,6 +61,8 @@ msgid ""
 "Using MySQL under NIS/YP requires a mysql user account to be added on the "
 "local system with:"
 msgstr ""
+"MySQL'in NIS/YP ile kullanılması için yerel sisteme bir mysql kullanıcı "
+"hesabının eklenmesi gereklidir."
 
 #. Type: note
 #. Description
@@ -67,12 +71,14 @@ msgid ""
 "You should also check the permissions and ownership of the /var/lib/mysql "
 "directory:"
 msgstr ""
+"/var/lib/mysql dizininin sahiplik ayarlarını ve izin haklarını da gözden "
+"geçirmelisiniz."
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:4001
 msgid "Remove all MySQL databases?"
-msgstr ""
+msgstr "Tüm MySQL veritabanları kaldırılsın mı?"
 
 #. Type: boolean
 #. Description
@@ -81,6 +87,7 @@ msgid ""
 "The /var/lib/mysql directory which contains the MySQL databases is about to "
 "be removed."
 msgstr ""
+"MySQL veritabanlarını barındıran /var/lib/mysql dizini kaldırılmak üzere"
 
 #. Type: boolean
 #. Description
@@ -90,32 +97,31 @@ msgid ""
 "version or if a different mysql-server package is already using it, the data "
 "should be kept."
 msgstr ""
+"Eğer MySQL paketini daha sonra güncel bir sürümünü kurmak üzere "
+"kaldırıyorsanız ya da veritabanlarınıza başka bir mysql-server paketi ile "
+"erişiyorsanız, veritabanlarınızı tutmalısınız."
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:5001
-#, fuzzy
-#| msgid "Should MySQL start on boot?"
 msgid "Start the MySQL server on boot?"
-msgstr "MySQL açılış sırasında başlatılsın mı?"
+msgstr "MySQL sunucusu açılış sırasında başlatılsın mı?"
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:5001
-#, fuzzy
 msgid ""
 "The MySQL server can be launched automatically at boot time or manually with "
 "the '/etc/init.d/mysql start' command."
 msgstr ""
-"MySQL açılış sırasında veya '/etc/init.d/mysql start' komutunu vermeniz "
-"halinde elle başlatılabilir. Eğer açılışta otomatik olarak başlatılmasını "
-"istiyorsanız burada 'evet'i seçin."
+"MySQL sunucusu açılış sırasında kendiliğinden ya da '/etc/init.d/mysql "
+"start' komutu çalıştırılarak elle başlatılabilir."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:6001
 msgid "New password for the MySQL \"root\" user:"
-msgstr ""
+msgstr "MySQL \"root\" kullanıcısı için yeni parola:"
 
 #. Type: password
 #. Description
@@ -124,24 +130,26 @@ msgid ""
 "While not mandatory, it is highly recommended that you set a password for "
 "the MySQL administrative \"root\" user."
 msgstr ""
+"Zorunlu olmasa da MySQL yönetimsel \"root\" kullanıcısı için bir parola "
+"oluşturulması kuvvetle önerilir."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:6001
 msgid "If this field is left blank, the password will not be changed."
-msgstr ""
+msgstr "Bu alanın boş bırakılması durumunda parola değiştirilmeyecektir."
 
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:7001
 msgid "Repeat password for the MySQL \"root\" user:"
-msgstr ""
+msgstr "MySQL \"root\" kullanıcısının parolasını yineleyin:"
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
 msgid "Unable to set password for the MySQL \"root\" user"
-msgstr ""
+msgstr "MySQL \"root\" kullanıcısı için parola oluşturulamadı"
 
 #. Type: error
 #. Description
@@ -151,47 +159,64 @@ msgid ""
 "user. This may have happened because the account already has a password, or "
 "because of a communication problem with the MySQL server."
 msgstr ""
+"MySQL yönetimsel kullanıcısı için parola oluşturulurken bir hata oluştu. Bu "
+"hataya ilgili hesabın zaten bir parolası olması ya da MySQL sunucusu ile "
+"yaşanan iletişim sorunları neden olmuş olabilir."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
 msgid "You should check the account's password after the package installation."
-msgstr ""
+msgstr "Paketin kurulumundan sonra ilgili hesabın parolasını denetlemelisiniz."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
+#, fuzzy
+#| msgid ""
+#| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
+#| "more information."
 msgid ""
 "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
 msgstr ""
+"Daha fazla bilgi için /usr/share/doc/mysql-server-5.1/README.Debian "
+"dosyasını inceleyiniz."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:9001
 msgid "Password input error"
-msgstr ""
+msgstr "Parola giriş hatası"
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:9001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr ""
+msgstr "Girdiğiniz parolalar eşleşmiyor, lütfen tekrar deneyiniz."
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
 msgid "NDB Cluster seems to be in use"
-msgstr ""
+msgstr "NDB Kümesi kullanılıyor gibi görünüyor"
 
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
+#, fuzzy
+#| msgid ""
+#| "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the "
+#| "new mysql-cluster package and remove all lines starting with \"ndb\" from "
+#| "all config files below /etc/mysql/."
 msgid ""
 "MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""
+"MySQL-5.1 artık NDB Kümesi desteği vermemektedir. Lütfen yeni mysql-cluster "
+"paketine geçiniz ve /etc/mysql/ dizinindeki tüm yapılandırma dosyalarından "
+"\"ndb\" ile başlayan satırları kaldırınız."
 
 #~ msgid ""
 #~ "To use mysql you must install an equivalent user and group to the "
