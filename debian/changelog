@@ -1,9 +1,9 @@
-mysql-5.5 (5.5.24+dfsg-7) UNRELEASED; urgency=low
+mysql-5.5 (5.5.24+dfsg-7) unstable; urgency=low
 
   * Updated Turkish debconf translation (Closes: #683733)
   * Use xz compression for binary packages (Closes: #684146)
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Wed, 08 Aug 2012 09:45:40 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 11 Aug 2012 21:02:27 +0100
 
 mysql-5.5 (5.5.24+dfsg-6) unstable; urgency=low
 
