@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.24+dfsg-8) UNRELEASED; urgency=low
+mysql-5.5 (5.5.24+dfsg-8) unstable; urgency=low
 
   * Updated debian/copyright after analysis from development version
     of license-reconcile (Closes: #682311)
@@ -10,7 +10,7 @@ mysql-5.5 (5.5.24+dfsg-8) UNRELEASED; urgency=low
     - Clarified 'BSD (3 clause) GPL-2' as being 'BSD (3 clause) or GPL-2'
   * Updated Slovak debconf translation (Closes: #684644)
 
- -- Nicholas Bamber <nicholas@periapt.co.uk>  Sun, 02 Sep 2012 19:52:51 +0100
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 04 Sep 2012 06:56:24 +0100
 
 mysql-5.5 (5.5.24+dfsg-7) unstable; urgency=low
 
