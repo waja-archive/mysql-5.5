@@ -1,15 +1,15 @@
-# Danish translation mysql-5.1.
-# Copyright (C) 2010 mysql-5.1 & nedenstående oversættere.
-# This file is distributed under the same license as the mysql-5.1 package.
+# Danish translation mysql-5.5.
+# Copyright (C) 2010 mysql-5.5 & nedenstående oversættere.
+# This file is distributed under the same license as the mysql-5.5 package.
 # Claus Hindsgaul <claus_h@image.dk> 2005, 2006, 2007.
-# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mysql-5.1\n"
+"Project-Id-Version: mysql-5.5\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-08 11:42-0800\n"
-"PO-Revision-Date: 2010-10-07 05:26+0100\n"
+"PO-Revision-Date: 2012-08-11 05:26+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <debian-l10n-danish@lists.debian.org> \n"
 "Language: \n"
@@ -174,15 +174,11 @@ msgstr "Du bør tjekke kontoens adgangskode efter pakkeinstallationen."
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-#, fuzzy
-#| msgid ""
-#| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
-#| "more information."
 msgid ""
 "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
 "information."
 msgstr ""
-"Læs venligst filen /usr/share/doc/mysql-server-5.1/README.Debian for "
+"Læs venligst filen /usr/share/doc/mysql-server-5.5/README.Debian for "
 "yderligere oplysninger."
 
 #. Type: error
@@ -207,16 +203,11 @@ msgstr "NDB-cluster ser ud til at være i brug"
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
-#, fuzzy
-#| msgid ""
-#| "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the "
-#| "new mysql-cluster package and remove all lines starting with \"ndb\" from "
-#| "all config files below /etc/mysql/."
 msgid ""
 "MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster-server package and remove all lines starting with \"ndb\" from "
 "all config files below /etc/mysql/."
 msgstr ""
-"MySQL-5.1 tilbyder ikke længere NDB-clusterunderstøttelse. Migrer venligst "
+"MySQL-5.5 tilbyder ikke længere NDB-clusterunderstøttelse. Migrer venligst "
 "til den nye pakke mysql-cluster og fjern alle linjer der starter med »ndb« "
 "fra alle konfigurationsfiler under /etc/mysql/."
