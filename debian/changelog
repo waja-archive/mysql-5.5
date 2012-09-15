@@ -1,6 +1,8 @@
 mysql-5.5 (5.5.24+dfsg-9) UNRELEASED; urgency=low
 
   * Danish debconf translation (Closes: #684566)
+  * Loosened versioned dependency between mysql-server-5.5 and
+    mysql-server-core-5.5, hopefully (Closes: #686803)
 
  -- Nicholas Bamber <nicholas@periapt.co.uk>  Sun, 09 Sep 2012 09:36:01 +0100
 
