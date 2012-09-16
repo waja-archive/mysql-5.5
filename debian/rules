@@ -104,6 +104,7 @@ configure-stamp configure-pic-stamp:
 		$(USE_STATIC_MYSQLD) \
 		$(USE_LINUX_NATIVE_AIO) \
 		-DWITH_SSL=bundled \
+		-DWITH_ZLIB=system \
 	    -DCOMPILATION_COMMENT="($(DISTRIBUTION))" \
 	    -DMYSQL_SERVER_SUFFIX="-$(DEBVERSION)" \
 	    -DSYSTEM_TYPE="debian-linux-gnu" \
