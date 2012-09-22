@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mysql-5.1\n"
 "Report-Msgid-Bugs-To: mysql-5.5@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-08 11:42-0800\n"
-"PO-Revision-Date: 2012-03-20 21:31+0200\n"
+"PO-Revision-Date: 2012-09-17 11:40+0200\n"
 "Last-Translator: Atila KOÇ <akoc@artielektronik.com.tr>\n"
 "Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "Language: tr\n"
@@ -31,22 +31,14 @@ msgstr "Bu sistemde /var/lib/mysql/debian-*.flag adlı bir dosya bulunmaktadır.
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:2001
-msgid ""
-"Such a file is an indication that a mysql-server package with a higher "
-"version has been installed previously."
-msgstr ""
-"Böyle bir dosyanın varlığı daha yüksek sürümde bir mysql-server paketinin "
-"önceden kurulu olduğunu gösterir."
+msgid "Such a file is an indication that a mysql-server package with a higher version has been installed previously."
+msgstr "Böyle bir dosyanın varlığı daha yüksek sürümde bir mysql-server paketinin önceden kurulu olduğunu gösterir."
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:2001
-msgid ""
-"There is no guarantee that the version you're currently installing will be "
-"able to use the current databases."
-msgstr ""
-"Kurmakta olduğunuz sürümün var olan veritabanlarını kullanabileceğinin "
-"garantisi yoktur."
+msgid "There is no guarantee that the version you're currently installing will be able to use the current databases."
+msgstr "Kurmakta olduğunuz sürümün var olan veritabanlarını kullanabileceğinin garantisi yoktur."
 
 #. Type: note
 #. Description
@@ -57,22 +49,14 @@ msgstr "NIS/YP kullanıcıları için önemli not"
 #. Type: note
 #. Description
 #: ../mysql-server-5.5.templates:3001
-msgid ""
-"Using MySQL under NIS/YP requires a mysql user account to be added on the "
-"local system with:"
-msgstr ""
-"MySQL'in NIS/YP ile kullanılması için yerel sisteme bir mysql kullanıcı "
-"hesabının eklenmesi gereklidir."
+msgid "Using MySQL under NIS/YP requires a mysql user account to be added on the local system with:"
+msgstr "MySQL'in NIS/YP ile kullanılması için yerel sisteme bir mysql kullanıcı hesabının eklenmesi gereklidir."
 
 #. Type: note
 #. Description
 #: ../mysql-server-5.5.templates:3001
-msgid ""
-"You should also check the permissions and ownership of the /var/lib/mysql "
-"directory:"
-msgstr ""
-"/var/lib/mysql dizininin sahiplik ayarlarını ve izin haklarını da gözden "
-"geçirmelisiniz."
+msgid "You should also check the permissions and ownership of the /var/lib/mysql directory:"
+msgstr "/var/lib/mysql dizininin sahiplik ayarlarını ve izin haklarını da gözden geçirmelisiniz."
 
 #. Type: boolean
 #. Description
@@ -83,23 +67,14 @@ msgstr "Tüm MySQL veritabanları kaldırılsın mı?"
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:4001
-msgid ""
-"The /var/lib/mysql directory which contains the MySQL databases is about to "
-"be removed."
-msgstr ""
-"MySQL veritabanlarını barındıran /var/lib/mysql dizini kaldırılmak üzere"
+msgid "The /var/lib/mysql directory which contains the MySQL databases is about to be removed."
+msgstr "MySQL veritabanlarını barındıran /var/lib/mysql dizini kaldırılmak üzere"
 
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:4001
-msgid ""
-"If you're removing the MySQL package in order to later install a more recent "
-"version or if a different mysql-server package is already using it, the data "
-"should be kept."
-msgstr ""
-"Eğer MySQL paketini daha sonra güncel bir sürümünü kurmak üzere "
-"kaldırıyorsanız ya da veritabanlarınıza başka bir mysql-server paketi ile "
-"erişiyorsanız, veritabanlarınızı tutmalısınız."
+msgid "If you're removing the MySQL package in order to later install a more recent version or if a different mysql-server package is already using it, the data should be kept."
+msgstr "Eğer MySQL paketini daha sonra güncel bir sürümünü kurmak üzere kaldırıyorsanız ya da veritabanlarınıza başka bir mysql-server paketi ile erişiyorsanız, veritabanlarınızı tutmalısınız."
 
 #. Type: boolean
 #. Description
@@ -110,12 +85,8 @@ msgstr "MySQL sunucusu açılış sırasında başlatılsın mı?"
 #. Type: boolean
 #. Description
 #: ../mysql-server-5.5.templates:5001
-msgid ""
-"The MySQL server can be launched automatically at boot time or manually with "
-"the '/etc/init.d/mysql start' command."
-msgstr ""
-"MySQL sunucusu açılış sırasında kendiliğinden ya da '/etc/init.d/mysql "
-"start' komutu çalıştırılarak elle başlatılabilir."
+msgid "The MySQL server can be launched automatically at boot time or manually with the '/etc/init.d/mysql start' command."
+msgstr "MySQL sunucusu açılış sırasında kendiliğinden ya da '/etc/init.d/mysql start' komutu çalıştırılarak elle başlatılabilir."
 
 #. Type: password
 #. Description
@@ -126,12 +97,8 @@ msgstr "MySQL \"root\" kullanıcısı için yeni parola:"
 #. Type: password
 #. Description
 #: ../mysql-server-5.5.templates:6001
-msgid ""
-"While not mandatory, it is highly recommended that you set a password for "
-"the MySQL administrative \"root\" user."
-msgstr ""
-"Zorunlu olmasa da MySQL yönetimsel \"root\" kullanıcısı için bir parola "
-"oluşturulması kuvvetle önerilir."
+msgid "While not mandatory, it is highly recommended that you set a password for the MySQL administrative \"root\" user."
+msgstr "Zorunlu olmasa da MySQL yönetimsel \"root\" kullanıcısı için bir parola oluşturulması kuvvetle önerilir."
 
 #. Type: password
 #. Description
@@ -154,14 +121,8 @@ msgstr "MySQL \"root\" kullanıcısı için parola oluşturulamadı"
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-msgid ""
-"An error occurred while setting the password for the MySQL administrative "
-"user. This may have happened because the account already has a password, or "
-"because of a communication problem with the MySQL server."
-msgstr ""
-"MySQL yönetimsel kullanıcısı için parola oluşturulurken bir hata oluştu. Bu "
-"hataya ilgili hesabın zaten bir parolası olması ya da MySQL sunucusu ile "
-"yaşanan iletişim sorunları neden olmuş olabilir."
+msgid "An error occurred while setting the password for the MySQL administrative user. This may have happened because the account already has a password, or because of a communication problem with the MySQL server."
+msgstr "MySQL yönetimsel kullanıcısı için parola oluşturulurken bir hata oluştu. Bu hataya ilgili hesabın zaten bir parolası olması ya da MySQL sunucusu ile yaşanan iletişim sorunları neden olmuş olabilir."
 
 #. Type: error
 #. Description
@@ -172,16 +133,11 @@ msgstr "Paketin kurulumundan sonra ilgili hesabın parolasını denetlemelisiniz
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:8001
-#, fuzzy
 #| msgid ""
 #| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
 #| "more information."
-msgid ""
-"Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more "
-"information."
-msgstr ""
-"Daha fazla bilgi için /usr/share/doc/mysql-server-5.1/README.Debian "
-"dosyasını inceleyiniz."
+msgid "Please read the /usr/share/doc/mysql-server-5.5/README.Debian file for more information."
+msgstr "Daha fazla bilgi için lütfen /usr/share/doc/mysql-server-5.5/README.Debian dosyasını inceleyiniz."
 
 #. Type: error
 #. Description
@@ -204,19 +160,12 @@ msgstr "NDB Kümesi kullanılıyor gibi görünüyor"
 #. Type: error
 #. Description
 #: ../mysql-server-5.5.templates:10001
-#, fuzzy
 #| msgid ""
 #| "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the "
 #| "new mysql-cluster package and remove all lines starting with \"ndb\" from "
 #| "all config files below /etc/mysql/."
-msgid ""
-"MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new "
-"mysql-cluster-server package and remove all lines starting with \"ndb\" from "
-"all config files below /etc/mysql/."
-msgstr ""
-"MySQL-5.1 artık NDB Kümesi desteği vermemektedir. Lütfen yeni mysql-cluster "
-"paketine geçiniz ve /etc/mysql/ dizinindeki tüm yapılandırma dosyalarından "
-"\"ndb\" ile başlayan satırları kaldırınız."
+msgid "MySQL-5.5 no longer provides NDB Cluster support. Please migrate to the new mysql-cluster-server package and remove all lines starting with \"ndb\" from all config files below /etc/mysql/."
+msgstr "MySQL-5.5 artık NDB Kümesi desteği vermemektedir. Lütfen yeni mysql-cluster paketine geçiniz ve /etc/mysql/ dizinindeki tüm yapılandırma dosyalarından \"ndb\" ile başlayan satırları kaldırınız."
 
 #~ msgid ""
 #~ "To use mysql you must install an equivalent user and group to the "
