@@ -1,3 +1,19 @@
+mysql-5.5 (5.5.28+dfsg-1) UNRELEASED; urgency=low
+
+  * New upstream release (resolves CVE-2012-3163, CVE-2012-3158, CVE-2012-3177,
+    CVE-2012-3147, CVE-2012-3166, CVE-2012-3173, CVE-2012-3144, CVE-2012-3150,
+    CVE-2012-3180, CVE-2012-3149, CVE-2012-3156, CVE-2012-3167, CVE-2012-3197,
+    CVE-2012-3160) (Closes: #690778)
+  * Removed debian/patches/73_mysqlcheck_tests.patch and
+    debian/patches/2_main_openssl_1.patch as they did not apply cleanly and did
+    not seem to be required any longer
+  * Refreshed patches and updated headers:
+    - debian/patches/73_mysqlcheck_tests.patch
+    - debian/patches/94_spelling.patch
+    - debian/patches/70_mysql_va_list.patch
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sun, 23 Sep 2012 08:04:50 +0100
+
 mysql-5.5 (5.5.24+dfsg-9) unstable; urgency=low
 
   * Danish debconf translation (Closes: #684566)
