@@ -1,7 +1,7 @@
 Author <nicholas@periapt.co.uk>
 Subject: spelling errors
  Preceeding -> preceding
-Last-Update: 2012-05-19
+Last-Update: 2012-10-24
 Forwarded: no
 --- a/libmysql/errmsg.c
 +++ b/libmysql/errmsg.c
@@ -108,7 +108,7 @@ Forwarded: no
  --echo **** On Master ****
 --- a/sql/log_event.cc
 +++ b/sql/log_event.cc
-@@ -3236,7 +3236,7 @@
+@@ -3267,7 +3267,7 @@
      if ((error= rows_event_stmt_cleanup(const_cast<Relay_log_info*>(rli), thd)))
      {
        const_cast<Relay_log_info*>(rli)->report(ERROR_LEVEL, error,
