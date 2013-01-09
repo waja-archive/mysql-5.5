@@ -8,18 +8,20 @@ Debian-Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=527623
 Last-Update: 2012-03-07
 Reviewed-by: Nicholas Bamber <nicholas@periapt.co.uk>
 
---- a/scripts/mysqld_safe.sh
-+++ b/scripts/mysqld_safe.sh
+Index: mysql-5.5.29/scripts/mysqld_safe.sh
+===================================================================
+--- mysql-5.5.29.orig/scripts/mysqld_safe.sh	2013-01-02 15:36:15.330357744 -0800
++++ mysql-5.5.29/scripts/mysqld_safe.sh	2013-01-02 15:38:10.183623263 -0800
 @@ -29,8 +29,6 @@
  syslog_tag_mysqld=mysqld
  syslog_tag_mysqld_safe=mysqld_safe
  
 -trap '' 1 2 3 15			# we shouldn't let anyone kill us
 -
- umask 007
- 
- defaults=
-@@ -132,7 +130,7 @@
+ # MySQL-specific environment variable. First off, it's not really a umask,
+ # it's the desired mode. Second, it follows umask(2), not umask(3) in that
+ # octal needs to be explicit. Our shell might be a proper sh without printf,
+@@ -153,7 +151,7 @@
        # sed buffers output (only GNU sed supports a -u (unbuffered) option)
        # which means that messages may not get sent to syslog until the
        # mysqld process quits.
@@ -28,7 +30,7 @@ Reviewed-by: Nicholas Bamber <nicholas@periapt.co.uk>
        ;;
      *)
        echo "Internal program error (non-fatal):" \
-@@ -711,6 +709,13 @@
+@@ -740,6 +738,13 @@
  fi
  
  #
