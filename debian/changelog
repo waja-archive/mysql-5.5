@@ -1,11 +1,12 @@
-mysql-5.5 (5.5.29+dfsg-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.29+dfsg-1) unstable; urgency=low
 
+  [ Clint Byrum ]
   * d/mysql-server-5.5.postinst: Patch from Alex Bligh to fix privilege
     regression that was introduced in the switch from 5.1 to 5.5.
     (Closes: #692871)
   * New upstream release. (Closes: #695001) Refreshed patches.
 
- -- Clint Byrum <clint@ubuntu.com>  Tue, 27 Nov 2012 06:07:25 -0800
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 11 Jan 2013 15:29:53 +0000
 
 mysql-5.5 (5.5.28+dfsg-1) unstable; urgency=low
 
