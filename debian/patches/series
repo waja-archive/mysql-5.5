@@ -8,4 +8,4 @@
 94_spelling.patch
 regex_plus.patch
 versioned_symbols.patch
-rpl_mariadb_test.patch
+debian-mdev382-fixup.patch

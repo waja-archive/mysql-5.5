@@ -1,7 +1,8 @@
 mysql-5.5 (5.5.30+dfsg-1) UNRELEASED; urgency=low
 
   * New upstream release.
-  * d/p/rpl_mariadb_test.patch - test for fix of CVE-2012-4414
+  * d/p/debian-mdev382-fixup.patch - patch from MariaDB, Thanks
+    Kristian Nielsen. resolves  CVE-2012-4414 (Closes: #698068)
 
  -- Clint Byrum <clint@ubuntu.com>  Tue, 05 Mar 2013 05:53:18 -0800
 
