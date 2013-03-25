@@ -1,10 +1,10 @@
-mysql-5.5 (5.5.30+dfsg-1) UNRELEASED; urgency=low
+mysql-5.5 (5.5.30+dfsg-1) unstable; urgency=low
 
   * New upstream release.
   * d/p/debian-mdev382-fixup.patch - patch from MariaDB, Thanks
     Kristian Nielsen. resolves  CVE-2012-4414 (Closes: #698068)
 
- -- Clint Byrum <clint@ubuntu.com>  Tue, 05 Mar 2013 05:53:18 -0800
+ -- Clint Byrum <clint@ubuntu.com>  Sun, 24 Mar 2013 16:22:56 -0700
 
 mysql-5.5 (5.5.29+dfsg-1) unstable; urgency=low
 
