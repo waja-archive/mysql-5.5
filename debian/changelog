@@ -1,3 +1,9 @@
+mysql-5.5 (5.5.31+dfsg-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Clint Byrum <clint@ubuntu.com>  Sun, 05 May 2013 09:37:54 -0700
+
 mysql-5.5 (5.5.30+dfsg-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
