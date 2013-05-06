@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.31+dfsg-1) UNRELEASED; urgency=high
+mysql-5.5 (5.5.31+dfsg-1) unstable; urgency=high
 
   * New upstream release.
     SECURITY UPDATE: CVE-2013-2375 CVE-2013-1544 CVE-2013-1532
@@ -8,7 +8,7 @@ mysql-5.5 (5.5.31+dfsg-1) UNRELEASED; urgency=high
     - d/p/yassl.patch - dropped, applied upstream
     - d/p/debian-mdev382-fixup.patch: dropped, fixed upstream.
 
- -- Clint Byrum <clint@ubuntu.com>  Sun, 05 May 2013 09:37:54 -0700
+ -- Clint Byrum <clint@ubuntu.com>  Mon, 06 May 2013 12:22:55 -0700
 
 mysql-5.5 (5.5.30+dfsg-1.1) unstable; urgency=low
 
