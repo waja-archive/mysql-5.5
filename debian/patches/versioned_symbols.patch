@@ -3,10 +3,10 @@ Bug: http://bugs.mysql.com/bug.php?id=64386
 Debian-Bug: http://bugs.debian.org/660686
 Subject: versioned symbols got dropped from the build
 Last-Update: 2012-06-01
-Index: mysql-5.5.29/libmysql/CMakeLists.txt
+Index: mysql-5.5-5.5.31+dfsg/libmysql/CMakeLists.txt
 ===================================================================
---- mysql-5.5.29.orig/libmysql/CMakeLists.txt	2013-01-02 15:36:15.014376269 -0800
-+++ mysql-5.5.29/libmysql/CMakeLists.txt	2013-01-02 15:38:17.931168951 -0800
+--- mysql-5.5-5.5.31+dfsg.orig/libmysql/CMakeLists.txt	2013-05-05 09:47:48.275180114 -0700
++++ mysql-5.5-5.5.31+dfsg/libmysql/CMakeLists.txt	2013-05-05 09:47:48.275180114 -0700
 @@ -136,6 +136,8 @@
  
  )

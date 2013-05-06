@@ -4,10 +4,10 @@ Description: makes mtr look in the standard location from the
 Forwarded: not-needed
 Reviewed-by: Nicholas Bamber <nicholas@periapt.co.uk>
 Last-Update: 2012-10-24
-Index: mysql-5.5.29/mysql-test/lib/mtr_cases.pm
+Index: mysql-5.5-5.5.31+dfsg/mysql-test/lib/mtr_cases.pm
 ===================================================================
---- mysql-5.5.29.orig/mysql-test/lib/mtr_cases.pm	2013-01-02 15:36:15.190365953 -0800
-+++ mysql-5.5.29/mysql-test/lib/mtr_cases.pm	2013-01-02 15:38:13.147449465 -0800
+--- mysql-5.5-5.5.31+dfsg.orig/mysql-test/lib/mtr_cases.pm	2013-05-05 09:47:48.135188277 -0700
++++ mysql-5.5-5.5.31+dfsg/mysql-test/lib/mtr_cases.pm	2013-05-05 09:47:48.131188510 -0700
 @@ -287,7 +287,8 @@
      else
      {

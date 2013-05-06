@@ -4,10 +4,10 @@ Description: make sure va_list usage is portable to fix FTBFS on ARM
 Reviewed-by: Nicholas Bamber <nicholas@periapt.co.uk>
 Last-Update: 2012-10-24
 
-Index: mysql-5.5.29/sql-common/client_plugin.c
+Index: mysql-5.5-5.5.31+dfsg/sql-common/client_plugin.c
 ===================================================================
---- mysql-5.5.29.orig/sql-common/client_plugin.c	2013-01-02 15:36:15.258361966 -0800
-+++ mysql-5.5.29/sql-common/client_plugin.c	2013-01-02 15:38:12.035514668 -0800
+--- mysql-5.5-5.5.31+dfsg.orig/sql-common/client_plugin.c	2013-03-25 06:14:58.000000000 -0700
++++ mysql-5.5-5.5.31+dfsg/sql-common/client_plugin.c	2013-05-05 09:43:53.000000000 -0700
 @@ -233,11 +233,13 @@
  {
    MYSQL mysql;
