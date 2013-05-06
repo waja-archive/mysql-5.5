@@ -6,8 +6,7 @@ mysql-5.5 (5.5.31+dfsg-1) UNRELEASED; urgency=high
     CVE-2013-2391 CVE-2013-1502
     - Patches refreshed.
     - d/p/yassl.patch - dropped, applied upstream
-    - d/p/debian-mdev382-fixup.patch: reduced to only test cases
-      added by MariaDB. The code has been fixed upstream.
+    - d/p/debian-mdev382-fixup.patch: dropped, fixed upstream.
 
  -- Clint Byrum <clint@ubuntu.com>  Sun, 05 May 2013 09:37:54 -0700
 
