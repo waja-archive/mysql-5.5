@@ -1,0 +1,20 @@
+From: YunQiang Su <wzssyqa@gmail.com>
+Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=719196
+Forwarded: yes, http://bugs.mysql.com/69978
+Description:
+  Assembly problem, using =l instead of =lc.
+  http://stackoverflow.com/questions/3652153/impossible-constraint-in-asm
+
+Index: mysql-5.5/extra/yassl/taocrypt/src/integer.cpp
+===================================================================
+--- mysql-5.5.orig/extra/yassl/taocrypt/src/integer.cpp	2013-08-08 18:22:54.008293778 +0800
++++ mysql-5.5/extra/yassl/taocrypt/src/integer.cpp	2013-08-08 19:22:53.416259452 +0800
+@@ -192,7 +192,7 @@
+                 "a" (a), "rm" (b) : "cc");
+ 
+         #elif defined(__mips64)
+-            __asm__("dmultu %2,%3" : "=h" (r.halfs_.high), "=l" (r.halfs_.low)
++            __asm__("dmultu %2,%3" : "=d" (r.halfs_.high), "=lc" (r.halfs_.low)
+                 : "r" (a), "r" (b));
+ 
+         #elif defined(_M_IX86)

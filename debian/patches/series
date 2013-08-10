@@ -8,3 +8,4 @@
 94_spelling.patch
 regex_plus.patch
 versioned_symbols.patch
+fix-mips64el-ftbfs.patch

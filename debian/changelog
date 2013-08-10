@@ -2,6 +2,8 @@ mysql-5.5 (5.5.31+dfsg-2) UNRELEASED; urgency=low
 
   * d/rules, d/control: Remove gcc-4.4 dependency and disable X86
     assembly in taocrypt. (Closes: #707280) (Closes: #678252)
+  * d/patches/fix-mips64el-ftbfs.patch: Fix FTBFS on mips64el.
+    (Closes: #719196) Thanks YunQuiang Su.
 
  -- Clint Byrum <clint@ubuntu.com>  Wed, 08 May 2013 13:11:27 -0700
 
