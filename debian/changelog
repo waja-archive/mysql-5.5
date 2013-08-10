@@ -1,9 +1,12 @@
-mysql-5.5 (5.5.31+dfsg-2) UNRELEASED; urgency=low
+mysql-5.5 (5.5.33+dfsg-1) UNRELEASED; urgency=low
 
   * d/rules, d/control: Remove gcc-4.4 dependency and disable X86
     assembly in taocrypt. (Closes: #707280) (Closes: #678252)
   * d/patches/fix-mips64el-ftbfs.patch: Fix FTBFS on mips64el.
     (Closes: #719196) Thanks YunQuiang Su.
+  * New upstream release.
+    SECURITY UPDATE: CVE-2013-1861 CVE-2013-3783 CVE-2013-3793
+    CVE-2013-3804 CVE-2013-3802 CVE-2013-3809 CVE-2013-3812
 
  -- Clint Byrum <clint@ubuntu.com>  Wed, 08 May 2013 13:11:27 -0700
 
