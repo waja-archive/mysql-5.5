@@ -9,4 +9,4 @@
 regex_plus.patch
 versioned_symbols.patch
 fix-mips64el-ftbfs.patch
-work_around_failing_rpl_deadlock_test.patch
+fix-racey-rpltests.patch

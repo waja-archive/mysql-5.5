@@ -1,0 +1,249 @@
+From: Norvald Ryeng <norvald.ryeng@oracle.com>
+Description: Fix tests racing with temp table cleanup.
+Bug: http://bugs.mysql.com/bug.php?id=69458
+
+diff -rpu a/mysql-test/extra/rpl_tests/rpl_drop_create_temp_table.inc b/mysql-test/extra/rpl_tests/rpl_drop_create_temp_table.inc
+--- a/mysql-test/extra/rpl_tests/rpl_drop_create_temp_table.inc	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/extra/rpl_tests/rpl_drop_create_temp_table.inc	2013-09-23 17:17:56.192985008 +0200
+@@ -150,10 +150,9 @@ if (`SELECT HEX(@commands) = HEX('config
+ }
+ 
+ #
+-# Drops tables and synchronizes master and slave. Note that temporary
+-# tables are not explitcily dropped as they will be dropped while
+-# closing the connection.
++# Drops tables and synchronizes master and slave.
+ #
++
+ if (`SELECT HEX(@commands) = HEX('clean')`)
+ {
+   connection master;
+@@ -162,10 +161,15 @@ if (`SELECT HEX(@commands) = HEX('clean'
+ 
+   DROP TABLE IF EXISTS nt_xx_1;
+ 
++  DROP TEMPORARY TABLE IF EXISTS tt_tmp_xx_1;
++  DROP TEMPORARY TABLE IF EXISTS nt_tmp_xx_1;
++
+   --let $n= $tot_table
+   while ($n)
+   { 
+     --eval DROP TABLE IF EXISTS nt_$n
++    --eval DROP TEMPORARY TABLE IF EXISTS tt_tmp_$n
++    --eval DROP TEMPORARY TABLE IF EXISTS nt_tmp_$n
+     --dec $n
+   }
+ 
+diff -rpu a/mysql-test/extra/rpl_tests/rpl_innodb.test b/mysql-test/extra/rpl_tests/rpl_innodb.test
+--- a/mysql-test/extra/rpl_tests/rpl_innodb.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/extra/rpl_tests/rpl_innodb.test	2013-09-23 17:17:56.192985008 +0200
+@@ -112,7 +112,7 @@ FLUSH LOGS;
+ --echo -------- switch to master --------
+ connection master;
+ FLUSH LOGS;
+-
++DROP TEMPORARY TABLE IF EXISTS mysqltest1.tmp2;
+ DROP DATABASE mysqltest1;
+ 
+ --echo End of 5.1 tests
+diff -rpu a/mysql-test/extra/rpl_tests/rpl_reset_slave.test b/mysql-test/extra/rpl_tests/rpl_reset_slave.test
+--- a/mysql-test/extra/rpl_tests/rpl_reset_slave.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/extra/rpl_tests/rpl_reset_slave.test	2013-09-23 17:17:56.192985008 +0200
+@@ -38,6 +38,9 @@ reset slave;
+ source include/start_slave.inc;
+ sync_with_master;
+ show status like 'slave_open_temp_tables';
++connection master;
++drop temporary table if exists t1;
++sync_slave_with_master;
+ 
+ #
+ #Bug#34654  	RESET SLAVE does not clear LAST_IO_Err* 
+diff -rpu a/mysql-test/include/mtr_check.sql b/mysql-test/include/mtr_check.sql
+--- a/mysql-test/include/mtr_check.sql	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/include/mtr_check.sql	2013-09-23 17:17:56.192985008 +0200
+@@ -72,6 +72,8 @@ BEGIN
+     mysql.time_zone_transition_type,
+     mysql.user;
+ 
++ show status like 'slave_open_temp_tables';
++
+ END||
+ 
+ --
+diff -rpu a/mysql-test/suite/rpl/r/rpl_create_tmp_table_if_not_exists.result b/mysql-test/suite/rpl/r/rpl_create_tmp_table_if_not_exists.result
+--- a/mysql-test/suite/rpl/r/rpl_create_tmp_table_if_not_exists.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_create_tmp_table_if_not_exists.result	2013-09-23 17:19:55.288988163 +0200
+@@ -15,4 +15,7 @@ master-bin.000001	#	Query	#	#	use `test`
+ master-bin.000001	#	Query	#	#	use `test`; CREATE TEMPORARY TABLE IF NOT EXISTS tmp1 LIKE tmp
+ master-bin.000001	#	Query	#	#	use `test`; CREATE TEMPORARY TABLE IF NOT EXISTS tmp1 LIKE tmp
+ master-bin.000001	#	Query	#	#	use `test`; CREATE TEMPORARY TABLE IF NOT EXISTS tmp2 SELECT * FROM tmp
++DROP TEMPORARY TABLE IF EXISTS tmp;
++DROP TEMPORARY TABLE IF EXISTS tmp1;
++DROP TEMPORARY TABLE IF EXISTS tmp2;
+ include/rpl_end.inc
+diff -rpu a/mysql-test/suite/rpl/r/rpl_mixed_ddl_dml.result b/mysql-test/suite/rpl/r/rpl_mixed_ddl_dml.result
+--- a/mysql-test/suite/rpl/r/rpl_mixed_ddl_dml.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_mixed_ddl_dml.result	2013-09-23 17:17:56.192985008 +0200
+@@ -42,4 +42,5 @@ t5	CREATE TABLE `t5` (
+   `created` datetime DEFAULT NULL
+ ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+ drop table t2,t3,t5;
++drop temporary table if exists t4;
+ include/rpl_end.inc
+diff -rpu a/mysql-test/suite/rpl/r/rpl_mixed_drop_create_temp_table.result b/mysql-test/suite/rpl/r/rpl_mixed_drop_create_temp_table.result
+--- a/mysql-test/suite/rpl/r/rpl_mixed_drop_create_temp_table.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_mixed_drop_create_temp_table.result	2013-09-23 17:17:56.192985008 +0200
+@@ -1554,8 +1554,14 @@ master-bin.000001	#	Query	#	#	COMMIT
+ SET @commands= 'clean';
+ DROP TABLE IF EXISTS tt_xx_1;
+ DROP TABLE IF EXISTS nt_xx_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_xx_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_xx_1;
+ DROP TABLE IF EXISTS nt_2;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_2;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_2;
+ DROP TABLE IF EXISTS nt_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_1;
+ DROP TABLE IF EXISTS tt_2;
+ DROP TABLE IF EXISTS tt_1;
+ SET @commands= '';
+diff -rpu a/mysql-test/suite/rpl/r/rpl_rotate_logs.result b/mysql-test/suite/rpl/r/rpl_rotate_logs.result
+--- a/mysql-test/suite/rpl/r/rpl_rotate_logs.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_rotate_logs.result	2013-09-23 17:17:56.192985008 +0200
+@@ -85,6 +85,7 @@ lock tables t3 read;
+ include/assert.inc [Table t3 should contain 100 lines on the slave]
+ unlock tables;
+ drop table if exists t1,t2,t3,t4;
++drop temporary table temp_table;
+ End of 4.1 tests
+ show binlog events in 'non existing_binlog_file';
+ ERROR HY000: Error when executing command SHOW BINLOG EVENTS: Could not find target log
+diff -rpu a/mysql-test/suite/rpl/r/rpl_row_drop_create_temp_table.result b/mysql-test/suite/rpl/r/rpl_row_drop_create_temp_table.result
+--- a/mysql-test/suite/rpl/r/rpl_row_drop_create_temp_table.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_row_drop_create_temp_table.result	2013-09-23 17:49:08.116647381 +0200
+@@ -1619,8 +1619,14 @@ master-bin.000001	#	Query	#	#	COMMIT
+ SET @commands= 'clean';
+ DROP TABLE IF EXISTS tt_xx_1;
+ DROP TABLE IF EXISTS nt_xx_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_xx_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_xx_1;
+ DROP TABLE IF EXISTS nt_2;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_2;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_2;
+ DROP TABLE IF EXISTS nt_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_1;
+ DROP TABLE IF EXISTS tt_2;
+ DROP TABLE IF EXISTS tt_1;
+ SET @commands= '';
+diff -rpu a/mysql-test/suite/rpl/r/rpl_row_reset_slave.result b/mysql-test/suite/rpl/r/rpl_row_reset_slave.result
+--- a/mysql-test/suite/rpl/r/rpl_row_reset_slave.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_row_reset_slave.result	2013-09-23 17:44:43.347950788 +0200
+@@ -23,6 +23,7 @@ include/start_slave.inc
+ show status like 'slave_open_temp_tables';
+ Variable_name	Value
+ Slave_open_temp_tables	0
++drop temporary table if exists t1;
+ include/stop_slave.inc
+ reset slave;
+ include/check_slave_no_error.inc
+diff -rpu a/mysql-test/suite/rpl/r/rpl_stm_000001.result b/mysql-test/suite/rpl/r/rpl_stm_000001.result
+--- a/mysql-test/suite/rpl/r/rpl_stm_000001.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_stm_000001.result	2013-09-23 17:17:56.192985008 +0200
+@@ -48,6 +48,7 @@ select (@id := id) - id from t2;
+ 0
+ kill @id;
+ drop table t2;
++drop temporary table if exists t3;
+ Got one of the listed errors
+ include/wait_for_slave_sql_error_and_skip.inc [errno=1053]
+ select count(*) from t1;
+diff -rpu a/mysql-test/suite/rpl/r/rpl_stm_drop_create_temp_table.result b/mysql-test/suite/rpl/r/rpl_stm_drop_create_temp_table.result
+--- a/mysql-test/suite/rpl/r/rpl_stm_drop_create_temp_table.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_stm_drop_create_temp_table.result	2013-09-23 17:17:56.192985008 +0200
+@@ -1604,8 +1604,14 @@ master-bin.000001	#	Query	#	#	ROLLBACK
+ SET @commands= 'clean';
+ DROP TABLE IF EXISTS tt_xx_1;
+ DROP TABLE IF EXISTS nt_xx_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_xx_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_xx_1;
+ DROP TABLE IF EXISTS nt_2;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_2;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_2;
+ DROP TABLE IF EXISTS nt_1;
++DROP TEMPORARY TABLE IF EXISTS tt_tmp_1;
++DROP TEMPORARY TABLE IF EXISTS nt_tmp_1;
+ DROP TABLE IF EXISTS tt_2;
+ DROP TABLE IF EXISTS tt_1;
+ SET @commands= '';
+diff -rpu a/mysql-test/suite/rpl/r/rpl_stm_innodb.result b/mysql-test/suite/rpl/r/rpl_stm_innodb.result
+--- a/mysql-test/suite/rpl/r/rpl_stm_innodb.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_stm_innodb.result	2013-09-23 17:17:56.192985008 +0200
+@@ -79,6 +79,7 @@ COUNT(*)
+ FLUSH LOGS;
+ -------- switch to master --------
+ FLUSH LOGS;
++DROP TEMPORARY TABLE IF EXISTS mysqltest1.tmp2;
+ DROP DATABASE mysqltest1;
+ End of 5.1 tests
+ #
+diff -rpu a/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result b/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result
+--- a/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result	2013-09-23 17:22:01.585056446 +0200
+@@ -23,6 +23,7 @@ include/start_slave.inc
+ show status like 'slave_open_temp_tables';
+ Variable_name	Value
+ Slave_open_temp_tables	1
++drop temporary table if exists t1;
+ include/stop_slave.inc
+ reset slave;
+ include/check_slave_no_error.inc
+diff -rpu a/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test b/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test
+--- a/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test	2013-09-23 17:17:56.192985008 +0200
+@@ -38,4 +38,8 @@ CREATE TEMPORARY TABLE IF NOT EXISTS tmp
+ CREATE TEMPORARY TABLE IF NOT EXISTS tmp2 SELECT * FROM tmp;
+ source include/show_binlog_events.inc;
+ 
++DROP TEMPORARY TABLE IF EXISTS tmp;
++DROP TEMPORARY TABLE IF EXISTS tmp1;
++DROP TEMPORARY TABLE IF EXISTS tmp2;
++
+ --source include/rpl_end.inc
+diff -rpu a/mysql-test/suite/rpl/t/rpl_mixed_ddl_dml.test b/mysql-test/suite/rpl/t/rpl_mixed_ddl_dml.test
+--- a/mysql-test/suite/rpl/t/rpl_mixed_ddl_dml.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/t/rpl_mixed_ddl_dml.test	2013-09-23 17:17:56.192985008 +0200
+@@ -43,6 +43,7 @@ show create table t3;
+ show create table t5;
+ connection master;
+ drop table t2,t3,t5;
++drop temporary table if exists t4;
+ sync_slave_with_master;
+ 
+ # End of 4.1 tests
+diff -rpu a/mysql-test/suite/rpl/t/rpl_rotate_logs.test b/mysql-test/suite/rpl/t/rpl_rotate_logs.test
+--- a/mysql-test/suite/rpl/t/rpl_rotate_logs.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/t/rpl_rotate_logs.test	2013-09-23 17:17:56.192985008 +0200
+@@ -218,6 +218,7 @@ unlock tables;
+ #clean up
+ connection master;
+ drop table if exists t1,t2,t3,t4;
++drop temporary table temp_table;
+ sync_slave_with_master;
+ 
+ --echo End of 4.1 tests
+diff -rpu a/mysql-test/suite/rpl/t/rpl_stm_000001.test b/mysql-test/suite/rpl/t/rpl_stm_000001.test
+--- a/mysql-test/suite/rpl/t/rpl_stm_000001.test	2013-07-15 14:01:49.000000000 +0200
++++ b/mysql-test/suite/rpl/t/rpl_stm_000001.test	2013-09-23 17:17:56.192985008 +0200
+@@ -91,8 +91,8 @@ connection master1;
+ sleep 3;
+ select (@id := id) - id from t2;
+ kill @id;
+-# We don't drop t3 as this is a temporary table
+ drop table t2;
++drop temporary table if exists t3;
+ connection master;
+ # The get_lock function causes warning for unsafe statement.
+ --disable_warnings
