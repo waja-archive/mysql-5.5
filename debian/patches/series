@@ -10,3 +10,6 @@ regex_plus.patch
 versioned_symbols.patch
 fix-mips64el-ftbfs.patch
 fix-racey-rpltests.patch
+33_scripts__mysql_create_system_tables__no_test.patch
+41_scripts__mysql_install_db.sh__no_test.patch
+50_mysql-test__db_test.patch

@@ -1,3 +1,14 @@
+mysql-5.5 (5.5.33+dfsg-2) UNRELEASED; urgency=low
+
+  * d/p/33_scripts__mysql_create_system_tables__no_test.patch,
+    d/p/41_scripts__mysql_install_db.sh__no_test.patch,
+    d/p/50_mysql-test__db_test.patch: Restored from mysql-5.1
+    package, inadvertently dropped in 5.5 transition. This
+    removes the global anonymous access to the database which
+    is a security concern.
+
+ -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
+
 mysql-5.5 (5.5.33+dfsg-1) unstable; urgency=low
 
   * d/rules, d/control: Remove gcc-4.4 dependency and disable X86

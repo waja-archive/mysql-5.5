@@ -1,0 +1,19 @@
+From: Christian Hammers <ch@debian.org>
+Description: restores the rights for anybody to connect to the test
+ database so that the test suite can function properly.
+
+Index: mysql-5.5-5.5.33+dfsg/mysql-test/mysql-test-run.pl
+===================================================================
+--- mysql-5.5-5.5.33+dfsg.orig/mysql-test/mysql-test-run.pl	2013-09-26 18:57:40.686303901 -0700
++++ mysql-5.5-5.5.33+dfsg/mysql-test/mysql-test-run.pl	2013-09-26 18:57:40.682304133 -0700
+@@ -3355,6 +3355,10 @@
+     mtr_appendfile_to_file("$sql_dir/mysql_system_tables_data.sql",
+ 			   $bootstrap_sql_file);
+ 
++    mtr_tofile($bootstrap_sql_file, "-- Debian removed the default privileges on the 'test' database\n");
++    mtr_tofile($bootstrap_sql_file, "INSERT INTO mysql.db VALUES ('%','test','','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','N','N','Y','Y');\n");
++    
++
+     # Add test data for timezone - this is just a subset, on a real
+     # system these tables will be populated either by mysql_tzinfo_to_sql
+     # or by downloading the timezone table package from our website
