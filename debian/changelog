@@ -15,6 +15,17 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
     - d/p/50_mysql-test__db_test.patch: Add extra permissions to
       mysql-run-tests.pl for test_% accounts, fixing failing tests.
     - d/p/*: Refreshed patches.
+    SECURITY UPDATE:
+     - http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html
+     - CVE-2013-5891
+     - CVE-2013-5908
+     - CVE-2014-0386
+     - CVE-2014-0393
+     - CVE-2014-0401
+     - CVE-2014-0402
+     - CVE-2014-0412
+     - CVE-2014-0420
+     - CVE-2014-0437
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
 
