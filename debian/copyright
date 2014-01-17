@@ -8,7 +8,7 @@ Comment:
  See debian/README.source for how this repacking was done.
  .
  Originally produced by a modified version of licensecheck2dep5
- from CDBS by Clint Byrum <clint@ubuntu.com>. Hand modified to reduce 
+ from CDBS by Clint Byrum <clint@ubuntu.com>. Hand modified to reduce
  redundancy in the output and add appropriate license text. The file
  has been rechecked against the source using the development version
  of license-reconcile, see #686485.
@@ -67,7 +67,7 @@ Comment:
  > .
  > "Program" means a copy of Oracle's MySQL Client Libraries that
  > contains a FOSS Notice.
- > . 
+ > .
  > A FOSS application developer ("you" or "your") may distribute a
  > Derivative Work provided that you and the Derivative Work meet all
  > of the following conditions: You obey the GPL in all respects for
@@ -89,7 +89,7 @@ Comment:
  > does not apply to you or your Derivative Work.
  > .
  > FOSS License List
- > . 
+ > .
  > License Name    Version(s)/Copyright Date
  > Release Early    Certified Software
  > Academic Free License    2.0
@@ -131,7 +131,7 @@ Copyright: 2000, 2013, Oracle and/or its affiliates. All rights reserved.
 License: GPL-2
 
 Files: debian/*
-Copyright: 
+Copyright:
  1997-1998, Scott Hanson <shanson@debian.org>
  1997, Christian Schwarz <schwarz@debian.org>
  1999-2007, 2009, Christian Hammers <ch@debian.org>
@@ -191,11 +191,11 @@ Comment: These files fall under the blanket license specified in the file
 License: GPL-2
  GPLv2 Disclaimer
  For the avoidance of doubt, except that if any license choice
- other than GPL or LGPL is available it will apply instead, 
- Oracle elects to use only the General Public License version 2 
- (GPLv2) at this time for any software where a choice of GPL 
- license versions is made available with the language indicating 
- that GPLv2 or any later version may be used, or where a choice 
+ other than GPL or LGPL is available it will apply instead,
+ Oracle elects to use only the General Public License version 2
+ (GPLv2) at this time for any software where a choice of GPL
+ license versions is made available with the language indicating
+ that GPLv2 or any later version may be used, or where a choice
  of which version of the GPL is applied is otherwise unspecified.
 
 Files: BUILD/*
@@ -539,29 +539,29 @@ Files: dbug/dbug.c
  dbug/dbug_long.h
 Copyright: 1987 Abandoned Fred Fish
 License: public-domain
- N O T I C E				      
+ N O T I C E
  .
- Copyright Abandoned, 1987, Fred Fish		      
+ Copyright Abandoned, 1987, Fred Fish
  .
  .
- This previously copyrighted work has been placed into the  public     
- domain	by  the  author  and  may be freely used for any purpose,     
- private or commercial.						      
+ This previously copyrighted work has been placed into the  public
+ domain	by  the  author  and  may be freely used for any purpose,
+ private or commercial.
  .
- Because of the number of inquiries I was receiving about the  use     
- of this product in commercially developed works I have decided to     
- simply make it public domain to further its unrestricted use.	I     
- specifically  would  be  most happy to see this material become a     
- part of the standard Unix distributions by AT&T and the  Berkeley     
- Computer  Science  Research Group, and a standard part of the GNU     
- system from the Free Software Foundation.			      
+ Because of the number of inquiries I was receiving about the  use
+ of this product in commercially developed works I have decided to
+ simply make it public domain to further its unrestricted use.	I
+ specifically  would  be  most happy to see this material become a
+ part of the standard Unix distributions by AT&T and the  Berkeley
+ Computer  Science  Research Group, and a standard part of the GNU
+ system from the Free Software Foundation.
  .
- I would appreciate it, as a courtesy, if this notice is  left  in     
- all copies and derivative works.  Thank you.			      
+ I would appreciate it, as a courtesy, if this notice is  left  in
+ all copies and derivative works.  Thank you.
  .
- The author makes no warranty of any kind  with	respect  to  this     
- product  and  explicitly disclaims any implied warranties of mer-     
- chantability or fitness for any particular purpose.		      
+ The author makes no warranty of any kind  with	respect  to  this
+ product  and  explicitly disclaims any implied warranties of mer-
+ chantability or fitness for any particular purpose.
 
 Files: cmd-line-utils/libedit/np/vis.c
 Copyright: 1989-1993 The Regents of the University of California.
@@ -659,7 +659,7 @@ License: SWsoft
  This material is provided "as is", with absolutely no warranty expressed
  or implied. Any use is at your own risk.
  .
- Permission to use or copy this software for any purpose is hereby granted 
+ Permission to use or copy this software for any purpose is hereby granted
  without fee, provided the above notices are retained on all copies.
  Permission to modify the code and to distribute modified code is granted,
  provided the above notices are retained, and a notice that the code was
