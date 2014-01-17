@@ -31,7 +31,7 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
       to drop insecure database permissions.
     - SECURITY UPDATE: Insecure creation of the credential file debian.cnf.
       - d/mysql-server-5.5.postinst: Set umask to 066 before creating
-        debian.cnf file (Closes: #711600)(LP: #1185573).
+        debian.cnf file (Closes: #711600).
       - CVE-2013-2162
     - d/copyright: Update copyright years for upstream files.
 
