@@ -37,6 +37,7 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
   * d/control: Update VCS field for new git location.
   * d/control: Add myself to Uploaders.
   * d/*: Wrap and sort.
+  * d/control: Bumped Standards-Version, no changes.
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
 
