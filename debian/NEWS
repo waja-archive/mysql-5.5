@@ -1,0 +1,22 @@
+mysql-5.5 (5.5.35+dfsg-1) unstable; urgency=low
+
+  mysql-server-5.5 ships with the upstream mysql_install_db script which
+  creates a database "test" and sets up permissions that allow anonymous
+  access, without a password, from localhost to the "test" database and
+  any databases starting with "test_" that users might have created
+  after installing mysql-server.
+
+  During the migration of mysql-5.1 to mysql-5.5 in Debian the patches
+  to drop these permissions and the creation of the test databases were
+  not applied. This update resolves this issue for new installations of
+  mysql-server-5.5.
+
+  If you are updating from a previous version of mysql-5.5 it is
+  recommended to check your installation and to drop these privileges
+  and databases manually.
+
+  Further information can be found at the MySQL 5.5 Reference Manual[1].
+
+   [1] http://dev.mysql.com/doc/refman/5.5/en/default-privileges.html
+
+ -- James Page <jamespage@debian.org>  Fri, 17 Jan 2014 17:15:31 +0000

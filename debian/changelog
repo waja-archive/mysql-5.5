@@ -26,6 +26,9 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
      - CVE-2014-0412
      - CVE-2014-0420
      - CVE-2014-0437
+  * Sync changes from NMU 5.5.33+dfsg-0+wheezy1:
+    - d/NEWS: Add NEWS file to document changes needed to existing databases
+      to drop insecure database permissions.
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
 
