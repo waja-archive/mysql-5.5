@@ -15,24 +15,24 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
     - d/p/50_mysql-test__db_test.patch: Add extra permissions to
       mysql-run-tests.pl for test_% accounts, fixing failing tests.
     - d/p/*: Refreshed patches.
-    SECURITY UPDATE:
-     - http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html
-     - CVE-2013-5891
-     - CVE-2013-5908
-     - CVE-2014-0386
-     - CVE-2014-0393
-     - CVE-2014-0401
-     - CVE-2014-0402
-     - CVE-2014-0412
-     - CVE-2014-0420
-     - CVE-2014-0437
+    - SECURITY UPDATE:
+      http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html
+      - CVE-2013-5891
+      - CVE-2013-5908
+      - CVE-2014-0386
+      - CVE-2014-0393
+      - CVE-2014-0401
+      - CVE-2014-0402
+      - CVE-2014-0412
+      - CVE-2014-0420
+      - CVE-2014-0437
   * Sync changes from NMU 5.5.33+dfsg-0+wheezy1:
     - d/NEWS: Add NEWS file to document changes needed to existing databases
       to drop insecure database permissions.
     - SECURITY UPDATE: Insecure creation of the credential file debian.cnf.
-       - d/mysql-server-5.5.postinst: Set umask to 066 before creating
-         debian.cnf file (Closes: #711600)(LP: #1185573).
-       - CVE-2013-2162
+      - d/mysql-server-5.5.postinst: Set umask to 066 before creating
+        debian.cnf file (Closes: #711600)(LP: #1185573).
+      - CVE-2013-2162
     - d/copyright: Update copyright years for upstream files.
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
