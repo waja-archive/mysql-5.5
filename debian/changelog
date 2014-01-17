@@ -29,6 +29,10 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
   * Sync changes from NMU 5.5.33+dfsg-0+wheezy1:
     - d/NEWS: Add NEWS file to document changes needed to existing databases
       to drop insecure database permissions.
+    SECURITY UPDATE:
+     - CVE-2013-2162: Insecure creation of the credential file debian.cnf.
+       Set umask to 066 before creating debian.cnf file. (Closes: #711600)
+       (LP: #1185573)
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
 
