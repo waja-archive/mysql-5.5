@@ -34,6 +34,7 @@ mysql-5.5 (5.5.35+dfsg-1) UNRELEASED; urgency=low
         debian.cnf file (Closes: #711600).
       - CVE-2013-2162
     - d/copyright: Update copyright years for upstream files.
+  * d/control: Update VCS field for new git location.
 
  -- Clint Byrum <spamaps@debian.org>  Thu, 26 Sep 2013 18:51:57 -0700
 
