@@ -117,6 +117,7 @@ Depends:
  debianutils (>=1.6),
  libdbd-mysql-perl (>= 1.2202),
  libdbi-perl,
+ libterm-readkey-perl,
  mysql-common (>= ${source:Version}),
  ${misc:Depends},
  ${perl:Depends},
@@ -127,7 +128,6 @@ Replaces:
  mysql-client (<< ${source:Version}),
  mysql-client-5.0,
  mysql-client-5.1
-Suggests: libterm-readkey-perl
 Description: MySQL database client binaries
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
