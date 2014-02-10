@@ -29,6 +29,7 @@ Standards-Version: 3.9.5
 Homepage: http://dev.mysql.com/
 Vcs-Git: git://git.debian.org/git/pkg-mysql/mysql-5.5.git
 Vcs-Browser: http://git.debian.org/?p=pkg-mysql/mysql-5.5.git
+XS-Testsuite: autopkgtest
 
 Package: libmysqlclient18
 Section: libs

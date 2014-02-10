@@ -1,0 +1,5 @@
+Tests: build
+Depends: libmysqlclient-dev, build-essential
+
+Tests: upstream
+Depends: mysql-testsuite
