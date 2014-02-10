@@ -162,8 +162,8 @@ Description: MySQL database server binaries
 
 Package: mysql-server-5.5
 Architecture: any
-Suggests: tinyca
-Recommends: libhtml-template-perl, mailx
+Suggests: tinyca, mailx
+Recommends: libhtml-template-perl
 Pre-Depends: adduser (>= 3.40), debconf, mysql-common (>= ${source:Version})
 Depends:
  initscripts (>= 2.88dsf-13.3),
