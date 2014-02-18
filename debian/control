@@ -224,7 +224,7 @@ Description: MySQL database client (metapackage depending on the latest version)
 
 Package: mysql-testsuite
 Architecture: all
-Depends: mysql-testsuite-5.5
+Depends: mysql-testsuite-5.5, ${misc:Depends}
 Description: MySQL testsuite
  This is an empty package that depends on the current "best" version of
  mysql-testsuite (currently mysql-testsuite-5.5), as determined by the
