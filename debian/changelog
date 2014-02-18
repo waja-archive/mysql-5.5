@@ -1,9 +1,22 @@
 mysql-5.5 (5.5.35+dfsg-2) UNRELEASED; urgency=low
 
+  [ Clint Byrum ]
   * d/mysql-server-5.5.mysql.init: Increase timeout to 30s.
     (Closes: #736452)
   * d/mysql-server-5.5.postinst: Run mysql_install_db as mysql so tables are
     not created as root. (Closes: #737224)
+
+  [ Robie Basak ]
+  * Re-sync relevant Ubuntu changes:
+    - d/control: Make innotop usable without installing Suggests.
+    - d/rules: Build with debug symbols.
+    - d/{additions/my.cnf,mysql-server-5.5.mysql-server.logrotate}:
+      Write an error log and logrotate it.
+    - d/control,rules,apparmor-profile,mysql-server-5.5.files:
+      Add AppArmor profile (Closes: #736087).
+    - d/control: Move mailx from Recommends to Suggests.
+    - d/control,d/tests/*: Add DEP-8 tests.
+    - d/control: Re-add mysql-testsuite metapackage.
 
  -- Clint Byrum <clint@fewbar.com>  Sat, 25 Jan 2014 11:01:25 -0800
 
