@@ -109,8 +109,8 @@ case "${1:-''}" in
   	    /usr/bin/mysqld_safe > /dev/null 2>&1 &
 
 	    # 6s was reported in #352070 to be too few when using ndbcluster
-        # 14s was reported in #736452 to be too few with large installs
-        for i in $(seq 1 30); do
+	    # 14s was reported in #736452 to be too few with large installs
+	    for i in $(seq 1 30); do
                 sleep 1
 	        if mysqld_status check_alive nowarn ; then break; fi
 		log_progress_msg "."
