@@ -2,6 +2,8 @@ mysql-5.5 (5.5.35+dfsg-3) UNRELEASED; urgency=medium
 
   * d/mysql-server-5.5.mysql.init: Fixup indentation on previous change
     (Closes: #739846).
+  * d/rules: Always install apparmor profile, not just on Ubuntu
+    (Closes: #736087).
 
  -- James Page <james.page@ubuntu.com>  Mon, 10 Mar 2014 10:56:08 +0000
 
