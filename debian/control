@@ -121,12 +121,19 @@ Depends:
  ${misc:Depends},
  ${perl:Depends},
  ${shlibs:Depends}
-Provides: mysql-client, virtual-mysql-client
-Breaks: mysql-client (<< ${source:Version}), mysql-client-5.0, mysql-client-5.1
+Provides: mysql-client, virtual-mysql-client, virtual-mysql-client-core
+Breaks:
+ mysql-client (<< ${source:Version}),
+ mysql-client-5.0,
+ mysql-client-5.1,
+ virtual-mysql-client,
+ virtual-mysql-client-core
 Replaces:
  mysql-client (<< ${source:Version}),
  mysql-client-5.0,
- mysql-client-5.1
+ mysql-client-5.1,
+ virtual-mysql-client,
+ virtual-mysql-client-core
 Description: MySQL database client binaries
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
@@ -143,14 +150,16 @@ Breaks:
  mysql-client-5.1,
  mysql-server-5.0,
  mysql-server-5.1,
- mysql-server-core-5.1
-Provides: mysql-server-core
+ mysql-server-core-5.1,
+ virtual-mysql-server-core
+Provides: mysql-server-core, virtual-mysql-server-core
 Replaces:
  mysql-client-5.1,
  mysql-server-5.0,
  mysql-server-5.1,
  mysql-server-core-5.0,
- mysql-server-core-5.1
+ mysql-server-core-5.1,
+ virtual-mysql-server-core
 Description: MySQL database server binaries
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
@@ -162,7 +171,7 @@ Description: MySQL database server binaries
 
 Package: mysql-server-5.5
 Architecture: any
-Suggests: tinyca, mailx
+Suggests: mailx, tinyca
 Recommends: libhtml-template-perl
 Pre-Depends: adduser (>= 3.40), debconf, mysql-common (>= ${source:Version})
 Depends:
@@ -180,14 +189,16 @@ Breaks:
  libmysqlclient-dev ( << 5.5.17~),
  mysql-client-5.1,
  mysql-server (<< ${source:Version}),
- mysql-server-5.1
+ mysql-server-5.1,
+ virtual-mysql-server
 Provides: virtual-mysql-server
 Replaces:
  libmysqlclient-dev ( << 5.5.17~),
  mysql-client-5.1,
  mysql-server (<< ${source:Version}),
  mysql-server-5.0,
- mysql-server-5.1
+ mysql-server-5.1,
+ virtual-mysql-server
 Description: MySQL database server binaries and system database setup
  MySQL is a fast, stable and true multi-user, multi-threaded SQL database
  server. SQL (Structured Query Language) is the most popular database query
@@ -238,6 +249,9 @@ Depends:
  mysql-server (= ${source:Version}),
  ${misc:Depends},
  ${shlibs:Depends}
+Provides: virtual-mysql-testsuite
+Breaks: virtual-mysql-testsuite
+Replaces: virtual-mysql-testsuite
 Description: MySQL testsuite
  MySQL is a fast, stable, and true multi-user, multi-threaded SQL database
  server.  SQL (Structured Query Language) is the most popular database query
