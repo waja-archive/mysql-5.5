@@ -1,6 +1,9 @@
 mysql-5.5 (5.5.36+dfsg-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * d/p/CVE-2014-0001.patch:
+    - Fix buffer overflow in client/mysql.cc via a long server version string.
+      CVE-2014-0001
   * d/mysql-server-5.5.mysql.init: Fixup indentation on previous change
     (Closes: #739846).
   * d/rules: Always install apparmor profile, not just on Ubuntu
