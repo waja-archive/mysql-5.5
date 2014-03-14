@@ -518,11 +518,11 @@ Production Releases
    Windows examples will assume the name md5.exe.
 
    Linux and Microsoft Windows examples:
-shell> md5sum mysql-standard-5.5.36-linux-i686.tar.gz
-aaab65abbec64d5e907dcd41b8699945  mysql-standard-5.5.36-linux-i686.ta
+shell> md5sum mysql-standard-5.5.37-linux-i686.tar.gz
+aaab65abbec64d5e907dcd41b8699945  mysql-standard-5.5.37-linux-i686.ta
 r.gz
-shell> md5.exe mysql-installer-community-5.5.36.msi
-aaab65abbec64d5e907dcd41b8699945  mysql-installer-community-5.5.36.ms
+shell> md5.exe mysql-installer-community-5.5.37.msi
+aaab65abbec64d5e907dcd41b8699945  mysql-installer-community-5.5.37.ms
 i
 
    You should verify that the resulting checksum (the string of
@@ -632,8 +632,8 @@ shell> rpm --import mysql_pubkey.asc
 
    Table 2.1. MySQL Package and Signature Files for Source files
        File Type                      File Name
-   Distribution file mysql-standard-5.5.36-linux-i686.tar.gz
-   Signature file    mysql-standard-5.5.36-linux-i686.tar.gz.asc
+   Distribution file mysql-standard-5.5.37-linux-i686.tar.gz
+   Signature file    mysql-standard-5.5.37-linux-i686.tar.gz.asc
 
    Make sure that both files are stored in the same directory and
    then run the following command to verify the signature for the
@@ -642,7 +642,7 @@ shell> gpg --verify package_name.asc
 
    If the downloaded package is valid, you will see a "Good
    signature" similar to:
-shell> gpg --verify mysql-standard-5.5.36-linux-i686.tar.gz.asc
+shell> gpg --verify mysql-standard-5.5.37-linux-i686.tar.gz.asc
 gpg: Signature made Tue 01 Feb 2011 02:38:30 AM CST using DSA key ID
 5072E1F5
 gpg: Good signature from "MySQL Release Engineering <mysql-build@oss.
@@ -651,7 +651,7 @@ oracle.com>"
    The Good signature message indicates that the file signature is
    valid, when compared to the signature listed on our site. But you
    might also see warnings, like so:
-shell> gpg --verify mysql-standard-5.5.36-linux-i686.tar.gz.asc
+shell> gpg --verify mysql-standard-5.5.37-linux-i686.tar.gz.asc
 gpg: Signature made Wed 23 Jan 2013 02:25:45 AM PST using DSA key ID
 5072E1F5
 gpg: checking the trustdb
@@ -733,8 +733,8 @@ Primary key fingerprint: A4A9 4068 76FC BD3C 4567  70C8 8C71 8D3B 507
    Table 2.2. MySQL Package and Signature Files for MySQL Installer
    for Microsoft Windows
        File Type                    File Name
-   Distribution file mysql-installer-community-5.5.36.msi
-   Signature file    mysql-installer-community-5.5.36.msi.asc
+   Distribution file mysql-installer-community-5.5.37.msi
+   Signature file    mysql-installer-community-5.5.37.msi.asc
 
    Make sure that both files are stored in the same directory and
    then run the following command to verify the signature for the
@@ -770,8 +770,8 @@ Primary key fingerprint: A4A9 4068 76FC BD3C 4567  70C8 8C71 8D3B 507
 shell> rpm --checksig package_name.rpm
 
    Example:
-shell> rpm --checksig MySQL-server-5.5.36-0.glibc23.i386.rpm
-MySQL-server-5.5.36-0.glibc23.i386.rpm: md5 gpg OK
+shell> rpm --checksig MySQL-server-5.5.37-0.glibc23.i386.rpm
+MySQL-server-5.5.37-0.glibc23.i386.rpm: md5 gpg OK
 
    Note
 
@@ -850,7 +850,7 @@ pg-signature.html
 
    MySQL compressed tar file binary distributions have names of the
    form mysql-VERSION-OS.tar.gz, where VERSION is a number (for
-   example, 5.5.36), and OS indicates the type of operating system
+   example, 5.5.37), and OS indicates the type of operating system
    for which the distribution is intended (for example, pc-linux-i686
    or winx64).
 
@@ -1005,19 +1005,15 @@ Perform Postinstallation Setup
 
 2.3. Installing MySQL on Microsoft Windows
 
-   MySQL for Microsoft Windows is available in a number of different
-   forms. A Microsoft Windows operating system such as Windows XP,
-   Windows Vista, Windows 7, Windows 8, Windows Server 2003, Windows
-   Server 2008, or Windows Server 2012. Both 32-bit and 64-bit
-   versions are supported. For supported platform information, see
+   MySQL is available for Microsoft Windows, for both 32-bit and
+   64-bit versions. For supported Windows platform information, see
    http://www.mysql.com/support/supportedplatforms/database.html.
 
-   In addition to running MySQL as a standard application, you can
-   also run the MySQL server as a Windows service. By using a service
-   you can monitor and control the operation of the server through
-   the standard Windows service management tools. For more
-   information, see Section 2.3.7.7, "Starting MySQL as a Windows
-   Service."
+   It is possible to run MySQL as a standard application or as a
+   Windows service. By using a service, you can monitor and control
+   the operation of the server through the standard Windows service
+   management tools. For more information, see Section 2.3.7.7,
+   "Starting MySQL as a Windows Service."
 
    Generally, you should install MySQL on Windows using an account
    that has administrator rights. Otherwise, you may encounter
@@ -1026,20 +1022,20 @@ Perform Postinstallation Setup
    Once installed, MySQL does not need to be executed using a user
    with Administrator privileges.
 
-   For a list of limitations within the Windows version of MySQL, see
-   Section E.10.6, "Windows Platform Limitations."
+   For a list of limitations on the use of MySQL on the Windows
+   platform, see Section E.10.6, "Windows Platform Limitations."
 
    In addition to the MySQL Server package, you may need or want
    additional components to use MySQL with your application or
    development environment. These include, but are not limited to:
 
-     * If you plan to connect to the MySQL server using ODBC, you
-       need a Connector/ODBC driver. For more information, including
+     * To connect to the MySQL server using ODBC, you must have a
+       Connector/ODBC driver. For more information, including
        installation and configuration instructions, see Section 22.1,
        "MySQL Connector/ODBC."
 
-     * If you plan to use MySQL server with .NET applications, you
-       need the Connector/Net driver. For more information, including
+     * To use MySQL server with .NET applications, you must have the
+       Connector/Net driver. For more information, including
        installation and configuration instructions, see Section 22.2,
        "MySQL Connector/Net."
 
@@ -1051,49 +1047,38 @@ Perform Postinstallation Setup
    detailed below. Generally speaking, you should use MySQL
    Installer. It contains more features and MySQL products than the
    older MSI, is simpler to use than the ZIP file, and you need no
-   additional tools to get MySQL up and running. MySQL Installer will
-   automatically install MySQL Server, install additional MySQL
-   products, create an options file, starts the server, and allow you
-   to create default user accounts. For more information on choosing
-   a package, see Section 2.3.2, "Choosing An Installation Package."
+   additional tools to get MySQL up and running. MySQL Installer
+   automatically installs MySQL Server and additional MySQL products,
+   creates an options file, starts the server, and enables you to
+   create default user accounts. For more information on choosing a
+   package, see Section 2.3.2, "Choosing An Installation Package."
 
-   MySQL for Windows is available in several distribution formats,
-   detailed below. Generally speaking, you should use a binary
-   distribution that includes an installer. It is simpler to use than
-   the others, and you need no additional tools to get MySQL up and
-   running. The installer for the Windows version of MySQL, combined
-   with a GUI Config Wizard, automatically installs MySQL, creates an
-   option file, starts the server, and secures the default user
-   accounts.
-
-     * Binary installer distribution. There are two different
+     * Binary installer distributions. There are two different
        installable distributions that come packaged as a Microsoft
        Windows Installer (MSI) package that you can install manually
-       or automatically on your systems. The older MSI package that
-       contains all the files you need to install and configure MySQL
-       server, but no additional components, and the preferred MySQL
-       Installer package that includes MySQL Server and additional
-       MySQL products including MySQL Workbench, MySQL Notifier, and
-       MySQL for Excel. And MySQL Installer can also be used to
-       upgrade these product in the future. For more information on
-       choosing a package, see Section 2.3.2, "Choosing An
-       Installation Package"
+       or automatically on your systems. The preferred MySQL
+       Installer package includes MySQL Server and additional MySQL
+       products including MySQL Workbench, MySQL Notifier, and MySQL
+       for Excel. MySQL Installer can also be used to upgrade these
+       product in the future. The older MSI package contains all the
+       files you need to install and configure MySQL server, but no
+       additional components.
        For instructions on installing MySQL using MySQL Installer,
        see Section 2.3.3, "Installing MySQL on Microsoft Windows
        Using MySQL Installer."
 
-     * Standard binary distribution format packaged as a Zip file
-       containing all of the necessary files that you unpack into
-       your chosen location. This package contains all of the files
-       in the full Windows MSI Installer package, but does not
-       include an installation program.
+     * The standard binary distribution (packaged as a Zip file)
+       contains all of the necessary files that you unpack into your
+       chosen location. This package contains all of the files in the
+       full Windows MSI Installer package, but does not include an
+       installation program.
        For instructions on installing MySQL using the Zip file, see
        Section 2.3.7, "Installing MySQL on Microsoft Windows Using a
        noinstall Zip Archive."
 
-     * The source distribution contains all the code and support
-       files for building the executables using the Visual Studio
-       compiler system.
+     * The source distribution format contains all the code and
+       support files for building the executables using the Visual
+       Studio compiler system.
        For instructions on building MySQL from source on Windows, see
        Section 2.10, "Installing MySQL from Source."
 
@@ -1106,23 +1091,23 @@ Perform Postinstallation Setup
        13.1.17, "CREATE TABLE Syntax."
 
      * MySQL and Virus Checking Software
-       Using virus scanning software such as Norton/Symantec
-       Anti-Virus on directories containing MySQL data and temporary
-       tables can cause issues, both in terms of the performance of
-       MySQL and the virus-scanning software mis-identifying the
-       contents of the files as containing spam. This is because of
-       the fingerprinting mechanism used by the virus scanning
-       software, and the way in which MySQL rapidly updates different
-       files, which may be identified as a potential security risk.
+       Virus-scanning software such as Norton/Symantec Anti-Virus on
+       directories containing MySQL data and temporary tables can
+       cause issues, both in terms of the performance of MySQL and
+       the virus-scanning software misidentifying the contents of the
+       files as containing spam. This is due to the fingerprinting
+       mechanism used by the virus-scanning software, and the way in
+       which MySQL rapidly updates different files, which may be
+       identified as a potential security risk.
        After installing MySQL Server, it is recommended that you
-       disable virus scanning on the main directory (datadir) being
-       used to store your MySQL table data. There is usually a system
-       built into the virus scanning software to permit certain
-       directories to be specifically ignored during virus scanning.
+       disable virus scanning on the main directory (datadir) used to
+       store your MySQL table data. There is usually a system built
+       into the virus-scanning software to enable specific
+       directories to be ignored.
        In addition, by default, MySQL creates temporary files in the
        standard Windows temporary directory. To prevent the temporary
-       files also being scanned, you should configure a separate
-       temporary directory for MySQL temporary files and add this to
+       files also being scanned, configure a separate temporary
+       directory for MySQL temporary files and add this directory to
        the virus scanning exclusion list. To do this, add a
        configuration option for the tmpdir parameter to your my.ini
        configuration file. For more information, see Section 2.3.7.2,
@@ -1179,8 +1164,8 @@ Perform Postinstallation Setup
    within the "Complete Package."
 
      * MySQL Installer: This package has a file name similar to
-       mysql-installer-community-5.5.36.0.msi or
-       mysql-installer-commercial-5.5.36.0.msi, and utilizes MSI's to
+       mysql-installer-community-5.5.37.0.msi or
+       mysql-installer-commercial-5.5.37.0.msi, and utilizes MSI's to
        automatically install MySQL server and other products. It will
        download and apply updates to itself, and for each of the
        installed products. It also configures the additional
@@ -1193,21 +1178,24 @@ Perform Postinstallation Setup
        MySQL Installer will run on all Windows platforms that are
        supported by MySQL (see
        http://www.mysql.com/support/supportedplatforms/database.html)
-       . Note: because MySQL is not a native component of Windows and
-       depends on .NET, it will not work on minimal installation
-       options like the "Server Core" version of Windows Server 2008.
+       .
+       Note
+       Because MySQL Installer is not a native component of Microsoft
+       Windows and depends on .NET, it will not work on minimal
+       installation options like the "Server Core" version of Windows
+       Server 2008.
        For instructions on installing MySQL using MySQL Installer,
        see Section 2.3.3, "Installing MySQL on Microsoft Windows
        Using MySQL Installer."
 
      * The Complete Package: This package has a file name similar to
-       mysql-5.5.36-win32.msi and contains all files needed for a
+       mysql-5.5.37-win32.msi and contains all files needed for a
        complete Windows installation, including the Configuration
        Wizard. This package includes optional components such as the
        embedded server and benchmark suite.
 
      * The Noinstall Archive: This package has a file name similar to
-       mysql-5.5.36-win32.zip and contains all the files found in the
+       mysql-5.5.37-win32.zip and contains all the files found in the
        Complete install package, with the exception of the
        Configuration Wizard. This package does not include an
        automated installer, and must be manually installed and
@@ -2255,7 +2243,7 @@ Common Errors
    directory. In a default installation it contains C:\Program
    Files\MySQL\MySQL Server 5.5\. The Version string contains the
    release number. For example, for an installation of MySQL Server
-   5.5.36, the key contains a value of 5.5.36.
+   5.5.37, the key contains a value of 5.5.37.
 
    These registry keys are used to help external tools identify the
    installed location of the MySQL server, preventing a complete scan
@@ -2345,7 +2333,7 @@ MSI Package
    the command line (or within a script), you need to use the
    msiexec.exe tool. For example, to perform a quiet installation
    (which shows no dialog boxes or progress):
-shell> msiexec /i mysql-5.5.36.msi /quiet
+shell> msiexec /i mysql-5.5.37.msi /quiet
 
    The /i indicates that you want to perform an installation. The
    /quiet option indicates that you want no interactive elements.
@@ -2353,7 +2341,7 @@ shell> msiexec /i mysql-5.5.36.msi /quiet
    To provide a dialog box showing the progress during installation,
    and the dialog boxes providing information on the installation and
    registration of MySQL, use /passive mode instead of /quiet:
-shell> msiexec /i mysql-5.5.36.msi /passive
+shell> msiexec /i mysql-5.5.37.msi /passive
 
    Regardless of the mode of the installation, installing the package
    in this manner performs a 'Typical' installation, and installs the
@@ -2361,7 +2349,7 @@ shell> msiexec /i mysql-5.5.36.msi /passive
 
    You can also use this method to uninstall MySQL by using the
    /uninstall or /x options:
-shell> msiexec /x mysql-5.5.36.msi /uninstall
+shell> msiexec /x mysql-5.5.37.msi /uninstall
 
    To install MySQL and configure a MySQL instance from the command
    line, see Section 2.3.6.13, "MySQL Server Instance Config Wizard:
@@ -2946,7 +2934,7 @@ from the Command Line
    service name MySQL55 and setting the root password to 1234.
 shell> MySQLInstanceConfig.exe -i -q "-lC:\mysql_install_log.txt" »
    "-nMySQL Server 5.5" "-pC:\Program Files\MySQL\MySQL Server 5.5" -
-v5.5.36 »
+v5.5.37 »
    "-tmy-template.ini" "-cC:\mytest.ini" ServerType=DEVELOPMENT Datab
 aseType=MIXED »
    ConnectionUsage=DSS Port=3311 ServiceName=MySQL55 RootPassword=123
@@ -2962,7 +2950,7 @@ Date: 2009-10-27 17:07:21
 Installing service ...
 
 Product Name:         MySQL Server 5.5
-Version:              5.5.36
+Version:              5.5.37
 Installation Path:    C:\Program Files\MySQL\MySQL Server 5.5\
 
 Creating configuration file C:\mytest.ini using template my-template.
@@ -3152,15 +3140,12 @@ datadir=E:\\mydata\\data
    database directories.
 
    MySQL supports TCP/IP on all Windows platforms. MySQL servers on
-   Windows support named pipes as indicated in the following list.
-   However, the default is to use TCP/IP regardless of platform.
-   (Named pipes are slower than TCP/IP in many Windows
-   configurations.)
-
-   Named pipes are enabled only if you start the server with the
+   Windows also support named pipes, if you start the server with the
    --enable-named-pipe option. It is necessary to use this option
    explicitly because some users have experienced problems with
-   shutting down the MySQL server when named pipes were used.
+   shutting down the MySQL server when named pipes were used. The
+   default is to use TCP/IP regardless of platform because named
+   pipes are slower than TCP/IP in many Windows configurations.
 
 2.3.7.4. Starting the Server for the First Time
 
@@ -3224,7 +3209,7 @@ InnoDB: foreign key constraint system tables created
    something like this, which indicates that the server is ready to
    service client connections:
 mysqld: ready for connections
-Version: '5.5.36'  socket: ''  port: 3306
+Version: '5.5.37'  socket: ''  port: 3306
 
    The server continues to write to the console any further
    diagnostic output it produces. You can open a new console window
@@ -3545,9 +3530,9 @@ C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysql" test
    default pipe name.
 
    Note that if you have set a password for the root account, deleted
-   the anonymous account, or created a new user account, then you
-   must use the appropriate -u and -p options with the commands shown
-   above to connect with the MySQL Server. See Section 4.2.2,
+   the anonymous account, or created a new user account, then to
+   connect to the MySQL server you must use the appropriate -u and -p
+   options with the commands shown previously. See Section 4.2.2,
    "Connecting to the MySQL Server."
 
    For more information about mysqlshow, see Section 4.5.6,
@@ -4330,6 +4315,36 @@ Additional Resources
    so, the RPM does not install and produces a message explaining
    this.
 
+   Conflicts can arise when an RPM from another vendor is already
+   installed, such as when a vendor's convention about which files
+   belong with the server and which belong with the client library
+   differ from the breakdown used for Oracle packages. In such cases,
+   attempts to install an Oracle RPM with rpm -i may result in
+   messages that files in the RPM to be installed conflict with files
+   from an installed package (denoted mysql-libs in the following
+   paragraphs).
+
+   We provide a MySQL-shared-compat package with each MySQL release.
+   This package is meant to replace mysql-libs and provides a
+   replacement-compatible client library for older MySQL series.
+   MySQL-shared-compat is set up to make mysql-libs obsolete, but rpm
+   explicitly refuses to replace obsoleted packages when invoked with
+   -i (unlike -U), which is why installation with rpm -i produces a
+   conflict.
+
+   MySQL-shared-compat can safely be installed alongside mysql-libs
+   because libraries are installed to different locations. Therefore,
+   it is possible to install shared-compat first, then manually
+   remove mysql-libs before continuing with the installation. After
+   mysql-libs is removed, the dynamic linker stops looking for the
+   client library in the location where mysql-libs puts it, and the
+   library provided by the MySQL-shared-compat package takes over.
+
+   Another alternative is to install packages using yum. In a
+   directory containing all RPM packages for a MySQL release, yum
+   install MySQL*rpm installs them in the correct order and removes
+   mysql-libs in one step without conflicts.
+
    In most cases, you need to install only the MySQL-server and
    MySQL-client packages to get a functional MySQL installation. The
    other packages are not required for a standard installation.
@@ -4967,15 +4982,15 @@ Error in accept: Protocol error
    To use this package, download the corresponding
    mysql-VERSION-solaris10-PLATFORM.pkg.gz file, then uncompress it.
    For example:
-shell> gunzip mysql-5.5.36-solaris10-x86_64.pkg.gz
+shell> gunzip mysql-5.5.37-solaris10-x86_64.pkg.gz
 
    To install a new package, use pkgadd and follow the onscreen
    prompts. You must have root privileges to perform this operation:
-shell> pkgadd -d mysql-5.5.36-solaris10-x86_64.pkg
+shell> pkgadd -d mysql-5.5.37-solaris10-x86_64.pkg
 
 The following packages are available:
   1  mysql     MySQL Community Server (GPL)
-               (i86pc) 5.5.36
+               (i86pc) 5.5.37
 
 Select package(s) you wish to process (or 'all' to process
 all packages). (default: all) [?,??,q]:
@@ -5013,7 +5028,7 @@ shell> ln /etc/init.d/mysql /etc/rc0.d/K02mysql
    The typical upgrade sequence is therefore:
 shell> mysqladmin shutdown
 shell> pkgrm mysql
-shell> pkgadd -d mysql-5.5.36-solaris10-x86_64.pkg
+shell> pkgadd -d mysql-5.5.37-solaris10-x86_64.pkg
 shell> mysqld_safe &
 shell> mysql_upgrade
 
@@ -5264,7 +5279,7 @@ Source Installation Methods
        Standard distributions are available as compressed tar files,
        Zip archives, or RPM packages. Distribution files have names
        of the form mysql-VERSION.tar.gz, mysql-VERSION.zip, or
-       mysql-VERSION.rpm, where VERSION is a number like 5.5.36. File
+       mysql-VERSION.rpm, where VERSION is a number like 5.5.37. File
        names for source distributions can be distinguished from those
        for precompiled binary distributions in that source
        distribution names are generic and include no platform name,
@@ -6648,10 +6663,10 @@ shell> bin/mysqladmin variables
        on your platform and version of MySQL, but should be similar
        to that shown here:
 shell> bin/mysqladmin version
-mysqladmin  Ver 14.12 Distrib 5.5.36, for pc-linux-gnu on i686
+mysqladmin  Ver 14.12 Distrib 5.5.37, for pc-linux-gnu on i686
 ...
 
-Server version          5.5.36
+Server version          5.5.37
 Protocol version        10
 Connection              Localhost via UNIX socket
 UNIX socket             /var/lib/mysql/mysql.sock
@@ -7095,7 +7110,7 @@ basedir=/usr/local/mysql
    that you have them configured the way you want before starting the
    server:
 
-   If you are using InnoDB tables, see Section 14.3.7, "InnoDB
+   If you are using InnoDB tables, see Section 14.3.6, "InnoDB
    Configuration."
 
    Storage engines will use default option values if you specify
@@ -9090,5 +9105,5 @@ $dbh= DBI->connect("DBI:ODBC:$dsn",$user,$password) ||
    both compiled with gcc. In this case, you can solve the mismatch
    by compiling both with gcc.
 
-   Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights
+   Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights
    reserved. Legal Notices
