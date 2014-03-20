@@ -10,6 +10,8 @@ mysql-5.5 (5.5.36+dfsg-1) UNRELEASED; urgency=medium
     (Closes: #736087).
   * d/control: Update for use of virtual-* packages for switching to/from
     MySQL alternatives.
+  * d/watch,repack.*: Drop repackaging as upstream tarball is now DFSG
+    compliant.
 
  -- James Page <james.page@ubuntu.com>  Fri, 14 Mar 2014 15:00:55 +0000
 
