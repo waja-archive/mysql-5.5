@@ -1,7 +1,7 @@
-revision-id: murthy.narkedimilli@oracle.com-20140108100904-0h9egnphz4cplgeu
-date: 2014-01-08 11:09:04 +0100
-build-date: 2014-01-08 11:12:02 +0100
-revno: 4571
-branch-nick: mysql-5.5.36-release
+revision-id: balasubramanian.kandasamy@oracle.com-20140314184627-cjhtubsr6yea3pzd
+date: 2014-03-14 19:46:27 +0100
+build-date: 2014-03-14 19:49:45 +0100
+revno: 4610
+branch-nick: mysql-5.5.37-release
 
-MySQL source 5.5.36
+MySQL source 5.5.37
