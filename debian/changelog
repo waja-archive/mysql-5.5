@@ -1,9 +1,16 @@
-mysql-5.5 (5.5.36-1) UNRELEASED; urgency=medium
+mysql-5.5 (5.5.37-1) UNRELEASED; urgency=medium
 
-  * New upstream release.
-  * d/p/CVE-2014-0001.patch:
-    - Fix buffer overflow in client/mysql.cc via a long server version string.
-      CVE-2014-0001 (Closes: #737596).
+  * SECURITY UPDATE: Update to 5.5.37 to fix security issues (Closes: #744910)
+    - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
+    - CVE-2014-0001 (Closes: #737596).
+    - CVE-2014-0384
+    - CVE-2014-2419
+    - CVE-2014-2430
+    - CVE-2014-2431
+    - CVE-2014-2432
+    - CVE-2014-2436
+    - CVE-2014-2438
+    - CVE-2014-2440
   * d/mysql-server-5.5.mysql.init: Fixup indentation on previous change
     (Closes: #739846).
   * d/rules: Always install apparmor profile, not just on Ubuntu
@@ -13,7 +20,7 @@ mysql-5.5 (5.5.36-1) UNRELEASED; urgency=medium
   * d/watch,repack.*: Drop repackaging as upstream tarball is now DFSG
     compliant.
 
- -- James Page <james.page@ubuntu.com>  Fri, 14 Mar 2014 15:00:55 +0000
+ -- James Page <james.page@ubuntu.com>  Wed, 23 Apr 2014 17:47:09 +0100
 
 mysql-5.5 (5.5.35+dfsg-2) unstable; urgency=low
 
