@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.37-1) trusty; urgency=medium
+mysql-5.5 (5.5.37-1) unstable; urgency=medium
 
   * SECURITY UPDATE: Update to 5.5.37 to fix security issues (Closes: #744910)
     - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
