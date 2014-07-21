@@ -17,7 +17,7 @@
 
    MySQL compressed tar file binary distributions have names of the
    form mysql-VERSION-OS.tar.gz, where VERSION is a number (for
-   example, 5.5.38), and OS indicates the type of operating system
+   example, 5.5.39), and OS indicates the type of operating system
    for which the distribution is intended (for example, pc-linux-i686
    or winx64).
 
@@ -336,8 +336,8 @@ Perform Postinstallation Setup
    within the "Complete Package."
 
      * MySQL Installer: This package has a file name similar to
-       mysql-installer-community-5.5.38.0.msi or
-       mysql-installer-commercial-5.5.38.0.msi, and utilizes MSI's to
+       mysql-installer-community-5.5.39.0.msi or
+       mysql-installer-commercial-5.5.39.0.msi, and utilizes MSIs to
        automatically install MySQL server and other products. It will
        download and apply updates to itself, and for each of the
        installed products. It also configures the additional
@@ -361,13 +361,13 @@ Perform Postinstallation Setup
        Using MySQL Installer."
 
      * The Complete Package: This package has a file name similar to
-       mysql-5.5.38-win32.msi and contains all files needed for a
+       mysql-5.5.39-win32.msi and contains all files needed for a
        complete Windows installation, including the Configuration
        Wizard. This package includes optional components such as the
        embedded server and benchmark suite.
 
      * The Noinstall Archive: This package has a file name similar to
-       mysql-5.5.38-win32.zip and contains all the files found in the
+       mysql-5.5.39-win32.zip and contains all the files found in the
        Complete install package, with the exception of the
        Configuration Wizard. This package does not include an
        automated installer, and must be manually installed and
@@ -404,17 +404,17 @@ Installer package types
 
 
      * Full: Bundles all of the MySQL products (including MySQL
-       Server). The file is over 160MB, and have names of the form
-       mysql-installer-community-VERSION.N.msi where VERSION is the
-       MySQL Server version number such as 5.6 and N is the package
-       number, which begins at 0.
+       Server). The file' size is over 160MB, and its name has the
+       form mysql-installer-community-VERSION.N.msi where VERSION is
+       the MySQL Server version number such as 5.6 and N is the
+       package number, which begins at 0.
 
      * Web: Only contains the Installer and configuration files, and
        it only downloads the MySQL products you choose to install.
-       The file is about 2MB, and have names of the form
-       mysql-installer-community-web-VERSION.N.msi where VERSION is
-       the MySQL Server version number such as 5.6 and N is the
-       package number, which begins at 0.
+       The size of this file is about 2MB; the name of the file has
+       the form mysql-installer-community-web-VERSION.N.msi where
+       VERSION is the MySQL Server version number such as 5.6 and N
+       is the package number, which begins at 0.
 
 Installer editions
 
@@ -436,7 +436,7 @@ Installer editions
    (http://dev.mysql.com/doc/relnotes/mysql-installer/en/).
 
    MySQL Installer is compatible with pre-existing installations, and
-   adds them to its list of installed components. And while the MySQL
+   adds them to its list of installed components. While the MySQL
    Installer is bundled with a specific version of MySQL Server, a
    single MySQL Installer instance can install and manage multiple
    MySQL Server versions. For example, a single MySQL Installer
@@ -928,7 +928,7 @@ C:\> MySQLInstallerConsole --help
    asynchronous callback to the computer running the MySQL Notifier
    for Microsoft Windows so it knows when a service status has
    changed on the remote computer. Asynchronous notifications offer
-   the best performance compared to semi-synchronous notifications or
+   the best performance compared to semisynchronous notifications or
    synchronous notifications that use timers.
 
    Asynchronous notifications requires the remote computer to send a
@@ -1415,7 +1415,7 @@ Common Errors
    directory. In a default installation it contains C:\Program
    Files\MySQL\MySQL Server 5.5\. The Version string contains the
    release number. For example, for an installation of MySQL Server
-   5.5.38, the key contains a value of 5.5.38.
+   5.5.39, the key contains a value of 5.5.39.
 
    These registry keys are used to help external tools identify the
    installed location of the MySQL server, preventing a complete scan
@@ -1505,7 +1505,7 @@ MSI Package
    the command line (or within a script), you need to use the
    msiexec.exe tool. For example, to perform a quiet installation
    (which shows no dialog boxes or progress):
-shell> msiexec /i mysql-5.5.38.msi /quiet
+shell> msiexec /i mysql-5.5.39.msi /quiet
 
    The /i indicates that you want to perform an installation. The
    /quiet option indicates that you want no interactive elements.
@@ -1513,7 +1513,7 @@ shell> msiexec /i mysql-5.5.38.msi /quiet
    To provide a dialog box showing the progress during installation,
    and the dialog boxes providing information on the installation and
    registration of MySQL, use /passive mode instead of /quiet:
-shell> msiexec /i mysql-5.5.38.msi /passive
+shell> msiexec /i mysql-5.5.39.msi /passive
 
    Regardless of the mode of the installation, installing the package
    in this manner performs a 'Typical' installation, and installs the
@@ -1521,7 +1521,7 @@ shell> msiexec /i mysql-5.5.38.msi /passive
 
    You can also use this method to uninstall MySQL by using the
    /uninstall or /x options:
-shell> msiexec /x mysql-5.5.38.msi /uninstall
+shell> msiexec /x mysql-5.5.39.msi /uninstall
 
    To install MySQL and configure a MySQL instance from the command
    line, see Section 2.3.6.13, "MySQL Server Instance Config Wizard:
@@ -2105,7 +2105,7 @@ from the Command Line
    service name MySQL55 and setting the root password to 1234.
 shell> MySQLInstanceConfig.exe -i -q "-lC:\mysql_install_log.txt" »
    "-nMySQL Server 5.5" "-pC:\Program Files\MySQL\MySQL Server 5.5" -
-v5.5.38 »
+v5.5.39 »
    "-tmy-template.ini" "-cC:\mytest.ini" ServerType=DEVELOPMENT Datab
 aseType=MIXED »
    ConnectionUsage=DSS Port=3311 ServiceName=MySQL55 RootPassword=123
@@ -2121,7 +2121,7 @@ Date: 2009-10-27 17:07:21
 Installing service ...
 
 Product Name:         MySQL Server 5.5
-Version:              5.5.38
+Version:              5.5.39
 Installation Path:    C:\Program Files\MySQL\MySQL Server 5.5\
 
 Creating configuration file C:\mytest.ini using template my-template.
@@ -2380,7 +2380,7 @@ InnoDB: foreign key constraint system tables created
    something like this, which indicates that the server is ready to
    service client connections:
 mysqld: ready for connections
-Version: '5.5.38'  socket: ''  port: 3306
+Version: '5.5.39'  socket: ''  port: 3306
 
    The server continues to write to the console any further
    diagnostic output it produces. You can open a new console window
