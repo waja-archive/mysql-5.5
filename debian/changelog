@@ -1,3 +1,14 @@
+mysql-5.5 (5.5.38-1) UNRELEASED; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.5.38 to fix security issues:
+    - http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html
+    - CVE-2014-2494
+    - CVE-2014-4207
+    - CVE-2014-4258
+    - CVE-2014-4260
+
+ -- James Page <james.page@ubuntu.com>  Mon, 21 Jul 2014 10:58:45 +0100
+
 mysql-5.5 (5.5.37-1) unstable; urgency=medium
 
   * SECURITY UPDATE: Update to 5.5.37 to fix security issues (Closes: #744910)
