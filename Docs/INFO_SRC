@@ -1,7 +1,7 @@
-revision-id: balasubramanian.kandasamy@oracle.com-20140511162412-q037x3c3qmt0qjij
-date: 2014-05-11 18:24:12 +0200
-build-date: 2014-05-11 18:30:47 +0200
-revno: 4629
-branch-nick: mysql-5.5.38-release
+revision-id: ashish.y.agarwal@oracle.com-20140719055421-3clf2aol4p3zmymu
+date: 2014-07-19 11:24:21 +0530
+build-date: 2014-07-19 08:11:46 +0200
+revno: 4683
+branch-nick: mysql-5.5.39-release
 
-MySQL source 5.5.38
+MySQL source 5.5.39

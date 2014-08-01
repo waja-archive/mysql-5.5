@@ -10,7 +10,7 @@ Chapter 2 Installing and Upgrading MySQL
    upgrading.
 
    If you are interested in migrating to MySQL from another database
-   system, you may wish to read Section B.8, "MySQL 5.5 FAQ:
+   system, you may wish to read Section A.8, "MySQL 5.5 FAQ:
    Migration," which contains answers to some common questions
    concerning migration issues.
 
@@ -256,7 +256,7 @@ Production Releases
 
      * An internal test suite.  The mysql-test directory contains an
        extensive set of test cases. We run these tests for every
-       server binary. See Section 23.1.2, "The MySQL Test Suite," for
+       server binary. See Section 24.1.2, "The MySQL Test Suite," for
        more information about this test suite.
 
      * The MySQL benchmark suite.  This suite runs a range of common
@@ -439,11 +439,11 @@ Production Releases
    Windows examples will assume the name md5.exe.
 
    Linux and Microsoft Windows examples:
-shell> md5sum mysql-standard-5.5.39-linux-i686.tar.gz
-aaab65abbec64d5e907dcd41b8699945  mysql-standard-5.5.39-linux-i686.ta
+shell> md5sum mysql-standard-5.5.40-linux-i686.tar.gz
+aaab65abbec64d5e907dcd41b8699945  mysql-standard-5.5.40-linux-i686.ta
 r.gz
-shell> md5.exe mysql-installer-community-5.5.39.msi
-aaab65abbec64d5e907dcd41b8699945  mysql-installer-community-5.5.39.ms
+shell> md5.exe mysql-installer-community-5.5.40.msi
+aaab65abbec64d5e907dcd41b8699945  mysql-installer-community-5.5.40.ms
 i
 
    You should verify that the resulting checksum (the string of
@@ -613,8 +613,8 @@ shell> rpm --import mysql_pubkey.asc
 
    Table 2.1 MySQL Package and Signature Files for Source files
        File Type                      File Name
-   Distribution file mysql-standard-5.5.39-linux-i686.tar.gz
-   Signature file    mysql-standard-5.5.39-linux-i686.tar.gz.asc
+   Distribution file mysql-standard-5.5.40-linux-i686.tar.gz
+   Signature file    mysql-standard-5.5.40-linux-i686.tar.gz.asc
 
    Make sure that both files are stored in the same directory and
    then run the following command to verify the signature for the
@@ -623,7 +623,7 @@ shell> gpg --verify package_name.asc
 
    If the downloaded package is valid, you will see a "Good
    signature" similar to:
-shell> gpg --verify mysql-standard-5.5.39-linux-i686.tar.gz.asc
+shell> gpg --verify mysql-standard-5.5.40-linux-i686.tar.gz.asc
 gpg: Signature made Tue 01 Feb 2011 02:38:30 AM CST using DSA key ID
 5072E1F5
 gpg: Good signature from "MySQL Release Engineering <mysql-build@oss.
@@ -632,7 +632,7 @@ oracle.com>"
    The Good signature message indicates that the file signature is
    valid, when compared to the signature listed on our site. But you
    might also see warnings, like so:
-shell> gpg --verify mysql-standard-5.5.39-linux-i686.tar.gz.asc
+shell> gpg --verify mysql-standard-5.5.40-linux-i686.tar.gz.asc
 gpg: Signature made Wed 23 Jan 2013 02:25:45 AM PST using DSA key ID
 5072E1F5
 gpg: checking the trustdb
@@ -714,8 +714,8 @@ Primary key fingerprint: A4A9 4068 76FC BD3C 4567  70C8 8C71 8D3B 507
    Table 2.2 MySQL Package and Signature Files for MySQL Installer
    for Microsoft Windows
        File Type                    File Name
-   Distribution file mysql-installer-community-5.5.39.msi
-   Signature file    mysql-installer-community-5.5.39.msi.asc
+   Distribution file mysql-installer-community-5.5.40.msi
+   Signature file    mysql-installer-community-5.5.40.msi.asc
 
    Make sure that both files are stored in the same directory and
    then run the following command to verify the signature for the
@@ -751,8 +751,8 @@ Primary key fingerprint: A4A9 4068 76FC BD3C 4567  70C8 8C71 8D3B 507
 shell> rpm --checksig package_name.rpm
 
    Example:
-shell> rpm --checksig MySQL-server-5.5.39-0.glibc23.i386.rpm
-MySQL-server-5.5.39-0.glibc23.i386.rpm: md5 gpg OK
+shell> rpm --checksig MySQL-server-5.5.40-0.glibc23.i386.rpm
+MySQL-server-5.5.40-0.glibc23.i386.rpm: md5 gpg OK
 
    Note
 
@@ -831,7 +831,7 @@ pg-signature.html
 
    MySQL compressed tar file binary distributions have names of the
    form mysql-VERSION-OS.tar.gz, where VERSION is a number (for
-   example, 5.5.39), and OS indicates the type of operating system
+   example, 5.5.40), and OS indicates the type of operating system
    for which the distribution is intended (for example, pc-linux-i686
    or winx64).
 
@@ -1004,7 +1004,7 @@ Perform Postinstallation Setup
    with Administrator privileges.
 
    For a list of limitations on the use of MySQL on the Windows
-   platform, see Section E.10.6, "Windows Platform Limitations."
+   platform, see Section D.10.6, "Windows Platform Limitations."
 
    In addition to the MySQL Server package, you may need or want
    additional components to use MySQL with your application or
@@ -1147,8 +1147,8 @@ Perform Postinstallation Setup
    within the "Complete Package."
 
      * MySQL Installer: This package has a file name similar to
-       mysql-installer-community-5.5.39.0.msi or
-       mysql-installer-commercial-5.5.39.0.msi, and utilizes MSIs to
+       mysql-installer-community-5.5.40.0.msi or
+       mysql-installer-commercial-5.5.40.0.msi, and utilizes MSIs to
        automatically install MySQL server and other products. It will
        download and apply updates to itself, and for each of the
        installed products. It also configures the additional
@@ -1172,13 +1172,13 @@ Perform Postinstallation Setup
        Using MySQL Installer."
 
      * The Complete Package: This package has a file name similar to
-       mysql-5.5.39-win32.msi and contains all files needed for a
+       mysql-5.5.40-win32.msi and contains all files needed for a
        complete Windows installation, including the Configuration
        Wizard. This package includes optional components such as the
        embedded server and benchmark suite.
 
      * The Noinstall Archive: This package has a file name similar to
-       mysql-5.5.39-win32.zip and contains all the files found in the
+       mysql-5.5.40-win32.zip and contains all the files found in the
        Complete install package, with the exception of the
        Configuration Wizard. This package does not include an
        automated installer, and must be manually installed and
@@ -1242,7 +1242,7 @@ Installer editions
        credentials to automatically receive updates for your
        commercial MySQL products.
 
-   For release notes detailing the changes in each release of MySQL
+   For notes detailing the changes in each release of MySQL
    Installer, see MySQL Installer Release Notes
    (http://dev.mysql.com/doc/relnotes/mysql-installer/en/).
 
@@ -1567,9 +1567,9 @@ C:\> MySQLInstallerConsole --help
    with the installation. See the MySQL Installer manual for
    additional details.
 
-   For release notes detailing the changes in each release of MySQL
-   Notifier for Microsoft Windows, see the MySQL Notifier Release
-   Notes (http://dev.mysql.com/doc/relnotes/mysql-notifier/en/).
+   For notes detailing the changes in each release of MySQL Notifier
+   for Microsoft Windows, see the MySQL Notifier Release Notes
+   (http://dev.mysql.com/doc/relnotes/mysql-notifier/en/).
 
    Visit the MySQL Notifier forum
    (http://forums.mysql.com/list.php?173) for additional MySQL
@@ -1636,7 +1636,7 @@ C:\> MySQLInstallerConsole --help
    MySQL Notifier for Microsoft Windows Service Instance menu
 
    The Actions menu includes several links to external applications
-   (if they are installed), and a a Refresh Status option to manually
+   (if they are installed), and a Refresh Status option to manually
    refresh the status of all monitored services (in both local and
    remote computers) and MySQL instances.
    Note
@@ -2226,7 +2226,7 @@ Common Errors
    directory. In a default installation it contains C:\Program
    Files\MySQL\MySQL Server 5.5\. The Version string contains the
    release number. For example, for an installation of MySQL Server
-   5.5.39, the key contains a value of 5.5.39.
+   5.5.40, the key contains a value of 5.5.40.
 
    These registry keys are used to help external tools identify the
    installed location of the MySQL server, preventing a complete scan
@@ -2316,7 +2316,7 @@ MSI Package
    the command line (or within a script), you need to use the
    msiexec.exe tool. For example, to perform a quiet installation
    (which shows no dialog boxes or progress):
-shell> msiexec /i mysql-5.5.39.msi /quiet
+shell> msiexec /i mysql-5.5.40.msi /quiet
 
    The /i indicates that you want to perform an installation. The
    /quiet option indicates that you want no interactive elements.
@@ -2324,7 +2324,7 @@ shell> msiexec /i mysql-5.5.39.msi /quiet
    To provide a dialog box showing the progress during installation,
    and the dialog boxes providing information on the installation and
    registration of MySQL, use /passive mode instead of /quiet:
-shell> msiexec /i mysql-5.5.39.msi /passive
+shell> msiexec /i mysql-5.5.40.msi /passive
 
    Regardless of the mode of the installation, installing the package
    in this manner performs a 'Typical' installation, and installs the
@@ -2332,7 +2332,7 @@ shell> msiexec /i mysql-5.5.39.msi /passive
 
    You can also use this method to uninstall MySQL by using the
    /uninstall or /x options:
-shell> msiexec /x mysql-5.5.39.msi /uninstall
+shell> msiexec /x mysql-5.5.40.msi /uninstall
 
    To install MySQL and configure a MySQL instance from the command
    line, see Section 2.3.6.13, "MySQL Server Instance Config Wizard:
@@ -2916,7 +2916,7 @@ from the Command Line
    service name MySQL55 and setting the root password to 1234.
 shell> MySQLInstanceConfig.exe -i -q "-lC:\mysql_install_log.txt" »
    "-nMySQL Server 5.5" "-pC:\Program Files\MySQL\MySQL Server 5.5" -
-v5.5.39 »
+v5.5.40 »
    "-tmy-template.ini" "-cC:\mytest.ini" ServerType=DEVELOPMENT Datab
 aseType=MIXED »
    ConnectionUsage=DSS Port=3311 ServiceName=MySQL55 RootPassword=123
@@ -2932,7 +2932,7 @@ Date: 2009-10-27 17:07:21
 Installing service ...
 
 Product Name:         MySQL Server 5.5
-Version:              5.5.39
+Version:              5.5.40
 Installation Path:    C:\Program Files\MySQL\MySQL Server 5.5\
 
 Creating configuration file C:\mytest.ini using template my-template.
@@ -3038,7 +3038,7 @@ Archive
    When the MySQL server starts on Windows, it looks for option files
    in several locations, such as the Windows directory, C:\, and the
    MySQL installation directory (for the full list of locations, see
-   Section 4.2.3.3, "Using Option Files"). The Windows directory
+   Section 4.2.6, "Using Option Files"). The Windows directory
    typically is named something like C:\WINDOWS. You can determine
    its exact location from the value of the WINDIR environment
    variable using the following command:
@@ -3084,7 +3084,7 @@ basedir=E:\\mysql
 datadir=E:\\mydata\\data
 
    The rules for use of backslash in option file values are given in
-   Section 4.2.3.3, "Using Option Files."
+   Section 4.2.6, "Using Option Files."
 
    The data directory is located within the AppData directory for the
    user running MySQL.
@@ -3191,7 +3191,7 @@ InnoDB: foreign key constraint system tables created
    something like this, which indicates that the server is ready to
    service client connections:
 mysqld: ready for connections
-Version: '5.5.39'  socket: ''  port: 3306
+Version: '5.5.40'  socket: ''  port: 3306
 
    The server continues to write to the console any further
    diagnostic output it produces. You can open a new console window
@@ -3250,7 +3250,7 @@ C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqladmin" -u root
    The last option is to start mysqld with the --standalone and
    --debug options. In this case, mysqld writes a log file
    C:\mysqld.trace that should contain the reason why mysqld doesn't
-   start. See Section 23.4.3, "The DBUG Package."
+   start. See Section 24.4.3, "The DBUG Package."
 
    Use mysqld --verbose --help to display all the options that mysqld
    supports.
@@ -3421,7 +3421,7 @@ C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld" --install
      * If the service-installation command specifies a
        --defaults-file option after the service name, the server
        reads options the same way as described in the previous item,
-       except that it reads options only from the the named file and
+       except that it reads options only from the named file and
        ignores the standard option files.
 
    As a more complex example, consider the following command:
@@ -3592,7 +3592,7 @@ basedir=C:\\Program Files\\MySQL\\MySQL Server 5.5
 # set datadir to the location of your data directory
 datadir=D:\\MySQLdata
        The rules for use of backslash in option file values are given
-       in Section 4.2.3.3, "Using Option Files."
+       in Section 4.2.6, "Using Option Files."
        If you change the datadir value in your MySQL configuration
        file, you must move the contents of the existing MySQL data
        directory before restarting the MySQL server.
@@ -3799,17 +3799,20 @@ C:\> C:\mysql\bin\mysql -e "SELECT Host,Db,User FROM mysql.db"
 
 2.4 Installing MySQL on Mac OS X
 
+   For a list of supported Mac OS X versions that the MySQL server
+   supports, see
+   http://www.mysql.com/support/supportedplatforms/database.html.
+
    MySQL for Mac OS X is available in a number of different forms:
 
      * Native Package Installer format, which uses the native Mac OS
-       X installer to walk you through the installation of MySQL. For
-       more information, see Section 2.4.2, "Installing MySQL on Mac
-       OS X Using Native Packages." You can use the package installer
-       with Mac OS X 10.3 and later, and the package is available for
-       both PowerPC and Intel architectures, and 32-bit and 64-bit
-       architectures. There is no Universal Binary available using
-       the package installation method. The user you use to perform
-       the installation must have administrator privileges.
+       X installer (DMG) to walk you through the installation of
+       MySQL. For more information, see Section 2.4.2, "Installing
+       MySQL on Mac OS X Using Native Packages." You can use the
+       package installer with Mac OS X 10.6 and later, and the
+       package is available for both 32-bit and 64-bit architectures.
+       The user you use to perform the installation must have
+       administrator privileges.
 
      * Tar package format, which uses a file packaged using the Unix
        tar and gzip commands. To use this method, you will need to
@@ -3819,10 +3822,8 @@ C:\> C:\mysql\bin\mysql -e "SELECT Host,Db,User FROM mysql.db"
        using this method, you can use the generic instructions for
        using a tarball, Section 2.2, "Installing MySQL on Unix/Linux
        Using Generic Binaries."You can use the package installer with
-       Mac OS X 10.3 and later, and available for both PowerPC and
-       Intel architectures, and both 32-bit and 64-bit architectures.
-       A Universal Binary, incorporating both Power PC and Intel
-       architectures and 32-bit and 64-bit binaries is available.
+       Mac OS X 10.6 and later, and available for both 32-bit and
+       64-bit architectures.
        In addition to the core installation, the Package Installer
        also includes Section 2.4.3, "Installing the MySQL Startup
        Item" and Section 2.4.4, "Installing and Using the MySQL
@@ -3861,23 +3862,11 @@ C:\> C:\mysql\bin\mysql -e "SELECT Host,Db,User FROM mysql.db"
        more information, see Section 5.1.3, "Server Command Options."
 
      * You may need (or want) to create a specific mysql user to own
-       the MySQL directory and data. On Mac OS X 10.4 and lower you
-       can do this by using the Netinfo Manager application, located
-       within the Utilities folder within the Applications folder. On
-       Mac OS X 10.5 and later you can do this through the Directory
-       Utility. From Mac OS X 10.5 and later (including Mac OS X
-       Server 10.5) the mysql should already exist. For use in single
-       user mode, an entry for _mysql (note the underscore prefix)
-       should already exist within the system /etc/passwd file.
-
-     * Due to a bug in the Mac OS X package installer, you may see
-       this error message in the destination disk selection dialog:
-You cannot install this software on this disk. (null)
-       If this error occurs, click the Go Back button once to return
-       to the previous screen. Then click Continue to advance to the
-       destination disk selection again, and you should be able to
-       choose the destination disk correctly. We have reported this
-       bug to Apple and it is investigating this problem.
+       the MySQL directory and data. You can do this through the
+       Directory Utility, and the mysql user should already exist.
+       For use in single user mode, an entry for _mysql (note the
+       underscore prefix) should already exist within the system
+       /etc/passwd file.
 
      * If you get an "insecure startup item disabled" error when
        MySQL launches, use the following procedure. Adjust the
@@ -3928,12 +3917,6 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
 
 2.4.2 Installing MySQL on Mac OS X Using Native Packages
 
-   You can install MySQL on Mac OS X 10.3.x ("Panther") or newer
-   using a Mac OS X binary package in DMG format instead of the
-   binary tarball distribution. Please note that older versions of
-   Mac OS X (for example, 10.1.x or 10.2.x) are not supported by this
-   package.
-
    The package is located inside a disk image (.dmg) file that you
    first need to mount by double-clicking its icon in the Finder. It
    should then mount the image and display its contents.
@@ -3953,15 +3936,16 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
    When installing using the package installer, the files are
    installed into a directory within /usr/local matching the name of
    the installation version and platform. For example, the installer
-   file mysql-5.1.39-osx10.5-x86_64.pkg installs MySQL into
-   /usr/local/mysql-5.1.39-osx10.5-x86_64 . The following table shows
+   file mysql-5.5-osx10.7-x86_64.dmg installs MySQL into
+   /usr/local/mysql-5.5-osx10.7-x86_64/ . The following table shows
    the layout of the installation directory.
 
    Table 2.9 MySQL Installation Layout on Mac OS X
    Directory Contents of Directory
    bin Client programs and the mysqld server
    data Log files, databases
-   docs Manual in Info format
+   docs Helper documents, like the Release Notes and build
+   information
    include Include (header) files
    lib Libraries
    man Unix manual pages
@@ -3982,15 +3966,18 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
        installation package, the MySQLStartupItem.pkg installation
        package, and the MySQL.prefPane. Double-click the disk image
        to open it.
+       Figure 2.31 MySQL Package Installer: DMG Contents
+       MySQL Package Installer: DMG Contents
 
     2. Double-click the MySQL installer package. It will be named
        according to the version of MySQL you have downloaded. For
-       example, if you have downloaded MySQL 5.1.39, double-click
-       mysql-5.1.39-osx10.5-x86.pkg.
+       example, if you have downloaded MySQL server 5.5.40,
+       double-click mysql-5.5.40-osx-10.7-x86_64.pkg.
 
     3. You will be presented with the opening installer dialog. Click
        Continue to begin installation.
-       MySQL Package Installer: Step 1
+       Figure 2.32 MySQL Package Installer: Introduction
+       MySQL Package Installer: Introduction
 
     4. A copy of the installation instructions and other important
        information relevant to this installation are displayed. Click
@@ -4003,13 +3990,14 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
     6. Select the drive you want to use to install the MySQL Startup
        Item. The drive must have a valid, bootable, Mac OS X
        operating system installed. Click Continue.
-       MySQL Package Installer: Step 4
+       Figure 2.33 MySQL Package Installer: Choose your Hard drive
+       MySQL Package Installer: Choose your Hard drive
 
     7. You will be asked to confirm the details of the installation,
        including the space required for the installation. To change
-       the drive on which the startup item is installed, click either
-       Go Back or Change Install Location.... To install the startup
-       item, click Install.
+       the drive on which the MySQL server is installed, click either
+       Go Back or Change Install Location.... To install the MySQL
+       server, click Install.
 
     8. Once the installation has been completed successfully, you
        will be shown an Install Succeeded message.
@@ -4031,13 +4019,16 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
        installation package, the MySQLStartupItem.pkg installation
        package, and the MySQL.prefPane. Double-click the disk image
        to open it.
+       Figure 2.34 MySQL Package Installer: DMG Contents
+       MySQL Package Installer: DMG Contents
 
     2. Double-click the MySQLStartItem.pkg file to start the
        installation process.
 
     3. You will be presented with the Install MySQL Startup Item
        dialog.
-       MySQL Startup Item Installer: Step 1
+       Figure 2.35 MySQL Startup Item Installer: Introduction
+       MySQL Startup Item Installer: Introduction
        Click Continue to continue the installation process.
 
     4. A copy of the installation instructions and other important
@@ -4047,7 +4038,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
     5. Select the drive you want to use to install the MySQL Startup
        Item. The drive must have a valid, bootable, Mac OS X
        operating system installed. Click Continue.
-       MySQL Startup Item Installer: Step 3
+       Figure 2.36 MySQL Startup Item Installer: Choose Your Hard
+       drive
+       MySQL Startup Item Installer: Choose Your Hard drive
 
     6. You will be asked to confirm the details of the installation.
        To change the drive on which the startup item is installed,
@@ -4056,16 +4049,22 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
 
     7. Once the installation has been completed successfully, you
        will be shown an Install Succeeded message.
-       MySQL Startup Item Installer: Step 5
+       Figure 2.37 MySQL Startup Item Installer: Summary
+       MySQL Startup Item Installer: Summary
 
    The Startup Item for MySQL is installed into
    /Library/StartupItems/MySQLCOM. The Startup Item installation adds
    a variable MYSQLCOM=-YES- to the system configuration file
    /etc/hostconfig. If you want to disable the automatic startup of
    MySQL, change this variable to MYSQLCOM=-NO-.
+   Note
 
-   After the installation, you can start and stop MySQL by running
-   the following commands in a terminal window. You must have
+   Deselecting Automatically Start MySQL Server on Startup from the
+   MySQL Preference Pane sets the MYSQLCOM variable to -NO-.
+
+   After the installation, you can start and stop the MySQL server
+   from the MySQL Preference Pane (preferred), or by running the
+   following commands in a terminal window. You must have
    administrator privileges to perform these tasks, and you may be
    prompted for your password.
 
@@ -4090,6 +4089,8 @@ shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
        MySQL installation package, the MySQLStartupItem.pkg
        installation package, and the MySQL.prefPane. Double-click the
        disk image to open it.
+       Figure 2.38 MySQL Package Installer: DMG Contents
+       MySQL Package Installer: DMG Contents
 
     2. Double-click the MySQL.prefPane. The MySQL System Preferences
        will open.
@@ -4117,7 +4118,9 @@ shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
    preference pane, open the System Preferences... from the Apple
    menu. Select the MySQL preference pane by clicking the MySQL logo
    within the Other section of the preference panes list.
-   MySQL Preference Pane
+
+   Figure 2.39 MySQL Preference Pane: Location
+   MySQL Preference Pane: Location
 
    The MySQL Preference Pane shows the current status of the MySQL
    server, showing stopped (in red) if the server is not running and
@@ -4125,12 +4128,12 @@ shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
    preference pane also shows the current setting for whether the
    MySQL server has been set to start automatically.
 
-     * To start MySQL using the preference pane: 
+     * To start the MySQL server using the preference pane: 
        Click Start MySQL Server. You may be prompted for the username
        and password of a user with administrator privileges to start
        the MySQL server.
 
-     * To stop MySQL using the preference pane: 
+     * To stop the MySQL server using the preference pane: 
        Click Stop MySQL Server. You may be prompted for the username
        and password of a user with administrator privileges to stop
        the MySQL server.
@@ -4338,7 +4341,7 @@ Additional Resources
    all installed RPMs, including the Server and Client RPMs.
 
    For more information about installing MySQL Cluster from RPMs, see
-   Section 17.2, "MySQL Cluster Installation and Upgrades."
+   Section 18.2, "MySQL Cluster Installation and Upgrades."
 
    For upgrades, if your installation was originally produced by
    installing multiple RPM packages, it is best to upgrade all the
@@ -4968,15 +4971,15 @@ Error in accept: Protocol error
    To use this package, download the corresponding
    mysql-VERSION-solaris10-PLATFORM.pkg.gz file, then uncompress it.
    For example:
-shell> gunzip mysql-5.5.39-solaris10-x86_64.pkg.gz
+shell> gunzip mysql-5.5.40-solaris10-x86_64.pkg.gz
 
    To install a new package, use pkgadd and follow the onscreen
    prompts. You must have root privileges to perform this operation:
-shell> pkgadd -d mysql-5.5.39-solaris10-x86_64.pkg
+shell> pkgadd -d mysql-5.5.40-solaris10-x86_64.pkg
 
 The following packages are available:
   1  mysql     MySQL Community Server (GPL)
-               (i86pc) 5.5.39
+               (i86pc) 5.5.40
 
 Select package(s) you wish to process (or 'all' to process
 all packages). (default: all) [?,??,q]:
@@ -5014,7 +5017,7 @@ shell> ln /etc/init.d/mysql /etc/rc0.d/K02mysql
    The typical upgrade sequence is therefore:
 shell> mysqladmin shutdown
 shell> pkgrm mysql
-shell> pkgadd -d mysql-5.5.39-solaris10-x86_64.pkg
+shell> pkgadd -d mysql-5.5.40-solaris10-x86_64.pkg
 shell> mysqld_safe &
 shell> mysql_upgrade
 
@@ -5187,7 +5190,7 @@ Source Installation Methods
        Standard distributions are available as compressed tar files,
        Zip archives, or RPM packages. Distribution files have names
        of the form mysql-VERSION.tar.gz, mysql-VERSION.zip, or
-       mysql-VERSION.rpm, where VERSION is a number like 5.5.39. File
+       mysql-VERSION.rpm, where VERSION is a number like 5.5.40. File
        names for source distributions can be distinguished from those
        for precompiled binary distributions in that source
        distribution names are generic and include no platform name,
@@ -5286,7 +5289,7 @@ Source Installation System Requirements
 
    If you have to install any programs, modify your PATH environment
    variable to include any directories in which the programs are
-   located. See Section 4.2.4, "Setting Environment Variables."
+   located. See Section 4.2.10, "Setting Environment Variables."
 
    If you run into problems and need to file a bug report, please use
    the instructions in Section 1.7, "How to Report Bugs or Problems."
@@ -5512,9 +5515,9 @@ shell> cd bld
 shell> cmake ../mysql-src
 
    The build directory need not actually be outside the source tree.
-   For example, to build in a directory directory, you can build in a
-   directory named bld under the top-level source tree, do this,
-   starting with mysql-src as your current working directory:
+   For example, to build in a directory, you can build in a directory
+   named bld under the top-level source tree, do this, starting with
+   mysql-src as your current working directory:
 shell> mkdir bld
 shell> cd bld
 shell> cmake ..
@@ -5673,7 +5676,7 @@ shell> bzr log
    5.3, "Running Multiple MySQL Instances on One Machine."
 
    Play hard with your new installation. For example, try to make new
-   features crash. Start by running make test. See Section 23.1.2,
+   features crash. Start by running make test. See Section 24.1.2,
    "The MySQL Test Suite."
 
 2.9.4 MySQL Source-Configuration Options
@@ -5784,6 +5787,8 @@ shell> ccmake .
    WITH_READLINE Use bundled readline library OFF 5.5.7
    WITH_SSL Type of SSL support no 5.5.7
    WITH_UNIXODBC Enable unixODBC support OFF
+   WITH_VALGRIND Whether to compile in Valgrind header files OFF
+   5.5.6
    WITH_ZLIB Type of zlib support system 5.5.7
    WITHOUT_xxx_STORAGE_ENGINE Exclude storage engine xxx from build
    5.5.7
@@ -5975,8 +5980,8 @@ Storage Engine Options
    MySQL Cluster using the MySQL Cluster sources. It cannot be used
    to enable clustering support in other MySQL source trees or
    distributions. In MySQL Cluster NDB 7.2 source distributions, it
-   is enabled by default. See Section 17.2.1.3, "Building MySQL
-   Cluster from Source on Linux," and Section 17.2.2.2, "Compiling
+   is enabled by default. See Section 18.2.1.3, "Building MySQL
+   Cluster from Source on Linux," and Section 18.2.2.2, "Compiling
    and Installing MySQL Cluster from Source on Windows," for more
    information.
 
@@ -6078,7 +6083,7 @@ Feature Options
        the project file name. This option was added in MySQL 5.5.21.
 
      * -DMYSQL_TCP_PORT=port_num
-       The port number on on which the server listens for TCP/IP
+       The port number on which the server listens for TCP/IP
        connections. The default is 3306.
        This value can be set at server startup with the --port
        option.
@@ -6143,6 +6148,15 @@ Feature Options
 
      * -DWITH_UNIXODBC=1
        Enables unixODBC support, for Connector/ODBC.
+
+     * -DWITH_VALGRIND=bool
+       Whether to compile in the Valgrind header files, which exposes
+       the Valgrind API to MySQL code. The default is OFF.
+       To generate a Valgrind-aware debug build, -DWITH_VALGRIND=1
+       normally is combined with -DWITH_DEBUG=1. See Building Debug
+       Configurations
+       (http://dev.mysql.com/doc/internals/en/debug-configurations.ht
+       ml).
 
      * -DWITH_ZLIB=zlib_type
        Some features require that the server be built with
@@ -6616,10 +6630,10 @@ shell> bin/mysqladmin variables
        on your platform and version of MySQL, but should be similar
        to that shown here:
 shell> bin/mysqladmin version
-mysqladmin  Ver 14.12 Distrib 5.5.39, for pc-linux-gnu on i686
+mysqladmin  Ver 14.12 Distrib 5.5.40, for pc-linux-gnu on i686
 ...
 
-Server version          5.5.39
+Server version          5.5.40
 Protocol version        10
 Connection              Localhost via UNIX socket
 UNIX socket             /var/lib/mysql/mysql.sock
@@ -6730,7 +6744,7 @@ shell> mysql -vvf test < ./tests/auto_increment.tst
    directory under the installation directory, you can add that
    directory to your PATH environment variable setting. That enables
    you to run a program by typing only its name, not its entire path
-   name. See Section 4.2.4, "Setting Environment Variables."
+   name. See Section 4.2.10, "Setting Environment Variables."
 
    You can set up new accounts using the bin/mysql_setpermission
    script if you install the DBI and DBD::mysql Perl modules. See
@@ -6822,7 +6836,7 @@ shell> scripts/mysql_install_db --user=mysql
 shell> bin/mysqld_safe --user=mysql &
        If mysql_install_db is located in the scripts directory,
        modify the first command to scripts/mysql_install_db.
-       See Section C.5.4.5, "How to Protect or Change the MySQL Unix
+       See Section B.5.4.5, "How to Protect or Change the MySQL Unix
        Socket File," and Section 2.12, "Environment Variables."
 
    There are some alternatives to running the mysql_install_db script
@@ -7028,7 +7042,7 @@ basedir=/usr/local/mysql
    5.5.
 
    For more information on MySQL configuration files and their
-   structure and contents, see Section 4.2.3.3, "Using Option Files."
+   structure and contents, see Section 4.2.6, "Using Option Files."
 
 2.10.1.3 Starting and Troubleshooting the MySQL Server
 
@@ -7063,7 +7077,7 @@ basedir=/usr/local/mysql
    that you have them configured the way you want before starting the
    server:
 
-   If you are using InnoDB tables, see Section 14.3.6, "InnoDB
+   If you are using InnoDB tables, see Section 14.6, "InnoDB
    Configuration."
 
    Storage engines will use default option values if you specify
@@ -7191,7 +7205,7 @@ Can't start server: Bind on unix socket...
 
    If you cannot get mysqld to start, you can try to make a trace
    file to find the problem by using the --debug option. See Section
-   23.4.3, "The DBUG Package."
+   24.4.3, "The DBUG Package."
 
 2.10.2 Securing the Initial MySQL Accounts
 
@@ -7297,7 +7311,7 @@ mysql> SELECT User, Host, Password FROM mysql.user;
 
    For additional information about setting passwords, see Section
    6.3.5, "Assigning Account Passwords." If you forget your root
-   password after setting it, see Section C.5.4.1, "How to Reset the
+   password after setting it, see Section B.5.4.1, "How to Reset the
    Root Password."
 
    You might want to defer setting the passwords until later, to
@@ -7511,7 +7525,7 @@ mysql> DROP DATABASE test;
      * If you run MySQL Server on Windows, see Section 2.3.9,
        "Upgrading MySQL on Windows."
 
-     * If you use replication, see Section 16.4.3, "Upgrading a
+     * If you use replication, see Section 17.4.3, "Upgrading a
        Replication Setup," for information on upgrading your
        replication setup.
 
@@ -7669,7 +7683,7 @@ mysql> DROP DATABASE test;
      * If you run MySQL Server on Windows, see Section 2.3.9,
        "Upgrading MySQL on Windows."
 
-     * If you use replication, see Section 16.4.3, "Upgrading a
+     * If you use replication, see Section 17.4.3, "Upgrading a
        Replication Setup," for information on upgrading your
        replication setup.
 
@@ -7720,7 +7734,7 @@ plugin-load=innodb=ha_innodb_plugin.so
        available services and dynamic plugins now must be linked
        against this library (use the -lmysqlservices flag). For an
        example showing how to configure for CMake, see Section
-       23.2.5, "MySQL Services for Plugins."
+       24.2.5, "MySQL Services for Plugins."
 
 Server Changes
 
@@ -8157,7 +8171,7 @@ WHERE a1.id=a2.id;
      * If you run MySQL Server on Windows, see Section 2.3.9,
        "Upgrading MySQL on Windows."
 
-     * If you use replication, see Section 16.4.3, "Upgrading a
+     * If you use replication, see Section 17.4.3, "Upgrading a
        Replication Setup," for information on upgrading your
        replication setup.
 
@@ -8187,7 +8201,7 @@ Configuration Changes
        available services and dynamic plugins now must be linked
        against this library (use the -lmysqlservices flag). For an
        example showing how to configure for CMake, see Section
-       23.2.5, "MySQL Services for Plugins."
+       24.2.5, "MySQL Services for Plugins."
 
 Server Changes
 
@@ -8303,10 +8317,10 @@ shell> mysql_upgrade
        Error Messages."
 
      * Before MySQL 5.1.36, plugin options were boolean options (see
-       Section 4.2.3.2, "Program Option Modifiers"). If you upgrade
-       to MySQL 5.5 from a version older than 5.1.36 and previously
-       used options of the form --plugin_name=0 or --plugin_name=1,
-       the equivalent options are now --plugin_name=OFF and
+       Section 4.2.5, "Program Option Modifiers"). If you upgrade to
+       MySQL 5.5 from a version older than 5.1.36 and previously used
+       options of the form --plugin_name=0 or --plugin_name=1, the
+       equivalent options are now --plugin_name=OFF and
        --plugin_name=ON, respectively. You also have the choice of
        requiring plugins to start successfully by using
        --plugin_name=FORCE or --plugin_name=FORCE_PLUS_PERMANENT.
@@ -8548,7 +8562,7 @@ Index Incompatibilities
 
    In MySQL 5.6.3, the length limit for index prefix keys is
    increased from 767 bytes to 3072 bytes, for InnoDB tables using
-   ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED. See Section 14.3.9.7,
+   ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED. See Section 14.9.7,
    "Limits on InnoDB Tables" for details. This change is also
    backported to MySQL 5.5.14. If you downgrade from one of these
    releases or higher, to an earlier release with a lower length
@@ -8659,7 +8673,8 @@ Please do "REPAIR TABLE `tbl_name`" or dump/reload to fix it!
    or mysql_upgrade.
 
    Methods for rebuilding a table include dumping and reloading it,
-   or using ALTER TABLE or REPAIR TABLE.
+   or using ALTER TABLE or REPAIR TABLE. REPAIR TABLE only applies to
+   MyISAM, ARCHIVE, and CSV tables.
    Note
 
    If you are rebuilding tables because a different version of MySQL
@@ -8690,26 +8705,30 @@ shell> mysql < dump.sql
 
    To rebuild a table with ALTER TABLE, use a "null" alteration; that
    is, an ALTER TABLE statement that "changes" the table to use the
-   storage engine that it already has. For example, if t1 is a MyISAM
-   table, use this statement:
-mysql> ALTER TABLE t1 ENGINE = MyISAM;
+   storage engine that it already has. For example, if t1 is an
+   InnoDB table, use this statement:
+mysql> ALTER TABLE t1 ENGINE = InnoDB;
 
    If you are not sure which storage engine to specify in the ALTER
    TABLE statement, use SHOW CREATE TABLE to display the table
    definition.
 
-   If you must rebuild a table because a table checking operation
-   indicates that the table is corrupt or needs an upgrade, you can
-   use REPAIR TABLE if that statement supports the table's storage
-   engine. For example, to repair a MyISAM table, use this statement:
+   If you need to rebuild an InnoDB table because a CHECK TABLE
+   operation indicates that a table upgrade is required, use
+   mysqldump to create a dump file and mysql to reload the file, as
+   described earlier. If the CHECK TABLE operation indicates that
+   there is a corruption or causes InnoDB to fail, refer to Section
+   14.21.2, "Starting InnoDB on a Corrupted Database" for information
+   about using the innodb_force_recovery option to restart InnoDB. To
+   understand the type of problem that CHECK TABLE may be
+   encountering, refer to the InnoDB notes in Section 13.7.2.2,
+   "CHECK TABLE Syntax."
+
+   For MyISAM, ARCHIVE, or CSV tables, you can use REPAIR TABLE if
+   the table checking operation indicates that there is a corruption
+   or that an upgrade is required. For example, to repair a MyISAM
+   table, use this statement:
 mysql> REPAIR TABLE t1;
-
-   For storage engines such as InnoDB that REPAIR TABLE does not
-   support, use mysqldump to create a dump file and mysql to reload
-   the file, as described earlier.
-
-   For specifics about which storage engines REPAIR TABLE supports,
-   see Section 13.7.2.5, "REPAIR TABLE Syntax."
 
    mysqlcheck --repair provides command-line access to the REPAIR
    TABLE statement. This can be a more convenient means of repairing
@@ -8753,15 +8772,16 @@ MODIFY c1 CHAR(N) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci
 
 2.11.5 Copying MySQL Databases to Another Machine
 
-   You can copy the .frm, .MYI, and .MYD files for MyISAM tables
-   between different architectures that support the same
-   floating-point format. (MySQL takes care of any byte-swapping
-   issues.) See Section 14.4, "The MyISAM Storage Engine."
-
    In cases where you need to transfer databases between different
    architectures, you can use mysqldump to create a file containing
    SQL statements. You can then transfer the file to the other
    machine and feed it as input to the mysql client.
+   Note
+
+   You can copy the .frm, .MYI, and .MYD files for MyISAM tables
+   between different architectures that support the same
+   floating-point format. (MySQL takes care of any byte-swapping
+   issues.) See Section 15.3, "The MyISAM Storage Engine."
 
    Use mysqldump --help to see what options are available.
 
@@ -8829,7 +8849,7 @@ shell> mysqlimport db_name DUMPDIR/*.txt   # load data into tables
 
    In many cases, it is preferable to use an option file instead of
    environment variables to modify the behavior of MySQL. See Section
-   4.2.3.3, "Using Option Files."
+   4.2.6, "Using Option Files."
    Variable Description
    CXX The name of your C++ compiler (for running CMake).
    CC The name of your C compiler (for running CMake).
@@ -8862,7 +8882,7 @@ shell> mysqlimport db_name DUMPDIR/*.txt   # load data into tables
    PATH Used by the shell to find MySQL programs.
    TMPDIR The directory where temporary files are created.
    TZ This should be set to your local time zone. See Section
-   C.5.4.6, "Time Zone Problems."
+   B.5.4.6, "Time Zone Problems."
    UMASK The user-file creation mode when creating files. See note
    following table.
    UMASK_DIR The user-directory creation mode when creating
@@ -8901,7 +8921,7 @@ shell> mysqlimport db_name DUMPDIR/*.txt   # load data into tables
    Perl, and the DBD::MySQL module for DBI must be installed if you
    want to run the MySQL benchmark scripts; see Section 8.12.2, "The
    MySQL Benchmark Suite." They are also required for the MySQL
-   Cluster ndb_size.pl utility; see Section 17.4.23, "ndb_size.pl ---
+   Cluster ndb_size.pl utility; see Section 18.4.23, "ndb_size.pl ---
    NDBCLUSTER Size Requirement Estimator."
    Note
 
@@ -9052,6 +9072,3 @@ $dbh= DBI->connect("DBI:ODBC:$dsn",$user,$password) ||
    Another cause of this problem may be that Perl and MySQL are not
    both compiled with gcc. In this case, you can solve the mismatch
    by compiling both with gcc.
-
-   Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights
-   reserved. Legal Notices
