@@ -17,7 +17,7 @@
 
    MySQL compressed tar file binary distributions have names of the
    form mysql-VERSION-OS.tar.gz, where VERSION is a number (for
-   example, 5.5.39), and OS indicates the type of operating system
+   example, 5.5.40), and OS indicates the type of operating system
    for which the distribution is intended (for example, pc-linux-i686
    or winx64).
 
@@ -170,9 +170,6 @@ Perform Postinstallation Setup
    passwords for them using the instructions in Section 2.10.2,
    "Securing the Initial MySQL Accounts."
 
-   Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights
-   reserved. Legal Notices
-
 2.3 Installing MySQL on Microsoft Windows
 
    MySQL is available for Microsoft Windows, for both 32-bit and
@@ -193,7 +190,7 @@ Perform Postinstallation Setup
    with Administrator privileges.
 
    For a list of limitations on the use of MySQL on the Windows
-   platform, see Section E.10.6, "Windows Platform Limitations."
+   platform, see Section D.10.6, "Windows Platform Limitations."
 
    In addition to the MySQL Server package, you may need or want
    additional components to use MySQL with your application or
@@ -336,8 +333,8 @@ Perform Postinstallation Setup
    within the "Complete Package."
 
      * MySQL Installer: This package has a file name similar to
-       mysql-installer-community-5.5.39.0.msi or
-       mysql-installer-commercial-5.5.39.0.msi, and utilizes MSIs to
+       mysql-installer-community-5.5.40.0.msi or
+       mysql-installer-commercial-5.5.40.0.msi, and utilizes MSIs to
        automatically install MySQL server and other products. It will
        download and apply updates to itself, and for each of the
        installed products. It also configures the additional
@@ -361,13 +358,13 @@ Perform Postinstallation Setup
        Using MySQL Installer."
 
      * The Complete Package: This package has a file name similar to
-       mysql-5.5.39-win32.msi and contains all files needed for a
+       mysql-5.5.40-win32.msi and contains all files needed for a
        complete Windows installation, including the Configuration
        Wizard. This package includes optional components such as the
        embedded server and benchmark suite.
 
      * The Noinstall Archive: This package has a file name similar to
-       mysql-5.5.39-win32.zip and contains all the files found in the
+       mysql-5.5.40-win32.zip and contains all the files found in the
        Complete install package, with the exception of the
        Configuration Wizard. This package does not include an
        automated installer, and must be manually installed and
@@ -431,7 +428,7 @@ Installer editions
        credentials to automatically receive updates for your
        commercial MySQL products.
 
-   For release notes detailing the changes in each release of MySQL
+   For notes detailing the changes in each release of MySQL
    Installer, see MySQL Installer Release Notes
    (http://dev.mysql.com/doc/relnotes/mysql-installer/en/).
 
@@ -756,9 +753,9 @@ C:\> MySQLInstallerConsole --help
    with the installation. See the MySQL Installer manual for
    additional details.
 
-   For release notes detailing the changes in each release of MySQL
-   Notifier for Microsoft Windows, see the MySQL Notifier Release
-   Notes (http://dev.mysql.com/doc/relnotes/mysql-notifier/en/).
+   For notes detailing the changes in each release of MySQL Notifier
+   for Microsoft Windows, see the MySQL Notifier Release Notes
+   (http://dev.mysql.com/doc/relnotes/mysql-notifier/en/).
 
    Visit the MySQL Notifier forum
    (http://forums.mysql.com/list.php?173) for additional MySQL
@@ -825,7 +822,7 @@ C:\> MySQLInstallerConsole --help
    MySQL Notifier for Microsoft Windows Service Instance menu
 
    The Actions menu includes several links to external applications
-   (if they are installed), and a a Refresh Status option to manually
+   (if they are installed), and a Refresh Status option to manually
    refresh the status of all monitored services (in both local and
    remote computers) and MySQL instances.
    Note
@@ -1415,7 +1412,7 @@ Common Errors
    directory. In a default installation it contains C:\Program
    Files\MySQL\MySQL Server 5.5\. The Version string contains the
    release number. For example, for an installation of MySQL Server
-   5.5.39, the key contains a value of 5.5.39.
+   5.5.40, the key contains a value of 5.5.40.
 
    These registry keys are used to help external tools identify the
    installed location of the MySQL server, preventing a complete scan
@@ -1505,7 +1502,7 @@ MSI Package
    the command line (or within a script), you need to use the
    msiexec.exe tool. For example, to perform a quiet installation
    (which shows no dialog boxes or progress):
-shell> msiexec /i mysql-5.5.39.msi /quiet
+shell> msiexec /i mysql-5.5.40.msi /quiet
 
    The /i indicates that you want to perform an installation. The
    /quiet option indicates that you want no interactive elements.
@@ -1513,7 +1510,7 @@ shell> msiexec /i mysql-5.5.39.msi /quiet
    To provide a dialog box showing the progress during installation,
    and the dialog boxes providing information on the installation and
    registration of MySQL, use /passive mode instead of /quiet:
-shell> msiexec /i mysql-5.5.39.msi /passive
+shell> msiexec /i mysql-5.5.40.msi /passive
 
    Regardless of the mode of the installation, installing the package
    in this manner performs a 'Typical' installation, and installs the
@@ -1521,7 +1518,7 @@ shell> msiexec /i mysql-5.5.39.msi /passive
 
    You can also use this method to uninstall MySQL by using the
    /uninstall or /x options:
-shell> msiexec /x mysql-5.5.39.msi /uninstall
+shell> msiexec /x mysql-5.5.40.msi /uninstall
 
    To install MySQL and configure a MySQL instance from the command
    line, see Section 2.3.6.13, "MySQL Server Instance Config Wizard:
@@ -2105,7 +2102,7 @@ from the Command Line
    service name MySQL55 and setting the root password to 1234.
 shell> MySQLInstanceConfig.exe -i -q "-lC:\mysql_install_log.txt" »
    "-nMySQL Server 5.5" "-pC:\Program Files\MySQL\MySQL Server 5.5" -
-v5.5.39 »
+v5.5.40 »
    "-tmy-template.ini" "-cC:\mytest.ini" ServerType=DEVELOPMENT Datab
 aseType=MIXED »
    ConnectionUsage=DSS Port=3311 ServiceName=MySQL55 RootPassword=123
@@ -2121,7 +2118,7 @@ Date: 2009-10-27 17:07:21
 Installing service ...
 
 Product Name:         MySQL Server 5.5
-Version:              5.5.39
+Version:              5.5.40
 Installation Path:    C:\Program Files\MySQL\MySQL Server 5.5\
 
 Creating configuration file C:\mytest.ini using template my-template.
@@ -2227,7 +2224,7 @@ Archive
    When the MySQL server starts on Windows, it looks for option files
    in several locations, such as the Windows directory, C:\, and the
    MySQL installation directory (for the full list of locations, see
-   Section 4.2.3.3, "Using Option Files"). The Windows directory
+   Section 4.2.6, "Using Option Files"). The Windows directory
    typically is named something like C:\WINDOWS. You can determine
    its exact location from the value of the WINDIR environment
    variable using the following command:
@@ -2273,7 +2270,7 @@ basedir=E:\\mysql
 datadir=E:\\mydata\\data
 
    The rules for use of backslash in option file values are given in
-   Section 4.2.3.3, "Using Option Files."
+   Section 4.2.6, "Using Option Files."
 
    The data directory is located within the AppData directory for the
    user running MySQL.
@@ -2380,7 +2377,7 @@ InnoDB: foreign key constraint system tables created
    something like this, which indicates that the server is ready to
    service client connections:
 mysqld: ready for connections
-Version: '5.5.39'  socket: ''  port: 3306
+Version: '5.5.40'  socket: ''  port: 3306
 
    The server continues to write to the console any further
    diagnostic output it produces. You can open a new console window
@@ -2439,7 +2436,7 @@ C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqladmin" -u root
    The last option is to start mysqld with the --standalone and
    --debug options. In this case, mysqld writes a log file
    C:\mysqld.trace that should contain the reason why mysqld doesn't
-   start. See Section 23.4.3, "The DBUG Package."
+   start. See Section 24.4.3, "The DBUG Package."
 
    Use mysqld --verbose --help to display all the options that mysqld
    supports.
@@ -2610,7 +2607,7 @@ C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld" --install
      * If the service-installation command specifies a
        --defaults-file option after the service name, the server
        reads options the same way as described in the previous item,
-       except that it reads options only from the the named file and
+       except that it reads options only from the named file and
        ignores the standard option files.
 
    As a more complex example, consider the following command:
@@ -2781,7 +2778,7 @@ basedir=C:\\Program Files\\MySQL\\MySQL Server 5.5
 # set datadir to the location of your data directory
 datadir=D:\\MySQLdata
        The rules for use of backslash in option file values are given
-       in Section 4.2.3.3, "Using Option Files."
+       in Section 4.2.6, "Using Option Files."
        If you change the datadir value in your MySQL configuration
        file, you must move the contents of the existing MySQL data
        directory before restarting the MySQL server.
@@ -2985,6 +2982,3 @@ C:\> C:\mysql\bin\mysql -e "SELECT Host,Db,User FROM mysql.db"
    you can set up the MySQL server to run automatically when Windows
    starts. See Section 2.3.7.7, "Starting MySQL as a Windows
    Service."
-
-   Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights
-   reserved. Legal Notices
