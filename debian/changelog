@@ -1,4 +1,4 @@
-mysql-5.5 (5.5.39-1) UNRELEASED; urgency=medium
+mysql-5.5 (5.5.39-1) unstable; urgency=medium
 
   * SECURITY UPDATE: Update to 5.5.38 to fix security issues:
     - http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html
@@ -10,7 +10,7 @@ mysql-5.5 (5.5.39-1) UNRELEASED; urgency=medium
   * d/p/fix-func_math-test-failure.patch: Fix for failing func_math test
     (Closes: #753196, #746883).
 
- -- James Page <james.page@ubuntu.com>  Mon, 01 Sep 2014 11:28:53 +0100
+ -- James Page <james.page@ubuntu.com>  Mon, 01 Sep 2014 13:20:20 +0100
 
 mysql-5.5 (5.5.37-1) unstable; urgency=medium
 
