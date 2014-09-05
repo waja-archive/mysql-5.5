@@ -1,3 +1,10 @@
+mysql-5.5 (5.5.39-2) UNRELEASED; urgency=medium
+
+  * d/p/fix-mysqlhotcopy-test-failure.patch: Add return code 255 to the list
+    of allowable return codes for mysqlhotcopy tests. 
+
+ -- James Page <james.page@ubuntu.com>  Fri, 05 Sep 2014 11:18:07 +0100
+
 mysql-5.5 (5.5.39-1) unstable; urgency=medium
 
   * SECURITY UPDATE: Update to 5.5.38 to fix security issues:
