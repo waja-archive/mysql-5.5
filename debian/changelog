@@ -1,17 +1,17 @@
-mysql-5.5 (5.5.40-1) UNRELEASED; urgency=medium
+mysql-5.5 (5.5.40-1) unstable; urgency=medium
 
   * SECURITY UPDATE: Update to 5.5.40 to fix security issues:
-     - http://www.oracle.com/technetwork/topics/security/cpuoct2014-1972960.html
-     - CVE-2012-5615, CVE-2014-4274, CVE-2014-4287, CVE-2014-6463,
-       CVE-2014-6464, CVE-2014-6469, CVE-2014-6478, CVE-2014-6484,
-       CVE-2014-6491, CVE-2014-6494, CVE-2014-6495, CVE-2014-6496,
-       CVE-2014-6500, CVE-2014-6505, CVE-2014-6507, CVE-2014-6520,
-       CVE-2014-6530, CVE-2014-6551, CVE-2014-6555, CVE-2014-6559
+    - http://www.oracle.com/technetwork/topics/security/cpuoct2014-1972960.html
+    - CVE-2012-5615, CVE-2014-4274, CVE-2014-4287, CVE-2014-6463,
+      CVE-2014-6464, CVE-2014-6469, CVE-2014-6478, CVE-2014-6484,
+      CVE-2014-6491, CVE-2014-6494, CVE-2014-6495, CVE-2014-6496,
+      CVE-2014-6500, CVE-2014-6505, CVE-2014-6507, CVE-2014-6520,
+      CVE-2014-6530, CVE-2014-6551, CVE-2014-6555, CVE-2014-6559
     (Closes: #765663, #769337)
   * d/p/fix-mysqlhotcopy-test-failure.patch: Add return code 255 to the list
     of allowable return codes for mysqlhotcopy tests. 
 
- -- James Page <james.page@ubuntu.com>  Fri, 05 Sep 2014 11:18:07 +0100
+ -- James Page <james.page@ubuntu.com>  Mon, 24 Nov 2014 16:31:57 +0000
 
 mysql-5.5 (5.5.39-1) unstable; urgency=medium
 
