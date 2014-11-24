@@ -9,7 +9,8 @@ mysql-5.5 (5.5.40-1) unstable; urgency=medium
       CVE-2014-6530, CVE-2014-6551, CVE-2014-6555, CVE-2014-6559
     (Closes: #765663, #769337)
   * d/p/fix-mysqlhotcopy-test-failure.patch: Add return code 255 to the list
-    of allowable return codes for mysqlhotcopy tests. 
+    of allowable return codes for mysqlhotcopy tests.
+  * d/rules: Enable parallel builds.
 
  -- James Page <james.page@ubuntu.com>  Mon, 24 Nov 2014 16:31:57 +0000
 
