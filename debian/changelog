@@ -5,6 +5,7 @@ mysql-5.5 (5.5.41-1) UNRELEASED; urgency=medium
     - CVE-2015-0411, CVE-2015-0382, CVE-2015-0381, CVE-2015-0432,
       CVE-2014-6568, CVE-2015-0374
     (Closes: #775881).
+  * d/p/fix-func_math-test-failure.patch: Dropped, included upstream.
 
  -- James Page <james.page@ubuntu.com>  Wed, 21 Jan 2015 11:04:41 +0000
 
