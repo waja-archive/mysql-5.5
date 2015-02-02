@@ -1071,8 +1071,9 @@ C:\> MySQLInstallerConsole help install
           + [feature]: The feature block is a semicolon
             separated list of features, or '*' to select all
             features.
-C:\> MySQLInstallerConsole install server;5.6.20:*:port=3307;serverid=
+C:\> MySQLInstallerConsole install server;5.6.22:*:port=3307;serverid=
 2:type=user;username=foo;password=bar;role=DBManager
+C:\> MySQLInstallerConsole install server;5.6.22;x64 -silent
 
 
      * list
@@ -2930,9 +2931,9 @@ shutdown
    C:\Program Files\MySQL\MySQL Server 5.5\data directory. It is
    the file with a suffix of .err, or may be specified by
    passing in the --log-error option. Alternatively, you can try
-   to start the server as mysqld --console; in this case, you
-   may get some useful information on the screen that may help
-   solve the problem.
+   to start the server with the --console option; in this case,
+   the server may display some useful information on the screen
+   that will help solve the problem.
 
    The last option is to start mysqld with the --standalone and
    --debug options. In this case, mysqld writes a log file

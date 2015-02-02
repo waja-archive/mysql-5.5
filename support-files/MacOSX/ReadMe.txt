@@ -30,8 +30,8 @@
        10.6 and later, and available for both 32-bit and 64-bit
        architectures.
        In addition to the core installation, the Package
-       Installer also includes Section 2.4.3, "Installing the
-       MySQL Startup Item" and Section 2.4.4, "Installing and
+       Installer also includes Section 2.4.4, "Installing the
+       MySQL Startup Item" and Section 2.4.5, "Installing and
        Using the MySQL Preference Pane," both of which simplify
        the management of your installation.
 
@@ -40,7 +40,7 @@
        supplied with the Mac OS X server release, you can make
        use of the package or tar formats. For more information
        on using the MySQL bundled with Mac OS X, see Section
-       2.4.5, "Using the Bundled MySQL on Mac OS X Server."
+       2.4.6, "Using the Bundled MySQL on Mac OS X Server."
 
    For additional information on using MySQL on Mac OS X, see
    Section 2.4.1, "General Notes on Installing MySQL on Mac OS
@@ -49,6 +49,11 @@
 2.4.1 General Notes on Installing MySQL on Mac OS X
 
    You should keep the following issues and notes in mind:
+
+     * OS X 10.4 deprecated startup items in favor of launchd
+       daemons, and as of OS X 10.10 (Yosemite), startup items
+       do not function. For these reasons, using launchd daemons
+       is preferred over startup items.
 
      * The default location for the MySQL Unix socket is
        different on Mac OS X and Mac OS X Server depending on
@@ -148,7 +153,7 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
    When installing from the package version, you should also
    install the MySQL Preference Pane, which will enable you to
    control the startup and execution of your MySQL server from
-   System Preferences. For more information, see Section 2.4.4,
+   System Preferences. For more information, see Section 2.4.5,
    "Installing and Using the MySQL Preference Pane."
 
    When installing using the package installer, the files are
@@ -225,14 +230,73 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
        you will be shown an Install Succeeded message.
 
    For convenience, you may also want to install the startup
-   item and preference pane. See Section 2.4.3, "Installing the
-   MySQL Startup Item," and Section 2.4.4, "Installing and Using
+   item and preference pane. See Section 2.4.4, "Installing the
+   MySQL Startup Item," and Section 2.4.5, "Installing and Using
    the MySQL Preference Pane."
 
-2.4.3 Installing the MySQL Startup Item
+2.4.3 Installing a MySQL Launch Daemon
+
+   OS X uses launch daemons to automatically start, stop, and
+   manage processes and applications such as MySQL. Using launch
+   daemons is recommended over startup items on OS X.
+   Note
+
+   OS X 10.4 deprecated startup items in favor of launchd
+   daemons, and as of OS X 10.10 (Yosemite), startup items do
+   not function. For these reasons, using launchd daemons is
+   preferred over startup items.
+
+   Here is an example launchd file that starts MySQL:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>KeepAlive</key>
+    <true/>
+    <key>Label</key>
+    <string>com.mysql.mysqld</string>
+    <key>ProgramArguments</key>
+    <array>
+    <string>/usr/local/mysql/bin/mysqld_safe</string>
+    <string>--user=mysql</string>
+    </array>
+  </dict>
+</plist>
+
+
+   Adjust the ProgramArguments array according to your system,
+   as for example your path to mysqld_safe might be different.
+   After making the proper adjustments, do the following:
+
+     * Save the XML as a file named
+       /Library/LaunchDaemons/com.mysql.mysql.plist
+
+     * Adjust the file permissions using the Apple recommended
+       owner "root", owning group "wheel", and file permissions
+       "644"
+shell> sudo chown root:wheel /Library/LaunchDaemons/com.mysql.mysql.pl
+ist
+shell> sudo chmod 644 /Library/LaunchDaemons/com.mysql.mysql.plist
+
+
+     * Enable this new MySQL service
+shell> sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysql.p
+list
+
+   The MySQL daemon is now running, and automatically starts
+   when your system is rebooted.
+
+2.4.4 Installing the MySQL Startup Item
 
    The MySQL Installation Package includes a startup item that
    can be used to automatically start and stop MySQL.
+   Important
+
+   Startup items are deprecated in favor of launchd daemons. For
+   additional information, see Section 2.4.3, "Installing a
+   MySQL Launch Daemon."
 
    To install the MySQL Startup Item:
 
@@ -298,7 +362,7 @@ shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
    stop the server:
 shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
 
-2.4.4 Installing and Using the MySQL Preference Pane
+2.4.5 Installing and Using the MySQL Preference Pane
 
    The MySQL Package installer disk image also includes a custom
    MySQL Preference Pane that enables you to start, stop, and
@@ -377,7 +441,7 @@ shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
    You can close the System Preferences... window once you have
    completed your settings.
 
-2.4.5 Using the Bundled MySQL on Mac OS X Server
+2.4.6 Using the Bundled MySQL on Mac OS X Server
 
    If you are running Mac OS X Server, a version of MySQL should
    already be installed. The following table shows the versions
