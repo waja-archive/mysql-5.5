@@ -14,7 +14,7 @@ mysql-5.5 (5.5.42-1) unstable; urgency=medium
     and replaced with options slow_query_log_file and slow_query_log.
     (Closes: #677222)
 
- -- James Page <james.page@ubuntu.com>  Fri, 30 Jan 2015 11:31:10 +0000
+ -- James Page <james.page@ubuntu.com>  Mon, 09 Feb 2015 14:12:44 +0000
 
 mysql-5.5 (5.5.40-1) unstable; urgency=medium
 
