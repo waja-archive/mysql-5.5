@@ -14,3 +14,4 @@ fix-mips64el-ftbfs.patch
 50_mysql-test__db_test.patch
 fix-mysqlhotcopy-test-failure.patch
 mysqld_multi_confd.patch
+mysqld_multi.server_lsb-header.patch
